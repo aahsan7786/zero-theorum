@@ -57,7 +57,7 @@ export default function AppToolBar(props) {
                     {options.map((item, index) => {
                         if (item.type === appBarTypes.LABEL) {
                             return (
-                                <Link href="#" underline="hover">
+                                <Link href={item.props.href} underline="hover">
                                     <Typography
                                         className={classes.menuItem}
                                         component='body2'

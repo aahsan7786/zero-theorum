@@ -3,28 +3,45 @@ import { appBarTypes } from "../constants/commonConstants"
 export default [
     {
         type: appBarTypes.LABEL,
-        label: 'About',
-        props: {}
+        label: 'Home',
+        props: {
+            href:"/home"
+        }
     },
     {
         type: appBarTypes.LABEL,
-        label: 'Forecast',
-        props: {}
+        label: 'About',
+        props: {
+            href:"/underdev"
+        }
+    },
+    {
+        type: appBarTypes.LABEL,
+        label: 'Research',
+        props: {
+            href:"/underdev"
+        }
     },
     {
         type: appBarTypes.LABEL,
         label: 'Performance',
-        props: {}
+        props: {
+            href:"/underdev"
+        }
     },
     {
         type: appBarTypes.LABEL,
-        label: 'Generation-0',
-        props: {}
+        label: 'Contact',
+        props: {
+            href:"/underdev"
+        }
     },
     {
         type: appBarTypes.LABEL,
-        label: 'Login',
-        props: {}
+        label: 'Investor',
+        props: {
+            href:"/underdev"
+        }
     },
     {
         type: appBarTypes.ICON,
