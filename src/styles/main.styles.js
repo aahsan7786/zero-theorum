@@ -1,5 +1,5 @@
 
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import circleBack from './../assets/mainPage/circleBack.png';
 import circleBackTop from './../assets/mainPage/circleBackTop.png';
 import pageBackground from './../assets/mainPage/bg.jpg';
@@ -190,6 +190,6 @@ const useStyles = makeStyles({
         fontFamily: fonts.ralewayLight,
 
     }
-},{index: 1});
+},{index: 999});
 
 export default useStyles;

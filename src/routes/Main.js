@@ -1,16 +1,16 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
 // import Grid from './../components/common/Grid';
 
 import AppBar from '../components/AppBar';
 import logo from './../assets/logo/zerOtheorem_logo.png';
 import AppBarOptions from './../config/AppBar.config'
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { Button } from '@mui/material';
-import ArrowDropUpOutlinedIcon from '@mui/icons-material/ArrowDropUpOutlined';
-import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import { Button } from '@material-ui/core';
+import ArrowDropUpOutlinedIcon from '@material-ui/icons/ArrowDropUpOutlined';
+import ArrowDropDownOutlinedIcon from '@material-ui/icons/ArrowDropDownOutlined';
 import clsx from 'clsx';
 
 import threeDModlingImage from './../assets/mainPage/3d-modeling.svg';

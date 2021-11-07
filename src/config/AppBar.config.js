@@ -1,4 +1,4 @@
-import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
+import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
 import { appBarTypes } from "../constants/commonConstants"
 export default [
     {

@@ -1,10 +1,10 @@
 import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import { makeStyles } from '@mui/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+import { makeStyles } from '@material-ui/core/styles';
 import { appBarTypes } from '../constants/commonConstants';
 import fonts from '../constants/fonts';
 
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
         cursor: 'pointer',
         fontFamily: fonts.ralewayRegular
     }
-}, {index: 1});
+}, {index: 999});
 
 export default function AppToolBar(props) {
     const classes = useStyles();
