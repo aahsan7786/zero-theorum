@@ -34,7 +34,7 @@ const useStyles = makeStyles({
         cursor: 'pointer',
         fontFamily: fonts.ralewayRegular
     }
-});
+}, {index: 1});
 
 export default function AppToolBar(props) {
     const classes = useStyles();

@@ -190,6 +190,6 @@ const useStyles = makeStyles({
         fontFamily: fonts.ralewayLight,
 
     }
-});
+},{index: 1});
 
 export default useStyles;

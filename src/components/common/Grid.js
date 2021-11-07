@@ -6,7 +6,7 @@ import clsx from 'clsx';
 const useStyles = makeStyles({
     root: {
     }
-});
+},{index: 1});
 
 export default function MyGrid({ className, ...otherProps }) {
     const classes = useStyles();
