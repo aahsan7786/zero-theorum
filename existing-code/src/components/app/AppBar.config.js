@@ -1,5 +1,7 @@
+import React from 'react';
+
+import { appBarTypes } from "../../constants/commonConstants"
 import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
-import { appBarTypes } from "../constants/commonConstants"
 export default [
     {
         type: appBarTypes.LABEL,

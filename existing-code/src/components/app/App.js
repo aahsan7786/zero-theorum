@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Routes} from "react-router-dom";
 import Logo from "../logo/Logo";
 import LeftNav from "../leftNav/LeftNav";
 import LeftNavMobile from "../leftNavMobile/LeftNavMobile";
@@ -70,6 +70,20 @@ import ArticleNineteen from "../../pages/articlesList/ArticleNineteen";
 import Discord from "../../pages/discord/Discord";
 
 import { COGNITO } from "../../config";
+import logo from './../../assets/images/zerOtheorem_logo.svg';
+import './App.css';
+import Box from '@material-ui/core/Box';
+import { ThemeProvider } from '@material-ui/core/styles';
+import Main from './Main';
+//import Performance from './../../routes/Performance';
+//import Investor from './../../routes/Investor';
+import theme from './theme/theme';
+import Grid from '@material-ui/core/Grid';
+// import Grid from './../components/common/Grid';
+
+import AppBar from './AppBar';
+import AppBarOptions from './AppBar.config'
+import useStyles from './../../styles/main.styles';
 
 Amplify.configure({
     aws_cognito_region: COGNITO.REGION,
@@ -80,58 +94,50 @@ Amplify.configure({
 const App = () => {
     const [overlay, setOverlay] = useState(false);
     const [menuBig, setMenuBig] = useState(false);
-
+    const classes = useStyles();
+    return (
+        <Box className="App">
+      <Grid item xs={12}
+        className={classes.spacingBottom40, classes.gridPaddingLeft40}>
+        <AppBar
+            logo={logo}
+            options={AppBarOptions}
+        />
+     </Grid>
+        <Router>
+            <Switch>
+            <Route exact path="/">
+                <Main/>
+            </Route>
+            <Route exact path="/home">
+                <Main/>
+            </Route>
+            <Route exact path="/about">
+                <About/>
+            </Route>
+            <Route exact path="/contact">
+                <Feedback/>
+            </Route>
+          </Switch>
+        </Router>
+      
+    </Box>
+    )
     return (
         <div id="wrapper">
+            <Grid item xs={12}
+                className={classes.spacingBottom40, classes.gridPaddingLeft40}>
+                <AppBar
+                    logo={logo}
+                    options={AppBarOptions}
+                />
+            </Grid>
             <Router>
-                <ScrollToTop/>
-                <div className="burger-menu">
-                    <ReactSVG
-                        // className={["", scroll ? "scroll" : "", scrollTwo ? "scrollTwo" : ""].join(" ")}
-                        renumerateIRIElements={false}
-                        src={burger}
-                        wrapper="div"
-                        onClick={() => {
-                            setOverlay(!overlay);
-                        }}
-                        style={{width: "1rem", fill: "#f3de1a"}}
-                    />
-                </div>
-                <div className={[overlay ? "overlay" : "overlay-hidden"].join(" ")}>
-                    <LeftNavMobile setOverlay={() => setOverlay(!overlay)}/>
-                </div>
-                <div className="paddingFixedLogo"/>
-                {screen.width > 540 ? <div/> : <Logo menuBig={false}/>}
-                <div
-                    className={["col-12 mb-3", overlay ? "overlay-blur" : ""].join(" ")}
-                >
-                    <div className="row">
-                        {screen.width > 540 && (
-                            <div
-                                style={menuBig ? {} : {width: "5rem"}}
-                                className={`${
-                                    menuBig ? "col-auto" : "col-auto"
-                                } d-flex justify-content-center`}
-                                onMouseOver={() => setMenuBig(true)}
-                                onMouseOut={() => setMenuBig(false)}
-                            >
-                                <LeftNav menuBig={menuBig} setMenuBig={setMenuBig}/>
-                            </div>
-                        )}
-                        <div
-                            className={[
-                                screen.width > 540
-                                    ? menuBig
-                                    ? "col-11 offset-lg-1"
-                                    : "col-11 offset-lg-1"
-                                    : "col-12",
-                            ].join(" ")}
-                        >
-                            <Header/>
+                {screen.width > 540 ? <div/> : <Logo menuBig={false}/>}        
                             {/* <div style={{height: 120}}/> */}
                             <Switch>
                                 <Route exact path="/">
-                                    <Forecast/>
+                                    <Main/>
                                 </Route>
                                 {/*<Route path="/home">*/}
                                 {/*    <Home/>*/}
@@ -265,14 +271,14 @@ const App = () => {
                                     <PageNotFound/>
                                 </Route>
                             </Switch>
-                        </div>
-                    </div>
-                </div>
+                        
+                {/*
                 <Footer menuBig={menuBig}/>
                 <Cookies/>
                 <Modal/>
                 <ModalData/>
                 <ModalPublication/>
+                */}
             </Router>
         </div>
     );
