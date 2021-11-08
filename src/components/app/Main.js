@@ -24,7 +24,12 @@ export default function Main() {
     const classes = useStyles();
     const history = useHistory();
     const handlePerformanceClick = (event) =>{
+        window.scrollTo(0, 0);
         history.push("/performance");
+    }
+    const handleCheckResearchClick = (event) =>{
+        window.scrollTo(0, 0);
+        history.push("/research");
     }
     return (
         <Grid container
@@ -209,6 +214,7 @@ export default function Main() {
                                         variant='outlined'
                                         color='primary'
                                         className={classes.checkButton}
+                                        onClick={handleCheckResearchClick}
                                     >
                                         Check
                                     </Button>
@@ -254,6 +260,7 @@ export default function Main() {
                                         variant='outlined'
                                         color='primary'
                                         className={classes.checkButton}
+                                        onClick={handlePerformanceClick}
                                     >
                                         Check
                                     </Button>

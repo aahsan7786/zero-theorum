@@ -97,8 +97,9 @@ const App = (props) => {
     const [overlay, setOverlay] = useState(false);
     const [menuBig, setMenuBig] = useState(false);
     const classes = useStyles();
+    const pathname = props.history.location.pathname; 
     return (
-        <Box className="App">
+        <Box className="App" id="maindiv">
       <Grid item xs={12}
         className={classes.spacingBottom40, classes.gridPaddingLeft40}>
         <AppBar
@@ -107,6 +108,7 @@ const App = (props) => {
         />
      </Grid>
         <Router>
+        <ScrollToTop/>
             <Switch>
             <Route exact path="/">
                 <Main/>
@@ -134,7 +136,7 @@ const App = (props) => {
             </Route>
           </Switch>
         </Router>
-     { props.history.location.pathname !== "/investor"?  <Grid item xs={12} className={clsx(classes.gridPaddingLeft40)}>
+     { pathname !== "/investor" && pathname !== "/home" && pathname !== "/"  ?  <Grid item xs={12} className={clsx(classes.gridPaddingLeft40)}>
             <AppBar
                 logo={logo}
                 options={AppBarOptions}

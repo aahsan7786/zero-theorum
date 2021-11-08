@@ -6,7 +6,7 @@ class ScrollToTop extends React.Component {
         if (
             this.props.location.pathname !== prevProps.location.pathname
         ) {
-            window.scrollTo(0, 0);
+            document.getElementById('maindiv').scrollTo({ top: 0, behavior: 'smooth' })
         }
     }
 
