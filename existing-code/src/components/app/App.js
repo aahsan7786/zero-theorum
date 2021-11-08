@@ -125,6 +125,9 @@ const App = () => {
             <Route exact path="/investor">
                 <PopupForm/>
             </Route>
+            <Route exact path="/performance">
+                <div>Under development</div>
+            </Route>
           </Switch>
         </Router>
         <Grid item xs={12} className={clsx(classes.gridPaddingLeft40)}>
