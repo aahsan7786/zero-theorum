@@ -68,6 +68,7 @@ import ArticleSixteen from "../../pages/articlesList/ArticleSixteen";
 import ArticleEighteen from "../../pages/articlesList/ArticleEighteen";
 import ArticleNineteen from "../../pages/articlesList/ArticleNineteen";
 import Discord from "../../pages/discord/Discord";
+import clsx from 'clsx';
 
 import { COGNITO } from "../../config";
 import logo from './../../assets/images/zerOtheorem_logo.svg';
@@ -118,9 +119,20 @@ const App = () => {
             <Route exact path="/contact">
                 <Feedback/>
             </Route>
+            <Route exact path="/research">
+                <Research/>
+            </Route>
+            <Route exact path="/investor">
+                <PopupForm/>
+            </Route>
           </Switch>
         </Router>
-      
+        <Grid item xs={12} className={clsx(classes.gridPaddingLeft40)}>
+                    <AppBar
+                        logo={logo}
+                        options={AppBarOptions}
+                    />
+                </Grid>
     </Box>
     )
     return (
