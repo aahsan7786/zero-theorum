@@ -1,0 +1,144 @@
+@import "~Sass/base/mixins";
+
+.counter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 190px;
+    &-body{
+      display: inline-flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+        &-label{
+          font-size: 77px;
+          margin-bottom: 7px;
+            @include d(1500){
+              font-size: 68px;
+            }
+            @include d(991){
+              font-size: 58px;
+            }
+            @include d(767){
+              font-size: 48px;
+            }
+            @include d(480){
+              font-size: 36px;
+            }
+        }
+        &-value{
+          font-size: 77px;
+          line-height: 1.2em;
+           @include d(1500){
+              font-size: 68px;
+            }
+            @include d(991){
+              font-size: 58px;
+            }
+            @include d(767){
+              font-size: 50px;
+            }
+            @include d(480){
+              font-size: 42px;
+            }
+        }
+        @media only screen and (max-width: 1440px) {
+          //width: 258px;
+        }
+        @media only screen and (max-width: 1200px) {
+          //width: 213px;
+        }
+        @media only screen and (max-width: 575px) {
+          //width: 184px;
+        }
+    }
+    &-control{
+      display: inline-flex;
+      height: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: 22px;
+      margin-top: -3px;
+        &-arrow{
+          width: 14px;
+          height: 8px;
+          position: relative;
+          //opacity: .5;
+          transition: opacity .4s ease;
+            &:before{
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 0;
+              height: 0;
+              border-style: solid;
+              transition: border-color .4s ease;
+            }
+            &.__up{
+              margin-bottom: 5px;
+                &:before{
+                  border-width: 0 7px 8px 7px;
+                  border-color: transparent transparent #00321c transparent;
+                }
+            }
+            &.__down{
+              margin-top: 5px;
+                &:before{
+                  border-width: 8px 7px 0 7px;
+                  border-color: #6e2214 transparent transparent transparent;
+                }
+            }
+        }
+        &.up{
+          .counter-control-arrow.__up{
+            opacity: 1;
+              &:before {
+                border-color: transparent transparent #00a651 transparent;
+              }
+          }
+        }
+        &.down{
+          .counter-control-arrow.__down{
+            opacity: 1;
+              &:before{
+                border-color: #f01e02 transparent transparent transparent;
+              }
+          }
+        }
+        @media only screen and (max-width: 1300px) {
+          margin-left: 16px;
+        }
+    }
+    &-description{
+      text-align: center;
+      font-size: 14px;
+      text-transform: uppercase;
+        p{
+          letter-spacing: .41em;
+        }
+        span{
+          letter-spacing: 1.08em;
+          display: block;
+          margin-top: 5px;
+        }
+        @include d(1500){
+          font-size: 12px;
+        }
+        @include d(1440){
+          margin-top: 10px;
+        }
+        @include d(991){
+          font-size: 10px;
+        }
+    }
+    @include d(1700){
+      margin-top: 130px;
+    }
+    @include d(1440){
+      margin-top: 110px;
+    }
+    @include d(991){
+      margin-top: 0;
+    }
+}

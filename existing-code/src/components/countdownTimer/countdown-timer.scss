@@ -1,0 +1,25 @@
+.timer{
+  text-align: center;
+  color: #0f58b3;
+    &-title,
+    &-label{
+      color: #B2B3B5;
+      font-size: 12px;
+    }
+    &-title{
+      line-height: 1.6em;
+    }
+    &-box{
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+        &-item{
+          font-size: 36px;
+          text-align: center;
+        }
+        &-dots{
+          font-size: 36px;
+          padding: 0 7px;
+        }
+    }
+}

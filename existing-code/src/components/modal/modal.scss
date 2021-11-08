@@ -1,0 +1,112 @@
+.modal{
+  &-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+    z-index: -11;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease;
+    transition-delay: .5s;
+      &-close{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      &.is-active{
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 12;
+      }
+  }
+  &-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,.7);
+    max-width: 862px;
+    width: 98%;
+  }
+  &-done{
+    padding: 100px 162px;
+      &-body{
+        display: flex;
+        align-items: flex-start;
+          @media only screen and (max-width: 480px) {
+            flex-direction: column;
+            align-items: center;
+          }
+      }
+      &-icon{
+        width: 112px;
+        height: 112px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-image: url(../../assets/images/icons/checked.svg);
+          @media only screen and (max-width: 991px) {
+            width: 90px;
+            height: 90px;
+          }
+          @media only screen and (max-width: 480px) {
+            width: 70px;
+            height: 70px;
+          }
+    }
+    &-content{
+      padding-left: 50px;
+        @media only screen and (max-width: 480px) {
+          padding: 20px 0 10px;
+          text-align: center;
+        }
+    }
+    &-title,
+    .title-2{
+      font-size: 30px;
+      color: #ffffff;
+      line-height: 1.8em;
+        @media only screen and (max-width: 767px) {
+          font-size: 28px;
+        }
+        @media only screen and (max-width: 480px) {
+          font-size: 24px;
+        }
+    }
+    &-description{
+      font-size: 18px;
+      line-height: 1.8em;
+      .blue {
+        text-decoration: underline;
+        color: #0071C0;
+      }
+        @media only screen and (max-width: 767px) {
+          font-size: 16px;
+        }
+    }
+    @media only screen and (max-width: 1200px) {
+      padding: 80px 140px;
+    }
+    @media only screen and (max-width: 991px) {
+      padding: 60px 100px;
+    }
+    @media only screen and (max-width: 575px) {
+      padding: 50px;
+    }
+    @media only screen and (max-width: 480px) {
+      padding: 30px 10px;
+    }
+  }
+  &-action{
+    text-align: center;
+    padding: 70px 0 4px;
+      @media only screen and (max-width: 767px) {
+        padding: 40px 0 5px;
+      }
+  }
+}

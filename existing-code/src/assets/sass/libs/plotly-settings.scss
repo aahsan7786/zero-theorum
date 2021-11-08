@@ -1,0 +1,51 @@
+.modebar{
+    &-group {
+        &:last-child {
+          display: none !important;
+        }
+    }
+    &-btn{
+      height: 28px !important;
+      width: 35px !important;
+      border: 1px #4A4A4A solid;
+      background-repeat: no-repeat;
+      background-size: 11px;
+      background-position: center;
+      transition: background-color .1s ease;
+        &:nth-child(1){
+          border-radius: 5px 0 0 5px;
+        }
+        &:last-child{
+          border-radius: 0 5px 5px 0;
+        }
+        &:not(:last-child){
+          border-right: none;
+        }
+        &[data-val="in"]{
+          background-image: url(../images/icons/plus.svg);
+        }
+        &[data-val="out"]{
+          background-image: url(../images/icons/minus.svg);
+        }
+        &[data-val="reset"]{
+          background-image: url(../images/icons/circular-arrow.svg);
+        }
+        &[data-attr="resetDefault"]{
+          background-image: url(../images/icons/circular-arrow.svg);
+        }
+        svg{
+          display: none;
+        }
+        @media only screen and (min-width: 991px), (any-hover: hover) {
+          &:hover{
+            background-color: rgba(255,255,255,.08);
+          }
+        }
+    }
+    &-container{
+      top: 50px !important;
+        @media only screen and (max-width: 575px) {
+          top: 20px !important;
+        }
+    }
+}

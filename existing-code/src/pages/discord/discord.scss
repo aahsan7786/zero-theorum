@@ -1,0 +1,28 @@
+.discord {
+  background: url("../../assets/images/discordBack.jpeg");
+  background-size: cover;
+
+  .form {
+    background: #000;
+
+    .green-circle {
+      width: 15px;
+      height: 15px;
+      background: #92D050;
+      border-radius: 50%;
+      margin-right: 0.3rem;
+    }
+
+    .grey-circle {
+      width: 15px;
+      height: 15px;
+      background: #656565;
+      border-radius: 50%;
+      margin-right: 0.3rem;
+    }
+
+    .small-text {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.assumptions {
+  .row-block {
+    white-space: nowrap;
+  }
+  .calculate {
+    color: #fff;
+  }
+  .default {
+    color: #01b0f1;
+    cursor: pointer;
+    margin-top: 0.3rem;
+  }
+}
+
+.dashboard-box-title {
+  // color: #000;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.description {
+  margin-top: 10px;
+  font-style: italic;
+  color: #cccc;
+}

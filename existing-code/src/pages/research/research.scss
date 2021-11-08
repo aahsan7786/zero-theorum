@@ -1,0 +1,129 @@
+@import "~Sass/base/variables";
+@import "~Sass/base/mixins";
+
+.research {
+    &-banner{
+      background-image: url(../../assets/images/resources.png);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      padding: 93px 20px;
+      margin: 121px 0 93px;
+      border-radius: 5px;
+      overflow: hidden;
+      min-height: 590px;
+        &:before{
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: $black;
+          opacity: .2;
+          pointer-events: none;
+        }
+        &-content{
+          position: relative;
+          max-width: 1000px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        &-icon{
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          margin-left: 10px;
+        }
+        &-date{
+          display: inline-flex;
+          align-items: center;
+        }
+        &-title{
+            &.title-2{
+              margin: 25px 0 48px;
+              line-height: 1.4em;
+              font-size: 48px;
+                @include d(1600){
+                  font-size: 46px;
+                }
+                @include d(1500){
+                  font-size: 42px;
+                }
+                @include d(1440){
+                  font-size: 40px;
+                }
+                @include d(1200){
+                  font-size: 38px;
+                }
+                @include d(991){
+                  font-size: 36px;
+                }
+                @include d(767){
+                  font-size: 32px;
+                }
+                @include d(575){
+                  font-size: 26px;
+                }
+                @include d(480){
+                  font-size: 22px;
+                }
+            }
+        }
+        &-description{
+          opacity: .7;
+        }
+        @include d(1440){
+          padding: 80px 20px;
+          margin: 70px 0;
+          min-height: 520px;
+        }
+        @include d(991){
+          padding: 60px 20px;
+          min-height: 450px;
+        }
+        @include d(767){
+          min-height: 100px;
+          margin: 40px 0 70px;
+        }
+        @include d(480){
+          padding: 50px 10px;
+        }
+    }
+    &-search{
+      display: flex;
+      justify-content: flex-end;
+        .search{
+          max-width: 365px;
+          width: 100%;
+            @include d(991){
+              max-width: 100%;
+            }
+        }
+        @include d(991){
+          margin-bottom: 50px;
+        }
+    }
+}
+
+.zero-theorem, .reinforcement-planning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  color: #FFC600;
+  font-size: 1.2em;
+}
+
+.zero-block {
+  margin: 50px 0;
+}
+
+.research-list-item {
+  display: flex;
+}

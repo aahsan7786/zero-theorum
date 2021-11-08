@@ -1,0 +1,41 @@
+.articles-one, .articles-six {
+  .subtitle-articles {
+    font-size: 19px;
+    font-weight: bold;
+  }
+
+  .lightBrown {
+    color: #FFB273;
+  }
+
+  table, th, td {
+    border: 1px solid #fff;
+    text-align: center;
+  }
+
+  p {
+    text-indent: 20px; /* Отступ первой строки в пикселах */
+  }
+}
+
+.articles-six {
+  li {
+    list-style: inherit;
+  }
+}
+
+.category-resource {
+  margin-bottom: 10px;
+
+  &-link {
+    border: 1px solid #ccc;
+    color: #ccc;
+    padding: 5px;
+    transition: all .2s ease;
+
+    &:hover {
+      color: #ffc002;
+      border-color: #ffc002;
+    }
+  }
+}

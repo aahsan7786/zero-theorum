@@ -1,0 +1,17 @@
+.scatteredPlots {
+  .display-none {
+    display: none;
+  }
+}
+
+.substitutionCorrIndexSelect {
+  position: absolute !important;
+  top: 30px;
+  right: 12rem;
+  width: 9rem;
+
+  @media only screen and (max-width: 540px) {
+    right: 4rem;
+    top: 4rem;
+  }
+}

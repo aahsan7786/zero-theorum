@@ -1,0 +1,85 @@
+.subscribe-page {
+  .block-title {
+    background: #000;
+    padding: 0 3rem;
+    text-align: center;
+
+    img {
+      margin-right: 1rem;
+    }
+  }
+
+  .pack {
+    border: 1px solid #fff;
+    border-radius: 4rem;
+    padding: 2rem;
+    margin: 1rem;
+
+    .grey {
+      color: #A6A6A6;
+      font-weight: bold;
+    }
+
+    .pack-button {
+      background: #deb513;
+      padding: 0.5rem;
+      border-radius: 5px;
+      width: 40%;
+      min-width: 10rem;
+      justify-content: center;
+      display: flex;
+      margin: auto;
+      cursor: pointer;
+    }
+  }
+
+  .google-ad-sense {
+    border: 1px solid #4A4A4A;
+    border-radius: 12px;
+    height: 100%;
+    padding: 1rem 1rem 0 1rem;
+
+    .ad {
+      background: #0D1922;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-back {
+      border: 1px solid #4A4A4A;
+      border-bottom: none;
+      border-left: none;
+      height: 5rem;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+
+    &-next {
+      border: 1px solid #4A4A4A;
+      border-bottom: none;
+      border-right: none;
+      height: 5rem;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+  }
+
+  .categories {
+    border: 1px solid #4A4A4A;
+    border-radius: 12px;
+  }
+
+  .modal-data {
+    z-index: 1;
+    background: green;
+    width: 70%;
+    position: absolute;
+    top: 0;
+    padding: 2rem;
+    left: 15%;
+  }
+}

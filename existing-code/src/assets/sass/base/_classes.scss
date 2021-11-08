@@ -1,0 +1,64 @@
+.regular{
+  font-family: 'Muli';
+  font-weight: 400;
+}
+
+.semi-bold{
+  font-family: 'Muli';
+  font-weight: 600;
+}
+
+.bold{
+  font-family: 'Muli';
+  font-weight: 700;
+}
+
+.extra-bold{
+  font-family: 'Muli';
+  font-weight: 800;
+}
+
+.ttu{
+  text-transform: uppercase;
+}
+
+.yellow{
+  color: $yellow;
+}
+
+.black{
+  color: #000;
+}
+
+.blue{
+  color: #0071C0;
+}
+
+.grey {
+  color: $grey;
+}
+
+.title-1{
+  @extend h1;
+  color: $white;
+}
+
+.title-2{
+  @extend h2;
+}
+
+.title-3{
+  @extend h3;
+}
+
+.title-4{
+  @extend h4;
+}
+
+.title-5{
+  @extend h5;
+}
+
+.title-6{
+  @extend h6;
+}

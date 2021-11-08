@@ -1,0 +1,35 @@
+.pdf-page {
+  .publication {
+
+    &-block {
+      border: 1px solid #aaabab;
+      padding: 12px 0 36px;
+    }
+
+    &-title {
+      border-bottom: 1px solid #aaabab;
+      padding-bottom: 12px;
+    }
+
+    &-body {
+      margin: 0;
+      padding-right: 36px;
+    }
+
+    &-image {
+      padding-left: 36px;
+      @media only screen and (max-width: 540px) {
+        margin-bottom: 2rem;
+      }
+      img {
+        height: 22rem;
+        padding: 0 24px 0 0;
+      }
+    }
+
+    &-text {
+      padding: 24px 12px;
+      border: 1px solid #aaabab;
+    }
+  }
+}

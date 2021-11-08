@@ -1,0 +1,14 @@
+.philosophy{
+  padding: 43px 0 100px;
+    &-content{
+      .accordion{
+        padding: 0 0 0 37px;
+          &-box{
+            margin-bottom: 15px;
+              &.is-active{
+                margin-bottom: 37px;
+              }
+          }
+      }
+    }
+}

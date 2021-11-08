@@ -1,0 +1,88 @@
+.who-are-we {
+  //background-image: url(../../assets/images/whoareBg.jpg);
+  font-size: 14px;
+  .title {
+    font-size: 3rem;
+  }
+
+  .sub-title {
+    font-size: 1rem;
+  }
+
+  .name {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+
+  .main-img {
+    img {
+      width: 20rem;
+    }
+  }
+
+  .position {
+    color: rgba(255,255,255, 0.7);
+
+    img {
+      margin: 0 1rem;
+    }
+  }
+
+  .lead-more {
+    color: #FFC600;
+    position: absolute;
+    right: 1rem;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .twoLine {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+
+  .arrow-block {
+    border: 1px solid #fff;
+    margin: 0 0.5rem;
+    display: flex;
+    border-radius: 7px;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &.disable {
+      svg {
+        fill: #ccc;
+      }
+    }
+
+    img {
+      width: 17px;
+      height: 17px;
+    }
+
+    svg {
+      width: 17px;
+      height: 17px;
+      fill: #FFC600;
+    }
+  }
+
+  .slide {
+    //margin-right: 2rem;
+    font-size: 0.8rem;
+    padding-bottom: 3rem;
+  }
+
+  .carousel-button-group {
+    display: flex;
+    position: absolute;
+    top: -5rem;
+    right: 3rem;
+  }
+}

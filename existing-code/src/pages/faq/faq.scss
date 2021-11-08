@@ -1,0 +1,45 @@
+@import "~Sass/base/mixins";
+
+.faq{
+  padding: 56px 0;
+    &-title{
+        @include d(991){
+          max-width: 50%;
+        }
+    }
+    &-banner{
+      opacity: .77;
+      max-width: 715px;
+      margin: 71px 0 0 -136px;
+        @include d(1500){
+          width: 50vw;
+        }
+        @include d(991){
+          position: absolute;
+          top: -35px;
+          right: 0;
+          margin: 0;
+        }
+        @include d(480){
+          top: -5px;
+          right: -35px;
+          margin: 0;
+          width: 60vw;
+        }
+    }
+    &.hero{
+      padding-bottom: 127px;
+    }
+    .accordion{
+        @include d(575){
+          margin-top: 50px;
+        }
+    }
+    .hero-title{
+        .title-border{
+            &:before{
+              left: -280px;
+            }
+        }
+    }
+}

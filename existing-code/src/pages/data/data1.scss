@@ -1,0 +1,34 @@
+.backCircle {
+  background-image: url(../../assets/images/circleBack.png);
+  background-size: cover;
+  height: 100vh;
+  //align-items: center;
+  //display: flex;
+}
+
+.input-data {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem !important;
+}
+
+.input-data span {
+  padding-bottom: 0;
+  margin-right: 12px;
+}
+
+.input-error {
+  top: -22px !important;
+}
+
+.input-container.error:before {
+  top: 16px !important;
+}
+
+.lab-box {
+  width: 100%;
+}
+
+.lab-box .btn {
+  margin-top: 0;
+}

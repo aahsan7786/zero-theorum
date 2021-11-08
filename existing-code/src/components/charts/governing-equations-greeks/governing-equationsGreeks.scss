@@ -1,0 +1,24 @@
+.governingGreekSelect {
+  //position: absolute !important;
+  //top: 30px;
+  //right: 24.5rem;
+  //width: 9rem;
+  //
+  //@media only screen and (max-width: 540px) {
+  //  right: 4rem;
+  //  top: 5rem;
+  //}
+}
+
+.governingIndexSelect {
+
+  position: absolute !important;
+  top: 30px;
+  right: 14rem;
+  width: 9rem;
+
+  @media only screen and (max-width: 540px) {
+    right: 4rem;
+    top: 4rem;
+  }
+}

@@ -1,0 +1,140 @@
+.accordion{
+  padding: 70px 0;
+  max-width: 1120px;
+    &-box{
+      margin-bottom: 85px;
+      transition: margin-bottom .4s ease;
+        &-header{
+          padding: 10px 10px 10px 98px;
+          position: relative;
+          cursor: pointer;
+            @media only screen and (max-width: 991px) {
+              padding: 10px 10px 10px 70px;
+            }
+            @media only screen and (max-width: 575px) {
+              padding: 10px 10px 10px 45px;
+            }
+        }
+        &-body{
+          height: 0;
+          overflow: hidden;
+          transition: height .4s ease;
+        }
+        &.is-active{
+          margin-bottom: 102px;
+            .accordion{
+                &-box-body{
+                  //height: 308px;
+                  height: auto;
+                }
+                &-btn{
+                  &:before{
+                    transform: rotate(-45deg);
+                  }
+                  &:after{
+                    transform: rotate(45deg);
+                  }
+                }
+            }
+            @media only screen and (max-width: 1440px) {
+              margin-bottom: 70px;
+            }
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+        @media only screen and (max-width: 1440px) {
+          margin-bottom: 50px;
+        }
+    }
+    &-title{
+      font-size: 18px;
+      letter-spacing: 0;
+        p{
+          font-size: inherit;
+        }
+    }
+    &-description-articles {
+      overflow-x: auto;
+      padding: 22px 10px 22px 0;
+    }
+    &-description{
+      padding: 22px 10px 10px 98px;
+        p{
+          margin-bottom: 27px;
+            &:last-child{
+              margin-bottom: 0;
+            }
+            &:empty{
+              display: none;
+            }
+        }
+        @media only screen and (max-width: 991px) {
+          padding: 10px 10px 10px 70px;
+        }
+        @media only screen and (max-width: 575px) {
+          padding: 10px 10px 10px 45px;
+        }
+    }
+    &-btn{
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 41px;
+      height: 41px;
+      background-color: #36312e;
+      border-radius: 50%;
+        &:before,
+        &:after{
+          content: '';
+          position: absolute;
+          width: 11px;
+          height: 3px;
+          background-color: #5e5a59;
+          pointer-events: none;
+          transition: transform .4s ease;
+        }
+        &:before{
+          transform: rotate(45deg);
+          top: 20px;
+          left: 12px;
+        }
+        &:after{
+          transform: rotate(-45deg);
+          top: 20px;
+          left: 19px;
+        }
+        @media only screen and (max-width: 991px) {
+          top: 10px;
+        }
+        @media only screen and (max-width: 575px) {
+          width: 31px;
+          height: 31px;
+          top: 15px;
+            &:before{
+              top: 14px;
+              left: 7px;
+            }
+            &:after{
+              top: 14px;
+              left: 13px;
+            }
+        }
+    }
+}
+
+.resource {
+  &-desc {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+.pg-viewer-wrapper {
+  height: 93% !important;
+  text-align: center;
+}
+
+#app {
+  background-color: #000 !important;
+}

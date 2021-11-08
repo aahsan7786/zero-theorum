@@ -1,0 +1,17 @@
+// BASE SETTINGS //
+@import "base/variables";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/grid";
+@import "../../../node_modules/bootstrap/scss/type";
+@import "../../../node_modules/bootstrap/scss/utilities";
+@import "libs/odometer-theme-default.css";
+@import "../../../node_modules/react-datepicker/dist/react-datepicker.min.css";
+
+@import "base/base";
+@import "base/mixins";
+@import "base/classes";
+@import "base/fonts";
+@import "libs/plotly-settings";
+@import "general";

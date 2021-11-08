@@ -1,0 +1,94 @@
+.cookies{
+  &-bg{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.7);
+    z-index: -11;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease;
+    transition-delay: .5s;
+      &.is-active{
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 12;
+      }
+  }
+  &-box{
+    position: absolute;
+    bottom: 0;
+    left: 5rem;
+    background-color: rgba(187,181,181,.7);
+    width: calc(100% - 5rem);
+  }
+  &-done{
+    padding: 12px;
+      &-body{
+        display: flex;
+          @media only screen and (max-width: 480px) {
+            flex-direction: column;
+            align-items: center;
+          }
+      }
+    &-content{
+      padding-left: 50px;
+        @media only screen and (max-width: 480px) {
+          padding: 20px 0 10px;
+          text-align: center;
+        }
+    }
+
+    .agree {
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      background: #000;
+      height: 2.5rem;
+      align-self: center;
+    }
+
+    &-title,
+    .title-2{
+      font-size: 30px;
+      color: #ffffff;
+      line-height: 1.8em;
+        @media only screen and (max-width: 767px) {
+          font-size: 28px;
+        }
+        @media only screen and (max-width: 480px) {
+          font-size: 24px;
+        }
+    }
+    &-description{
+      font-size: 18px;
+      line-height: 1.8em;
+      .blue {
+        color: #0071C0;
+        text-decoration: underline;
+      }
+        @media only screen and (max-width: 767px) {
+          font-size: 16px;
+        }
+    }
+    @media only screen and (max-width: 1200px) {
+      padding: 80px 140px;
+    }
+    @media only screen and (max-width: 991px) {
+      padding: 60px 100px;
+    }
+    @media only screen and (max-width: 575px) {
+      padding: 50px;
+    }
+    @media only screen and (max-width: 480px) {
+      padding: 30px 10px;
+    }
+  }
+  &-action{
+    text-align: center;
+    padding: 70px 0 4px;
+      @media only screen and (max-width: 767px) {
+        padding: 40px 0 5px;
+      }
+  }
+}

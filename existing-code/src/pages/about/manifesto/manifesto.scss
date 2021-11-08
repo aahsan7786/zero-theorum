@@ -1,0 +1,182 @@
+.manifesto{
+  padding: 130px 0 0;
+  position: relative;
+  .hero-title-description{
+    &.__quote{
+      margin-top: 60px;
+      @media only screen and (max-width: 1440px) {
+        margin-top: 40px;
+      }
+    }
+  }
+  &-list{
+    padding: 38px 0;
+      &-item{
+        margin-left: 25%;
+          @media only screen and (max-width: 480px) {
+            margin-left: 0;
+          }
+          &:nth-child(even){
+            margin-left: 50%;
+              @media only screen and (max-width: 1200px) {
+                margin-left: 33.33%;
+              }
+              @media only screen and (max-width: 991px) {
+                margin-left: 25%;
+              }
+              @media only screen and (max-width: 480px) {
+                margin-left: 0;
+              }
+          }
+      }
+  }
+  &-box{
+    position: relative;
+    padding: 50px 0 50px 52px;
+    max-width: 650px;
+    margin-bottom: 20px;
+    &:before{
+      content: attr(data-num);
+      position: absolute;
+      font-family: "Akrobat", sans-serif;
+      font-size: 300px;
+      color: #ffffff;
+      opacity: .02;
+      top: 6px;
+      right: calc(100% + 10px);
+      line-height: .8em;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 60px;
+      right: calc(100% + 200px);
+      width: 16px;
+      height: 16px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url(../../../assets/images/plus.svg);
+    }
+    &-title{
+      position: relative;
+      margin-bottom: 36px;
+      &:before{
+        content: '';
+        position: absolute;
+        top: 9px;
+        left: -35px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #002c5e;
+      }
+      @media only screen and (max-width: 1200px) {
+        margin-bottom: 20px;
+      }
+      @media only screen and (max-width: 991px) {
+        &:before{
+          top: 6px;
+        }
+      }
+      @media only screen and (max-width: 480px) {
+        &:before{
+          top: 4px;
+        }
+      }
+    }
+    @media only screen and (max-width: 1600px) {
+      max-width: 550px;
+      &:before{
+        font-size: 270px;
+        top: 20px;
+      }
+    }
+    @media only screen and (max-width: 1200px) {
+      &:before{
+        font-size: 200px;
+        top: 40px;
+      }
+      &:after{
+        right: calc(100% + 160px);
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      margin-bottom: 0;
+    }
+    @media only screen and (max-width: 767px) {
+      &:before{
+        font-size: 160px;
+        right: calc(100% - 10px);
+      }
+    }
+    @media only screen and (max-width: 480px) {
+      padding: 30px 0 10px 35px;
+      &:before{
+        display: none;
+      }
+    }
+  }
+  &.column{
+      .manifesto{
+          &-list {
+            column-count: 3;
+            padding: 0;
+            margin-top: -82px;
+              &-item {
+                display: inline-block;
+                width: 100%;
+                margin-left: 0;
+                margin-bottom: 85px;
+                  @media only screen and (min-width: 992px) {
+                    &:nth-child(1){
+                      margin-top: 200px;
+                    }
+                    &:nth-child(3){
+                      margin-top: 102px;
+                    }
+                    &:nth-child(even){
+                      margin-left: 27%;
+                    }
+                  }
+                  @media only screen and (max-width: 1300px) {
+                    &:nth-child(even){
+                      margin-left: 10%;
+                    }
+                  }
+                  @media only screen and (max-width: 991px) {
+                    margin-bottom: 0;
+                      &:nth-child(even){
+                        margin-left: 0;
+                      }
+                  }
+              }
+              @media only screen and (max-width: 991px) {
+                column-count: 1;
+                margin-top: 0;
+              }
+          }
+          &-box{
+            @media only screen and (min-width: 992px) {
+              padding: 180px 0 10px 52px;
+                &-title{
+                  &:before{
+                    top: 40px;
+                  }
+                }
+                &:before{
+                  right: auto;
+                  left: 0;
+                  top: 0;
+                }
+            }
+          }
+      }
+  }
+  @media only screen and (max-width: 1600px) {
+    padding: 80px 0 0;
+  }
+  @media only screen and (max-width: 991px) {
+    padding: 20px 0 0;
+  }
+}

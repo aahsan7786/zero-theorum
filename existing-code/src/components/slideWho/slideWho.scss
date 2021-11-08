@@ -1,0 +1,27 @@
+.slide {
+  .photo {
+    //max-height: 13.1rem;
+    width: 20rem;
+    margin-bottom: 2rem;
+  }
+
+  .name {
+    position: relative;
+    bottom: 4.5rem;
+    margin-left: 3rem;
+    line-height: 2rem;
+    width: 17rem;
+  }
+
+  .slide-description {
+    margin-top: -3.5rem;
+  }
+
+  .twoLine {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+}

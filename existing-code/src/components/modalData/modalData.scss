@@ -1,0 +1,135 @@
+.dataModal {
+
+  .phoneCode:hover {
+    background: transparent;
+  }
+
+  .phoneCode {
+    background: red !important;
+  }
+
+
+  &-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: -11;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease;
+    transition-delay: .5s;
+
+    &-close {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &.is-active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 12;
+    }
+  }
+
+  &-box {
+    height: 90%;
+    overflow-y: auto;
+    border: 1px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, .7);
+    max-width: 862px;
+    width: 98%;
+  }
+
+  &-done {
+    background: #000;
+    padding: 100px 162px;
+    color: #fff;
+    &-body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      @media only screen and (max-width: 480px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &-icon {
+      width: 112px;
+      height: 112px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url(../../assets/images/icons/checked.svg);
+      @media only screen and (max-width: 991px) {
+        width: 90px;
+        height: 90px;
+      }
+      @media only screen and (max-width: 480px) {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+    &-content {
+      padding-left: 50px;
+      @media only screen and (max-width: 480px) {
+        padding: 20px 0 10px;
+        text-align: center;
+      }
+    }
+
+    &-title,
+    .title-2 {
+      font-size: 30px;
+      color: #fff;
+      line-height: 1.8em;
+      @media only screen and (max-width: 767px) {
+        font-size: 28px;
+      }
+      @media only screen and (max-width: 480px) {
+        font-size: 24px;
+      }
+    }
+
+    &-description {
+      font-size: 18px;
+      line-height: 1.8em;
+      @media only screen and (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+
+    @media only screen and (max-width: 1200px) {
+      padding: 80px 140px;
+    }
+    @media only screen and (max-width: 991px) {
+      padding: 60px 100px;
+    }
+    @media only screen and (max-width: 575px) {
+      padding: 50px;
+    }
+    @media only screen and (max-width: 480px) {
+      padding: 30px 10px;
+    }
+  }
+
+  &-action {
+    background: #000;
+    text-align: center;
+    padding: 2rem 0 4px;
+    @media only screen and (max-width: 767px) {
+      padding: 40px 0 5px;
+    }
+  }
+}

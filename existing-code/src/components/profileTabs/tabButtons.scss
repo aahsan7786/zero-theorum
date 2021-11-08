@@ -1,0 +1,276 @@
+.active {
+  color: #ffc002;
+  cursor: pointer;
+}
+
+.tabs {
+  padding-bottom: 20px;
+}
+
+.tabList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tabItem {
+  width: 18%;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid;
+  padding: 5px 20px;
+}
+
+.tabPanel {
+  margin: 40px 40px 0;
+}
+
+.profile {
+  &-block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  &-billing {
+    width: 31%;
+
+    &-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &-form {
+    width: 65%;
+  }
+
+  &-formXL {
+    width: 80%;
+  }
+
+  &-data {
+    margin: 15px 0;
+    display: flex;
+    justify-content: flex-end;
+
+    .row-input {
+      width: 45%;
+    }
+  }
+
+  &-sub {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  &-subscription {
+    color: #ffc002;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+
+  &-billing {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-label {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &-input {
+    flex: 1;
+    background: none;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #fff;
+    color: #fff;
+    padding: 5px;
+  }
+
+  &-textarea {
+    flex: 1;
+    background: none;
+    line-height: 4ch;
+    background-image: linear-gradient(
+      transparent,
+      transparent calc(4ch - 1px),
+      #fff 0px
+    );
+    background-size: 100% 4ch;
+    border: none;
+    color: #fff;
+    padding: 5px;
+  }
+
+  &-button {
+    background-color: #ffc002;
+    color: #fff;
+    padding: 10px 50px;
+    outline: none;
+    border: none;
+  }
+}
+
+.billing-form {
+  flex-direction: column;
+}
+
+.data-download {
+  &-block {
+    padding: 24px;
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  &-column {
+    border-right: 1px solid #fff;
+
+    &-noBorder {
+      border-right: none;
+    }
+  }
+
+  &-cell {
+    font-weight: bold;
+    padding: 12px 50px;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+    line-height: 65px;
+  }
+}
+
+.feedback {
+  &-yellow {
+    color: #ffc002;
+    text-align: center;
+  }
+
+  &-description {
+    text-align: center;
+  }
+
+  &-radio {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  &-label {
+    margin-bottom: 10px;
+  }
+
+  &-radiobutton {
+    width: 20px;
+    height: 20px;
+
+    &:checked,
+    &:not(:checked) {
+      position: absolute;
+    }
+
+    &:checked,
+    &:not(:checked) {
+      position: relative;
+      padding-left: 28px;
+      cursor: pointer;
+      line-height: 20px;
+      display: inline-block;
+      color: #666;
+    }
+
+    &:checked::before,
+    &:not(:checked)::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #ddd;
+      border-radius: 100%;
+      background: #fff;
+    }
+
+    &:checked::after, &:not(:checked)::after {
+      content: '';
+    width: 14px;
+    height: 14px;
+    background: #ffc002;
+    position: absolute;
+    top: 3.5px;
+    left: 3px;
+    border-radius: 100%;
+    }
+
+    &:not(:checked)::after {
+      opacity: 0;
+    }
+
+    &:checked::after {
+      opacity: 1;
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  &-textarea {
+    margin-top: 10px;
+    background-color: transparent;
+    padding: 10px;
+    color: #fff;
+  }
+
+  &-data {
+    margin: 10px 0 20px;
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+    }
+  }
+
+  &-input {
+    margin-top: 10px;
+    background-color: transparent;
+    padding: 10px;
+    color: #fff;
+    border: 1px solid #fff;
+    outline: none;
+  }
+
+  &-button {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-padding {
+    padding: 12px 150px;
+  }
+}
+
+.stripe-form {
+  width: 30%;
+  margin-bottom: 1rem;
+}

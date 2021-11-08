@@ -1,0 +1,571 @@
+.folder-charts{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  pointer-events: none;
+    @media only screen and (min-width: 576px) {
+      display: block;
+    }
+}
+
+.chart{
+  display: flex;
+  width: 750px;
+  height: 605px;
+  position: absolute;
+  opacity: .5;
+    &-item{
+      flex: 1;
+      position: relative;
+      border-bottom: 2px rgba(0,255,246,.15) solid;
+      transition: transform 1s ease;
+        &-dot{
+          position: absolute;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          bottom: -7px;
+          left: -7px;
+          transition: transform 1s ease;
+            &:nth-child(2){
+              display: none;
+              left: auto;
+              right: -7px;
+            }
+            @media only screen and (max-width: 1440px) {
+              width: 10px;
+              height: 10px;
+              bottom: -5px;
+              left: -5px;
+                &:last-child{
+                  right: -5px;
+                }
+            }
+        }
+        &:before,
+        &:after{
+          content: '';
+          position: absolute;
+          left: -2px;
+          bottom: 14px;
+          top: 0;
+          border-radius: 4px;
+          width: 4px;
+          opacity: .2;
+          transition: transform 1s ease;
+        }
+        &:after{
+          display: none;
+          left: auto;
+          right: -2px;
+        }
+        &:last-child{
+          .chart-item-dot,
+          &:after{
+            display: block;
+          }
+        }
+        @media only screen and (max-width: 1440px) {
+          &:before{
+            width: 2px;
+            left: -1px;
+          }
+          &:after{
+            right: -1px;
+            width: 2px;
+          }
+        }
+    }
+    &.__blue{
+      .chart-item{
+          &-dot{
+            background-color: #09305d;
+          }
+          &:before,
+          &:after{
+            background: -moz-linear-gradient(top,  rgba(186,230,246,0) 0%, rgba(88,166,255,1) 100%);
+            background: -webkit-linear-gradient(top,  rgba(186,230,246,0) 0%,rgba(88,166,255,1) 100%);
+            background: linear-gradient(to bottom,  rgba(186,230,246,0) 0%,rgba(88,166,255,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bae6f6', endColorstr='#58a6ff',GradientType=0 );
+          }
+          &:nth-child(1){
+            transform: skewY(29deg) translateY(-95px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(-29deg);
+              }
+          }
+          &:nth-child(2){
+            transform: skewY(18deg) translateY(-27px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(-18deg);
+              }
+          }
+          &:nth-child(3){
+            transform: skewY(-10deg) translateY(-14px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(10deg);
+              }
+          }
+          &:nth-child(4){
+            transform: skewY(27deg) translateY(10px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(-27deg);
+              }
+          }
+          &:nth-child(5){
+            transform: skewY(-26deg) translateY(12px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(26deg);
+              }
+          }
+      }
+      &.theme-1{
+        .chart-item {
+          &:nth-child(1) {
+            transform: skewY(-20deg) translateY(-12px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(20deg);
+              }
+          }
+          &:nth-child(2){
+            transform: skewY(28deg) translateY(3px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-28deg);
+              }
+          }
+          &:nth-child(3){
+            transform: skewY(-26deg) translateY(7px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(26deg);
+              }
+          }
+          &:nth-child(4){
+            transform: skewY(6deg) translateY(-20px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-6deg);
+              }
+          }
+          &:nth-child(5){
+            transform: skewY(-14deg) translateY(-29px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(14deg);
+              }
+          }
+        }
+      }
+      &.theme-2{
+        .chart-item {
+          &:nth-child(1) {
+            transform: skewY(-3deg) translateY(-48px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(3deg);
+              }
+          }
+          &:nth-child(2){
+            transform: skewY(31deg) translateY(-4px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-31deg);
+              }
+          }
+          &:nth-child(3){
+            transform: skewY(-28deg) translateY(2px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(28deg);
+              }
+          }
+          &:nth-child(4){
+            transform: skewY(10deg) translateY(-22px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-10deg);
+              }
+          }
+          &:nth-child(5){
+            transform: skewY(-14deg) translateY(-26px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(14deg);
+              }
+          }
+        }
+      }
+      &.theme-3{
+        .chart-item{
+          &:nth-child(1){
+            transform: skewY(-30deg) translateY(-75px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(30deg);
+              }
+          }
+          &:nth-child(2){
+            transform: skewY(33deg) translateY(-68px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-33deg);
+              }
+          }
+          &:nth-child(3){
+            transform: skewY(-42deg) translateY(-86px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(42deg);
+              }
+          }
+          &:nth-child(4){
+            transform: skewY(34deg) translateY(-100px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-34deg);
+              }
+          }
+          &:nth-child(5){
+            transform: skewY(-16deg) translateY(-71px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(16deg);
+              }
+          }
+        }
+      }
+      &.theme-4{
+        .chart-item{
+          &:nth-child(1){
+            transform: skewY(-12deg) translateY(-111px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(12deg);
+              }
+          }
+          &:nth-child(2){
+            transform: skewY(45deg) translateY(-50px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-45deg);
+              }
+          }
+          &:nth-child(3){
+            transform: skewY(-30deg) translateY(-19px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(30deg);
+              }
+          }
+          &:nth-child(4){
+            transform: skewY(19deg) translateY(-34px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-19deg);
+              }
+          }
+          &:nth-child(5){
+            transform: skewY(-39deg) translateY(-68px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(39deg);
+              }
+          }
+        }
+      }
+    }
+    &.__yellow{
+      .chart-item{
+          &-dot{
+            background-color: #ae9700;
+          }
+          &:before,
+          &:after{
+            background: -moz-linear-gradient(top,  rgba(255,247,0,0) 0%, rgba(0,181,249,1) 100%);
+            background: -webkit-linear-gradient(top,  rgba(255,247,0,0) 0%,rgba(0,181,249,1) 100%);
+            background: linear-gradient(to bottom,  rgba(255,247,0,0) 0%,rgba(0,181,249,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fff700', endColorstr='#00b5f9',GradientType=0 );
+          }
+          &:nth-child(1){
+            transform: skewY(26deg) translateY(13px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(-26deg);
+              }
+          }
+          &:nth-child(2){
+            transform: skewY(-27deg) translateY(10px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(27deg);
+              }
+          }
+          &:nth-child(3){
+            transform: skewY(9deg) translateY(-14px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(-9deg);
+              }
+          }
+          &:nth-child(4){
+            transform: skewY(-19deg) translateY(-28px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(19deg);
+              }
+          }
+          &:nth-child(5){
+            transform: skewY(21deg) translateY(-25px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(-21deg);
+              }
+          }
+      }
+      &.theme-1{
+        .chart-item{
+          &:nth-child(1){
+            transform: skewY(-20deg) translateY(13px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(20deg);
+              }
+          }
+          &:nth-child(2){
+            transform: skewY(17deg) translateY(10px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(-17deg);
+              }
+          }
+          &:nth-child(3){
+            transform: skewY(-33deg) translateY(-14px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(33deg);
+              }
+          }
+          &:nth-child(4){
+            transform: skewY(24deg) translateY(-28px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(-24deg);
+              }
+          }
+          &:nth-child(5){
+            transform: skewY(-22deg) translateY(-25px);
+              .chart-item-dot,
+              &:before,
+              &:after{
+                transform: skewY(22deg);
+              }
+          }
+        }
+      }
+      &.theme-2{
+        .chart-item{
+          &:nth-child(1){
+            transform: skewY(-3deg) translateY(-8px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(3deg);
+              }
+          }
+          &:nth-child(2){
+            transform: skewY(-22deg) translateY(-40px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(22deg);
+              }
+          }
+          &:nth-child(3){
+            transform: skewY(36deg) translateY(-14px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-36deg);
+              }
+          }
+          &:nth-child(4){
+            transform: skewY(-17deg) translateY(17px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(17deg);
+              }
+          }
+          &:nth-child(5){
+            transform: skewY(13deg) translateY(13px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-13deg);
+              }
+          }
+        }
+      }
+      &.theme-3{
+        .chart-item{
+          &:nth-child(1){
+            transform: skewY(-4deg) translateY(-10px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(4deg);
+              }
+          }
+          &:nth-child(2){
+            transform: skewY(-36deg) translateY(-69px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(36deg);
+              }
+          }
+          &:nth-child(3){
+            transform: skewY(23deg) translateY(-89px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-23deg);
+              }
+          }
+          &:nth-child(4){
+            transform: skewY(-29deg) translateY(-97px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(29deg);
+              }
+          }
+          &:nth-child(5){
+            transform: skewY(12deg) translateY(-119px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-12deg);
+              }
+          }
+        }
+      }
+      &.theme-4{
+        .chart-item{
+          &:nth-child(1){
+            transform: skewY(-16deg) translateY(64px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(16deg);
+              }
+          }
+          &:nth-child(2){
+            transform: skewY(-38deg) translateY(-16px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(38deg);
+              }
+          }
+          &:nth-child(3){
+            transform: skewY(-23deg) translateY(-104px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(23deg);
+              }
+          }
+          &:nth-child(4){
+            transform: skewY(11deg) translateY(-118px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-11deg);
+              }
+          }
+          &:nth-child(5){
+            transform: skewY(30deg) translateY(-59px);
+              .chart-item-dot,
+              &:before,
+              &:after {
+                transform: skewY(-30deg);
+              }
+          }
+        }
+      }
+    }
+    &.__1{
+      top: -264px;
+      left: 67%;
+    }
+    &.__2{
+      top: -281px;
+      right: 67.1%;
+    }
+    &.__3{
+      transform: scaleY(-1);
+      top: -121px;
+      right: 70.8%;
+        @media only screen and (max-width: 1440px) {
+          transform: scaleY(-1) scale(.8);
+        }
+        @media only screen and (max-width: 767px) {
+          transform: scaleY(-1) scale(.6);
+        }
+    }
+    &.__4{
+      left: 73.2%;
+      top: -586px;
+    }
+    @media only screen and (max-width: 1440px) {
+      transform: scale(.8);
+    }
+    @media only screen and (max-width: 767px) {
+      transform: scale(.6);
+    }
+}

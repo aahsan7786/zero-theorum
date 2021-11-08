@@ -1,0 +1,79 @@
+@import "~Sass/base/mixins";
+
+.subscribe{
+  text-align: center;
+  padding: 88px 0 355px;
+    &-box{
+      max-width: 600px;
+      margin: 0 auto;
+        .title-2{
+          max-width: 500px;
+          margin: 0 auto 21px;
+            @include d(1440){
+              max-width: 360px;
+            }
+            @include d(767){
+              max-width: 260px;
+            }
+        }
+        .subtitle{
+          margin-bottom: 11px;
+        }
+        .btn{
+          height: 60px;
+          line-height: 60px;
+          max-width: 170px;
+            @include d(575){
+              height: 58px;
+              line-height: 58px;
+            }
+            @include d(480){
+              max-width: 100%;
+              margin-top: 10px;
+            }
+        }
+        .input{
+          border-radius: 5px 0 0 5px;
+          margin-right: -5px;
+            &-container{
+              &-row{
+                max-width: 500px;
+                margin: 0 auto;
+              }
+            }
+            &-error{
+              right: auto;
+              left: 20px;
+              top: auto;
+              bottom: -35px;
+                @include d(480){
+                  bottom: auto;
+                  top: -30px;
+                }
+            }
+            @include d(480){
+              border-radius: 5px;
+              margin-right: 0;
+            }
+        }
+    }
+    &-options{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin: 50px 0 53px;
+        .input-container-check{
+          margin-right: 22px;
+            &:last-child{
+              margin-right: 0;
+            }
+        }
+    }
+    @include d(1440){
+      padding: 100px 0 300px;
+    }
+    @include d(575){
+      padding: 150px 0 250px;
+    }
+}

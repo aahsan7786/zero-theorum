@@ -1,0 +1,64 @@
+.navFixedMobile {
+  //position: fixed;
+}
+
+.leftNavMobile {
+  background-color: #000;
+  padding: 25px 0;
+
+  &-navUl {
+    padding: 0 0 53px 0;
+    li {
+      display: flex;
+      padding-bottom: 30px;
+      text-align: center;
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+    .link {
+      position: relative;
+      font-size: 14px;
+      line-height: 1.25em;
+      display: inline-flex;
+      align-items: center;
+      white-space: normal;
+      justify-content: center;
+      width: 100%;
+
+      .link-thumb {
+        display: inline-block;
+      }
+      //&-title{
+      //  @media only screen and (min-width: 992px) {
+      //    max-width: 90px;
+      //  }
+      //}
+      //@media only screen and (min-width: 992px) {
+      //  &:before{
+      //    content: '';
+      //    position: absolute;
+      //    top: 50%;
+      //    transform: translateY(-50%);
+      //    right: -3px;
+      //    width: 4px;
+      //    height: 0;
+      //    border-radius: 0 5px 5px 0;
+      //    z-index: -1;
+      //    transition: height .4s ease;
+      //  }
+      //  &.active{
+      //    &:before{
+      //      height: 100%;
+      //      transition: height .8s ease;
+      //    }
+      //  }
+      //}
+    }
+  }
+  &-nav {
+    .advertising {
+      background: #002c5e;
+    }
+  }
+}
