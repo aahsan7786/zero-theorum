@@ -7,7 +7,7 @@ const Dotenv = require('dotenv-webpack');
 module.exports = {
     entry: ["babel-polyfill", "./src/index.js"],
     output: {
-        path: path.join(__dirname, "/dist"),
+        path: path.join(__dirname, "/build"),
         filename: "bundle.js"
     },
     module: {
@@ -79,7 +79,7 @@ module.exports = {
         ]
     },
     devServer: {
-        contentBase: path.join(__dirname, "/dist"),
+        contentBase: path.join(__dirname, "/build"),
         compress: true,
         port: 3030,
         historyApiFallback: true,
