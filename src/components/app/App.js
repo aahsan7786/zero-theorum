@@ -129,6 +129,9 @@ const App = (props) => {
             <Route exact path="/performance">
                 <Performance/>
             </Route>
+            <Route path="/pdf">
+                <PDF/>
+            </Route>
           </Switch>
         </Router>
      { props.history.location.pathname !== "/investor"?  <Grid item xs={12} className={clsx(classes.gridPaddingLeft40)}>
