@@ -9,8 +9,6 @@ import AppBarOptions from './AppBar.config'
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { Button } from '@material-ui/core';
-import ArrowDropUpOutlinedIcon from '@material-ui/icons/ArrowDropUpOutlined';
-import ArrowDropDownOutlinedIcon from '@material-ui/icons/ArrowDropDownOutlined';
 import clsx from 'clsx';
 
 import threeDModlingImage from './../../assets/images/icons/3d-modeling.svg';

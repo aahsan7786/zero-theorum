@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { appBarTypes } from "../../constants/commonConstants"
-import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
+//import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
 export default [
     {
         type: appBarTypes.LABEL,
@@ -45,11 +45,11 @@ export default [
             href:"/investor"
         }
     },
-    {
+    /*{
         type: appBarTypes.ICON,
         icon: <NotificationsOutlinedIcon />,
         props: {
             color: 'white',
         }
-    },
+    },*/
 ]
