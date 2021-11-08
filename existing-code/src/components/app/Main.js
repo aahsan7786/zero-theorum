@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-// import Grid from './../components/common/Grid';
+import { NavLink, useHistory } from "react-router-dom";
 
 import AppBar from './AppBar';
 import logo from './../../assets/images/zerOtheorem_logo.png';
@@ -24,6 +24,10 @@ import useStyles from '../../styles/main.styles';
 
 export default function Main() {
     const classes = useStyles();
+    const history = useHistory();
+    const handlePerformanceClick = (event) =>{
+        history.push("/performance");
+    }
     return (
         <Grid container
             className={classes.root}
@@ -74,6 +78,7 @@ export default function Main() {
                                     variant='outlined'
                                     color='primary'
                                     className={classes.performanceButton}
+                                    onClick={handlePerformanceClick}
                                 >
                                     Performance
                                 </Button>

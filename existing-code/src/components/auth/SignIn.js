@@ -4,6 +4,7 @@ import "./auth.scss";
 import ForgotPassword from "./ForgotPassword";
 import SignUp from "./SignUp";
 import Auth from "@aws-amplify/auth";
+import { useHistory } from "react-router-dom";
 
 const SignIn = ({ close }) => {
   const [recaptcha, setRecaptcha] = useState(false);
@@ -14,6 +15,8 @@ const SignIn = ({ close }) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState();
+
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +29,10 @@ const SignIn = ({ close }) => {
       close();
     }
   };
+
+  const handleContact = (e) =>{
+    history.push('/contact');
+  }
 
   const showForgotPass = () => {
     setForgotPass(false);
@@ -82,8 +89,12 @@ const SignIn = ({ close }) => {
           >
             Sign In
           </button>
-          <button className="pill pill-red" onClick={showSignUp}>
-            Register for Free!
+          <button
+            type="submit"
+            className="auth-button"
+            onClick={handleContact}
+          >
+            Contact
           </button>
         </div>
         <div className="forgot-pass" onClick={showForgotPass}>

@@ -130,7 +130,8 @@ const Header = () => {
                 screen.width > 767 ? "" : "mt-4"
               } d-flex justify-content-center align-items-center`}
             >
-              <NavLink to="/faq">
+              {/*
+                <NavLink to="/faq">
                 <div className="d-flex justify-content-center align-items-center header-faq">
                   <div className="h4">
                     <b>FAQ</b>
@@ -146,6 +147,7 @@ const Header = () => {
                   LOGIN
                 </button>
               )}
+              */}
               <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}

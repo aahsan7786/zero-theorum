@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { applyMiddleware, createStore } from "redux";
+
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import rootReducer from "./store/reducer";
@@ -10,6 +11,7 @@ import { ContextProvider } from "./components/context/Context";
 import "./assets/sass/main.scss";
 import { composeWithDevTools } from "redux-devtools-extension";
 import ErrorBoundry from "./components/error-boundry/ErrorBoundry";
+import { BrowserRouter } from "react-router-dom";
 // import WebFont from 'webfontloader';
 
 const api = new ApiClient();
@@ -27,9 +29,11 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <ErrorBoundry>
+      <BrowserRouter>
       <ContextProvider value={api}>
         <App />
       </ContextProvider>
+      </BrowserRouter>
     </ErrorBoundry>
   </Provider>,
   document.getElementById("app")
