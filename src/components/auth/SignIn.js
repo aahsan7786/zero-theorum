@@ -51,7 +51,7 @@ const SignIn = ({ close }) => {
         <p className="login-title">PLEASE FILL OUT THE FORM</p>
         <p className="login-heading">INVESTORS PORTAL</p>
         {errorMessage && <p className="error-text">{errorMessage}</p>}
-        <div className="auth-form">
+        {/*<div className="auth-form">
           <label className="auth-label" htmlFor="userName">
             Name: 
           </label>
@@ -62,7 +62,7 @@ const SignIn = ({ close }) => {
             onChange={(e) => setUserName(e.target.value)}
             className="auth-input"
           />
-        </div>
+        </div>*/}
         <div className="auth-form">
           <label className="auth-label" htmlFor="password">
             Email:
@@ -77,7 +77,7 @@ const SignIn = ({ close }) => {
         </div>
         <div className="auth-form">
           <label className="auth-label" htmlFor="userName">
-             2FA:
+             Password:
           </label>
           <input
             type="text"
@@ -96,14 +96,19 @@ const SignIn = ({ close }) => {
           />
         </div>
         */}
-
+        <div className="auth-form">
+            <p style={{width: '25rem'}}>Login is currently only available for memebers of the zero
+                Theorem Private Investment Fund. If you like access to our
+                data feeds, forecast models, AI decision matrix Or other live
+                metrics please reach out to us via contact form.</p>
+        </div>
         <div className="auth-form">
           <button
             type="submit"
             className="auth-button"
             onClick={handleSubmit}
           >
-            Send
+            Login
           </button>
           {/*<button
             type="submit"
