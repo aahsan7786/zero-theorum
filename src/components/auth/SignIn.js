@@ -105,7 +105,7 @@ const SignIn = ({ close }) => {
         <div className="auth-form">
           <button
             type="submit"
-            className="auth-button"
+            className="auth-button1"
             onClick={handleSubmit}
           >
             Login
