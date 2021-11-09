@@ -18,7 +18,8 @@ const useStyles = makeStyles({
         backgroundSize: 'cover',
     },
     spacingBottom40: {
-        marginBottom: '40px'
+        marginBottom: '40px',
+        marginTop: '-100px'
     },
     spacingTop40: {
         marginTop: '40px'
@@ -37,12 +38,15 @@ const useStyles = makeStyles({
     },
     headingWhite: {
         color: colors.textDefault,
-        fontFamily: 'Raleway-Bold',
+        //fontFamily: 'Raleway-Bold',
+        fontFamily: 'Muli',
+        fontWeight: 800,
         alignItems: 'center'
     },
     textWhite: {
         color: colors.textDefault,
         fontSize: 12,
+        fontFamily: 'Muli',
     },
     button: {
         width: 150,
@@ -81,13 +85,18 @@ const useStyles = makeStyles({
     },
     forecastButton: {
         margin: '15px',
-
+        backgroundColor: '#ffc002',
+        color: colors.textWhite,
     },
     performanceButton: {
         margin: '15px',
     },
     checkButton: {
         width: 150,
+        backgroundColor: 'black',
+        color: '#fff',
+        fontSize: 10,
+        border: '1px #4a4a4a solid'
     },
     generationButton: {
         width: 150,

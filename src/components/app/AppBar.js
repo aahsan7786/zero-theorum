@@ -32,7 +32,7 @@ const useStyles = makeStyles({
         color: 'white',
         fontSize: 12,
         cursor: 'pointer',
-        fontFamily: fonts.ralewayRegular
+        fontFamily: 'Muli'
     }
 }, {index: 999});
 

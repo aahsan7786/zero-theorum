@@ -7,9 +7,9 @@ const PopupForm = ({ close }) => {
     <div className="login">
       <SignIn close={close} />
 
-      <button className="button-close" onClick={close}>
+      {/*<button className="button-close" onClick={close}>
         X
-      </button>
+  </button>*/}
     </div>
   );
 };

@@ -50,7 +50,7 @@ export default function Main() {
                                 variant='body2'
                                 className={clsx(classes.textWhite, classes.spacingTop20, classes.spacingBottom20)}
                             >
-                                welcome
+                                WELCOME
                             </Typography>
                             <Typography
                                 variant='h4'
@@ -68,24 +68,22 @@ export default function Main() {
                             >
                                 using bitcoin to empower GENERATION-0!
                             </Typography>
-                            <Grid item xs={12} md={12}
-                                className={clsx(classes.spacingTop40)}
-                            >
-                                <Button
+                            <div className="d-flex">
+                                <button
                                     variant="contained"
-                                    className={classes.forecastButton}
+                                    className="auth-button"//{classes.forecastButton}
                                 >
                                     Forcast
-                                </Button>
-                                <Button
+                                </button>
+                                <button
                                     variant='outlined'
                                     color='primary'
-                                    className={classes.performanceButton}
+                                    className="auth-button"//{classes.performanceButton}
                                     onClick={handlePerformanceClick}
                                 >
                                     Performance
-                                </Button>
-                            </Grid>
+                                </button>
+                            </div>
                         </Grid>
                         <Grid item xs={12} md={6} sm={8} className={classes.amountContainer}>
                             <Box className={clsx(classes.amountCenter)}>
@@ -292,13 +290,13 @@ export default function Main() {
                                 you willing to go?
                             </Typography>
 
-                            <Button
+                            <button
                                 variant='contained'
                                 color='primary'
-                                className={clsx(classes.generationButton, classes.spacingTop40)}
+                                className="auth-button"//{clsx(classes.generationButton, classes.spacingTop40)}
                             >
                                 Generation - 0
-                            </Button>
+                            </button>
                         </Box>
                     </Grid>
 

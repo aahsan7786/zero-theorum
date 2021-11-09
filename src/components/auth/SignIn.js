@@ -14,6 +14,7 @@ const SignIn = ({ close }) => {
 
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState();
 
   const history = useHistory();
@@ -47,11 +48,12 @@ const SignIn = ({ close }) => {
   return (
     <div className="auth">
       <div style={{ display: forgotPass && signUp ? "block" : "none" }}>
-        <p className="login-title">Login</p>
+        <p className="login-title">PLEASE FILL OUT THE FORM</p>
+        <p className="login-heading">INVESTORS PORTAL</p>
         {errorMessage && <p className="error-text">{errorMessage}</p>}
         <div className="auth-form">
           <label className="auth-label" htmlFor="userName">
-            Username:
+            Name: 
           </label>
           <input
             type="text"
@@ -63,46 +65,64 @@ const SignIn = ({ close }) => {
         </div>
         <div className="auth-form">
           <label className="auth-label" htmlFor="password">
-            Password:
+            Email:
           </label>
           <input
-            type="password"
-            name="password"
+            type="text"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="auth-input"
+          />
+        </div>
+        <div className="auth-form">
+          <label className="auth-label" htmlFor="userName">
+             2FA:
+          </label>
+          <input
+            type="text"
+            name="2FA"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="auth-input"
           />
         </div>
 
-        <div className="d-flex justify-content-center">
+        {/*
+          <div className="d-flex justify-content-center">
           <ReCAPTCHA
             sitekey="6Lc684YcAAAAAJGG01D5ee2aFLKxHAFfqoZUb9fA"
             onChange={() => setRecaptcha(true)}
           />
         </div>
+        */}
 
-        <div className="d-flex">
+        <div className="auth-form">
           <button
             type="submit"
             className="auth-button"
             onClick={handleSubmit}
           >
-            Sign In
+            Send
           </button>
-          <button
+          {/*<button
             type="submit"
             className="auth-button"
             onClick={handleContact}
           >
             Contact
           </button>
+          */}
         </div>
-        <div className="forgot-pass" onClick={showForgotPass}>
+        {/*
+          <div className="forgot-pass" onClick={showForgotPass}>
           Forgot Password?
         </div>
       </div>
-      {forgotPass ? <></> : <ForgotPassword />}
-      {signUp ? <></> : <SignUp />}
+      //{forgotPass ? <></> : <ForgotPassword />}
+      //{signUp ? <></> : <SignUp />}
+      */}
+    </div>
     </div>
   );
 };
