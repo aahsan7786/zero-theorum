@@ -21,8 +21,8 @@ const SignIn = ({ close }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (userName === "" || password === "") return;
-    const user = await Auth.signIn(userName, password).catch((err) =>
+    if (email === "" || password === "") return;
+    const user = await Auth.signIn(email, password).catch((err) =>
       setErrorMessage(err.message)
     );
 
@@ -80,8 +80,8 @@ const SignIn = ({ close }) => {
              Password:
           </label>
           <input
-            type="text"
-            name="2FA"
+            type="password"
+            name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="auth-input"
