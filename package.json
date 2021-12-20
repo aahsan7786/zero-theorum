@@ -73,7 +73,7 @@
     "@rumess/react-flip-countdown": "^1.2.3",
     "@stripe/react-stripe-js": "^1.4.1",
     "@stripe/stripe-js": "^1.17.1",
-    "aws-amplify": "^4.3.2",
+    "aws-amplify": "4.3.2",
     "emailjs-com": "^3.2.0",
     "mathjax3-react": "^1.0.11",
     "react-external-link": "^1.2.2",
