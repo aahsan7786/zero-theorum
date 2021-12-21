@@ -83,7 +83,7 @@ import Box from "@material-ui/core/Box";
 import {ThemeProvider} from "@material-ui/core/styles";
 import Main from "./Main";
 import Landing from "../../pages/landing-screen/Landing";
-import Landing2 from "../../pages/landing-screen/Landing22";
+import Landing2 from "../../pages/landing-screen/Landing2";
 
 //import Performance from './../../routes/Performance';
 //import Investor from './../../routes/Investor';
