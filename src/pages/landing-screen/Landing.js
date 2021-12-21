@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import {makeStyles} from "@material-ui/styles";
 import clsx from "clsx";
 import {LANDING_CONSTANTS} from "../../constants/Constants";
@@ -166,6 +167,7 @@ const useStyles = makeStyles({
 
 const Landing = (props) => {
   const classes = useStyles(props);
+  const history = useHistory();
   const getAbout = () => {
     return (
       <>
@@ -226,7 +228,9 @@ const Landing = (props) => {
           <span>{LANDING_CONSTANTS.HEAD2_1}</span>
           <span className={classes.head2_2}>{LANDING_CONSTANTS.HEAD2_2}</span>
         </div>
-        <div className={classes.loginBtn}>Investor login</div>
+        <div className={classes.loginBtn} onClick={()=>{
+          history.push("/investor");
+        }}>Investor login</div>
       </div>
       <div className={classes.footer}>
         <div className={classes.about}>{getAbout()}</div>
