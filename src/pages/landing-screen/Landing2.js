@@ -1,12 +1,17 @@
 import React from "react";
 import {makeStyles} from "@material-ui/styles";
+import {useHistory} from "react-router-dom";
 import clsx from "clsx";
 import {LANDING_CONSTANTS} from "../../constants/Constants";
 import logo from "./../../assets/images/logo_1.png";
 import backgroundImg from "./../../assets/images/landing_2.png";
 import backgroundFooterImg from "./../../assets/images/landing_footer.png";
 import "./landing.scss";
+import sunImg from "./../../assets/images/staticsun.png";
+// import sunImg from "./../../assets/images/sun.gif";
 
+import loginImg from "./../../assets/images/Investor-LoginBTN.png";
+import TransitionButton from "../../components/common/transitionButton";
 const useStyles = makeStyles({
   main: {
     // background: "red",
@@ -54,26 +59,6 @@ const useStyles = makeStyles({
   },
   head2_2: {
     display: "block",
-  },
-  loginBtn: {
-    alignSelf: "flex-end",
-    marginRight: "50px",
-    background:
-      "linear-gradient(90deg, rgba(229,111,4,1) 8%, rgba(250,172,7,1) 58%)",
-    width: "110px",
-    textAlign: "center",
-    padding: "10px 0px",
-    fontSize: "10px",
-    borderRadius: "3px",
-    cursor: "pointer",
-    marginTop: "40px",
-    "&:hover": {
-      background:
-        "linear-gradient(to left, #ececec 50%, rgba(229,111,4,1) 50%) right",
-      backgroundSize: "200%",
-      transition: ".3s ease-out",
-      color: "#faac07",
-    },
   },
   footer: {
     width: "100%",
@@ -138,11 +123,33 @@ const useStyles = makeStyles({
     alignItems: "flex-end",
     justifyContent: "center",
   },
-
+  sun: {},
+  web: {
+    display: "flex",
+  },
+  mobile: {
+    display: "none",
+  },
+  loginImgBtn: {
+    marginTop: "60px",
+    textAlign: "center",
+    paddingRight: "20px",
+  },
+  submitBtn: {
+    margin: "auto",
+  },
   "@media only screen and (max-width: 480px)": {
+    web: {
+      display: "none",
+    },
+    mobile: {
+      display: "flex",
+    },
     main: {
       position: "relative",
       top: "unset",
+      backgroundSize: "auto",
+      alignItems: "center",
     },
     head1: {
       fontSize: "9px",
@@ -154,15 +161,18 @@ const useStyles = makeStyles({
     },
     footer: {
       display: "block",
-      margin: "30px",
+      margin: "0px",
+      padding: "0px",
+      backgroundSize: "cover",
     },
     about: {
-      marginLeft: "0",
+      marginLeft: "30px",
     },
     contact: {
       width: "calc(100% - 60px)",
       marginRight: "0",
       marginTop: "20px",
+      marginLeft: "30px",
     },
     heading: {
       marginBottom: "20px",
@@ -170,11 +180,33 @@ const useStyles = makeStyles({
     rightsReserved: {
       marginTop: "20px",
     },
+    sun: {
+      background: `url(${sunImg})`,
+      width: "100%",
+      height: "225px",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+    },
+    logo: {
+      //   textAlign: "center",
+    },
+    headingContainer: {
+      alignSelf: "center",
+      marginRight: "0",
+      marginTop: "0",
+    },
+    loginImgBtn: {
+      marginTop: "30px",
+      textAlign: "center",
+    },
   },
 });
 
 const Landing2 = (props) => {
   const classes = useStyles(props);
+  const history = useHistory();
+
   const getAbout = () => {
     return (
       <>
@@ -220,17 +252,31 @@ const Landing2 = (props) => {
               className={classes.input}
               placeholder="Message"></textarea>
           </div>
+          <div style={{gridColumnEnd: 3, gridColumnStart: 1}}>
+            <TransitionButton
+              text="Submit"
+              className={classes.submitBtn}></TransitionButton>
+          </div>
         </div>
       </>
     );
   };
-  return (
-    <>
-      <div className={clsx(classes.main, "no-scrollbar", "noselect")}>
+
+  const getWebMainContent = () => {
+    return (
+      <div
+        className={clsx(classes.main, "no-scrollbar", "noselect", classes.web)}>
         {/* <div className={classes.logo}>
-          <img src={logo} width="150px"></img>
-        </div> */}
-        <div className={classes.loginBtn}>Investor login</div>
+        <img src={logo} width="150px"></img>
+      </div> */}
+        <div className={classes.loginImgBtn}>
+          <img
+            src={loginImg}
+            width="150px"
+            onClick={() => {
+              history.push("/investorlogin2");
+            }}></img>
+        </div>
         <div className={classes.headingContainer}>
           <div className={classes.head2}>
             <span>
@@ -243,6 +289,43 @@ const Landing2 = (props) => {
           <div className={classes.head1}>{LANDING_CONSTANTS.HEAD1} </div>
         </div>
       </div>
+    );
+  };
+
+  const getMobileMainContent = () => {
+    return (
+      <div
+        className={clsx(
+          classes.main,
+          "no-scrollbar",
+          "noselect",
+          classes.mobile
+        )}>
+        <div className={classes.logo}>
+          <img src={logo} width="150px"></img>
+        </div>
+        <div className={classes.sun}></div>
+        <div className={classes.headingContainer}>
+          <div className={classes.head2}>
+            <span>
+              THE HOLY GRAIL OF <span style={{color: "#FAAC09"}}>BITCOIN</span>
+            </span>
+            <span className={classes.head2_2}>
+              {LANDING_CONSTANTS.L2_HEAD2_2}
+            </span>
+          </div>
+          <div className={classes.loginImgBtn}>
+            <img src={loginImg} width="150px"></img>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <>
+      {getWebMainContent()}
+      {getMobileMainContent()}
       <div className={classes.footer}>
         <div className={classes.about}>{getAbout()}</div>
         <div className={classes.contact}>{getContact()}</div>

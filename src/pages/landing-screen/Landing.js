@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import {makeStyles} from "@material-ui/styles";
 import clsx from "clsx";
 import {LANDING_CONSTANTS} from "../../constants/Constants";
@@ -7,7 +7,7 @@ import logo from "./../../assets/images/logo_1.png";
 import backgroundImg from "./../../assets/images/landinggif.gif";
 import backgroundFooterImg from "./../../assets/images/landing_footer.png";
 import "./landing.scss";
-
+import TransitionButton from "../../components/common/transitionButton";
 const useStyles = makeStyles({
   main: {
     // background: "red",
@@ -50,22 +50,7 @@ const useStyles = makeStyles({
     color: "#FAAC09",
   },
   loginBtn: {
-    background:
-      "linear-gradient(90deg, rgba(229,111,4,1) 8%, rgba(250,172,7,1) 58%)",
-    width: "110px",
-    textAlign: "center",
-    padding: "10px 0px",
-    fontSize: "10px",
-    borderRadius: "3px",
-    cursor: "pointer",
     marginTop: "40px",
-    "&:hover": {
-      background:
-        "linear-gradient(to left, #ececec 50%, rgba(229,111,4,1) 50%) right",
-      backgroundSize: "200%",
-      transition: ".3s ease-out",
-      color: "#faac07",
-    },
   },
   footer: {
     width: "100%",
@@ -130,11 +115,15 @@ const useStyles = makeStyles({
     alignItems: "flex-end",
     justifyContent: "center",
   },
-
+  submitBtn: {
+    margin: "auto",
+  },
   "@media only screen and (max-width: 480px)": {
     main: {
       position: "relative",
       top: "unset",
+      backgroundSize: "200% 100%",
+      backgroundPositionX: "-30px",
     },
     head1: {
       fontSize: "9px",
@@ -146,15 +135,17 @@ const useStyles = makeStyles({
     },
     footer: {
       display: "block",
-      margin: "30px",
+      // margin: "30px",
+      backgroundSize: "cover",
     },
     about: {
-      marginLeft: "0",
+      marginLeft: "30px",
     },
     contact: {
       width: "calc(100% - 60px)",
       marginRight: "0",
       marginTop: "20px",
+      marginLeft: "30px",
     },
     heading: {
       marginBottom: "20px",
@@ -213,6 +204,11 @@ const Landing = (props) => {
               className={classes.input}
               placeholder="Message"></textarea>
           </div>
+          <div style={{gridColumnEnd: 3, gridColumnStart: 1}}>
+            <TransitionButton
+              text="Submit"
+              className={classes.submitBtn}></TransitionButton>
+          </div>
         </div>
       </>
     );
@@ -228,9 +224,12 @@ const Landing = (props) => {
           <span>{LANDING_CONSTANTS.HEAD2_1}</span>
           <span className={classes.head2_2}>{LANDING_CONSTANTS.HEAD2_2}</span>
         </div>
-        <div className={classes.loginBtn} onClick={()=>{
-          history.push("/investor");
-        }}>Investor login</div>
+        <TransitionButton
+          text="Investor login"
+          className={classes.loginBtn}
+          onClick={() => {
+            history.push("/investorlogin");
+          }}></TransitionButton>
       </div>
       <div className={classes.footer}>
         <div className={classes.about}>{getAbout()}</div>

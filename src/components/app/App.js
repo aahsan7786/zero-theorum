@@ -74,6 +74,9 @@ import ArticleSixteen from "../../pages/articlesList/ArticleSixteen";
 import ArticleEighteen from "../../pages/articlesList/ArticleEighteen";
 import ArticleNineteen from "../../pages/articlesList/ArticleNineteen";
 import Discord from "../../pages/discord/Discord";
+import InvestorLogin from "../../pages/login/InvestorLogin";
+import InvestorLogin2 from "../../pages/login/InvestorLogin2";
+
 import clsx from "clsx";
 
 import {COGNITO} from "../../config";
@@ -108,14 +111,17 @@ const App = (props) => {
   const pathname = props.history.location.pathname;
   return (
     <Box className="App" id="maindiv">
-      {pathname != "/" && pathname != "/landing-2" && (
-        <Grid
-          item
-          xs={12}
-          className={(classes.spacingBottom40, classes.gridPaddingLeft40)}>
-          <AppBar logo={logo} options={AppBarOptions} />
-        </Grid>
-      )}
+      {pathname != "/" &&
+        pathname != "/landing-2" &&
+        pathname != "/investorlogin" &&
+        pathname != "/investorlogin2" && (
+          <Grid
+            item
+            xs={12}
+            className={(classes.spacingBottom40, classes.gridPaddingLeft40)}>
+            <AppBar logo={logo} options={AppBarOptions} />
+          </Grid>
+        )}
       <Router>
         <ScrollToTop />
         <Switch>
@@ -140,6 +146,12 @@ const App = (props) => {
           <Route exact path="/investor">
             <PopupForm />
           </Route>
+          <Route exact path="/investorlogin">
+            <InvestorLogin />
+          </Route>
+          <Route exact path="/investorlogin2">
+            <InvestorLogin2 />
+          </Route>
           <Route exact path="/performance">
             <Performance />
           </Route>
@@ -151,7 +163,9 @@ const App = (props) => {
       {pathname !== "/investor" &&
       pathname !== "/home" &&
       pathname !== "/" &&
-      pathname !== "/landing-2" ? (
+      pathname !== "/landing-2" &&
+      pathname != "/investorlogin" &&
+      pathname != "/investorlogin2" ? (
         <Grid item xs={12} className={clsx(classes.gridPaddingLeft40)}>
           <AppBar logo={logo} options={AppBarOptions} />
         </Grid>
