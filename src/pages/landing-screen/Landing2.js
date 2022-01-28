@@ -3,11 +3,11 @@ import {makeStyles} from "@material-ui/styles";
 import {useHistory} from "react-router-dom";
 import clsx from "clsx";
 import {LANDING_CONSTANTS} from "../../constants/Constants";
-import logo from "./../../assets/images/logo_1.png";
-import backgroundImg from "./../../assets/images/landing_2.png";
+import logo from "./../../assets/images/logoVector.png";
+import backgroundImg from "./../../assets/images/starry_bg.jpg";
 import backgroundFooterImg from "./../../assets/images/landing_footer.png";
 import "./landing.scss";
-import sunImg from "./../../assets/images/staticsun.png";
+import sunImg from "./../../assets/images/sun_gif.gif";
 // import sunImg from "./../../assets/images/sun.gif";
 
 import loginImg from "./../../assets/images/Investor-LoginBTN.png";
@@ -17,12 +17,18 @@ const useStyles = makeStyles({
     // background: "red",
     width: "100%",
     height: "100%",
-    background: `url(${backgroundImg}) repeat center`,
+    // background: `url(${backgroundImg}) repeat center`,
+    background: `url(${backgroundImg}) center  `,
     backgroundRepeat: "no-repeat",
     backgroundAttachment: "fixed",
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    backgroundSize: "101% 101%",
+    // backgroundPosition: "-250px -21rem",
+    // backgroundSize: "cover",
+    // backgroundSize: "101% 101%",
+    // backgroundSize: "contain",
+    backgroundSize: " 50%",
+    backgroundRepeat: "repeat",
+    // backgroundPosition: '0px 0px',
+    backgroundAttachment: "fixed",
 
     display: "flex",
     flexDirection: "column",
@@ -32,7 +38,21 @@ const useStyles = makeStyles({
     top: "0",
   },
   logo: {
-    marginTop: "100px",
+    marginTop: "-20px",
+    width: "97vw",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  sun_image: {
+    background: `url(${sunImg}) left  `,
+    backgroundRepeat: "no-repeat",
+    marginTop: "inherit",
+    height: "550px",
+    position: "absolute",
+    zIndex: "-1",
+    width: "100%",
+    // margin:"0 0 0 40px"
   },
   headingContainer: {
     alignSelf: "end",
@@ -148,7 +168,8 @@ const useStyles = makeStyles({
     main: {
       position: "relative",
       top: "unset",
-      backgroundSize: "auto",
+      // backgroundSize: "auto",
+      backgroundSize: "40%",
       alignItems: "center",
     },
     head1: {
@@ -160,10 +181,14 @@ const useStyles = makeStyles({
       "&>span": {display: "block"},
     },
     footer: {
+      backgroundPositionY: "bottom",
+      height: "max-content",
+      backgroundSize: "100vh !important",
+
       display: "block",
       margin: "0px",
       padding: "0px",
-      backgroundSize: "cover",
+      // backgroundSize: "cover",
     },
     about: {
       marginLeft: "30px",
@@ -182,14 +207,19 @@ const useStyles = makeStyles({
     },
     sun: {
       background: `url(${sunImg})`,
-      width: "100%",
+      width: "50%",
       height: "225px",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
     },
     logo: {
-      //   textAlign: "center",
+      // marginTop: "100px",
+      width: "95vw",
+      display: "flex",
+      marginTop: "40px",
+      justifyContent: "center",
+      alignItems: "center",
     },
     headingContainer: {
       alignSelf: "center",
@@ -266,16 +296,20 @@ const Landing2 = (props) => {
     return (
       <div
         className={clsx(classes.main, "no-scrollbar", "noselect", classes.web)}>
-        {/* <div className={classes.logo}>
-        <img src={logo} width="150px"></img>
-      </div> */}
         <div className={classes.loginImgBtn}>
-          <img
-            src={loginImg}
-            width="150px"
-            onClick={() => {
-              history.push("/investorlogin2");
-            }}></img>
+          <div className={classes.logo}>
+            <img src={logo} width="150px" style={{marginLeft: "20px"}}></img>
+
+            {/* <img src={logo} width="150px"></img> */}
+            <img
+              style={{marginRight: "20px"}}
+              src={loginImg}
+              width="150px"
+              onClick={() => {
+                history.push("/investorlogin2");
+              }}></img>
+          </div>
+          <div className={classes.sun_image} />
         </div>
         <div className={classes.headingContainer}>
           <div className={classes.head2}>

@@ -126,10 +126,10 @@ const App = (props) => {
         <ScrollToTop />
         <Switch>
           <Route exact path="/">
-            <Landing />
+            <Landing2 />
           </Route>
           <Route exact path="/landing-2">
-            <Landing2 />
+            <Landing />
           </Route>
           <Route exact path="/home">
             <Main />
