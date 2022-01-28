@@ -4,8 +4,9 @@ import {makeStyles} from "@material-ui/styles";
 import clsx from "clsx";
 import {LANDING_CONSTANTS} from "../../constants/Constants";
 import logo from "./../../assets/images/logo_1.png";
-import backgroundImg from "./../../assets/images/landinggif.gif";
-import backgroundFooterImg from "./../../assets/images/landing_footer.png";
+import backgroundImg from "./../../assets/images/starry_bg.webp";
+// import backgroundImg from "./../../assets/images/landinggif.gif";
+import backgroundFooterImg from "./../../assets/images/landing_footer.webp";
 import "./landing.scss";
 import TransitionButton from "../../components/common/transitionButton";
 const useStyles = makeStyles({

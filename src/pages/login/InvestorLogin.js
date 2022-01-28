@@ -1,6 +1,6 @@
 import React from "react";
 import Login from "../../components/login/Login";
-import backgroundImg from "./../../assets/images/landinggif.gif";
+import backgroundImg from "./../../assets/images/starry_bg.webp";
 import {makeStyles} from "@material-ui/styles";
 import clsx from "clsx";
 
