@@ -240,6 +240,7 @@ const useStyles = makeStyles({
     loginImgBtn: {
       marginTop: "30px",
       textAlign: "center",
+      paddingRight: "0 !important",
     },
   },
 });
