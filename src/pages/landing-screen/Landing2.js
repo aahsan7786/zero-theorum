@@ -37,6 +37,13 @@ const useStyles = makeStyles({
     position: "sticky",
     top: "0",
   },
+  container: {
+    display: "flex",
+    width: "100%",
+    justifyContent: "space-between",
+    alignItems: "center",
+    margin: "auto",
+  },
   logo: {
     marginTop: "-20px",
     width: "97vw",
@@ -55,9 +62,9 @@ const useStyles = makeStyles({
     // margin:"0 0 0 40px"
   },
   headingContainer: {
-    alignSelf: "end",
+    // alignSelf: "end",
     marginRight: "10%",
-    marginTop: "10%",
+    // marginTop: "10%",
   },
   head1: {
     color: "black",
@@ -71,7 +78,7 @@ const useStyles = makeStyles({
     padding: "0px 10px",
   },
   head2: {
-    fontSize: "40px",
+    fontSize: "45px",
     marginTop: "25px",
 
     textAlign: "center",
@@ -177,7 +184,9 @@ const useStyles = makeStyles({
       width: "60%",
     },
     head2: {
-      fontSize: "17px",
+      fontSize: "20px",
+      lineHeight: "40px",
+      fontWeight: "bold",
       "&>span": {display: "block"},
     },
     footer: {
@@ -191,7 +200,9 @@ const useStyles = makeStyles({
       // backgroundSize: "cover",
     },
     about: {
+      width: "calc(100% - 60px)",
       marginLeft: "30px",
+      marginRight: "0",
     },
     contact: {
       width: "calc(100% - 60px)",
@@ -212,19 +223,19 @@ const useStyles = makeStyles({
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
+      margin: "50px 0px",
     },
     logo: {
       // marginTop: "100px",
       width: "95vw",
       display: "flex",
-      marginTop: "40px",
+      marginTop: "70px",
       justifyContent: "center",
       alignItems: "center",
     },
     headingContainer: {
       alignSelf: "center",
-      marginRight: "0",
-      marginTop: "0",
+      margin: "0 !important",
     },
     loginImgBtn: {
       marginTop: "30px",
@@ -309,18 +320,25 @@ const Landing2 = (props) => {
                 history.push("/investorlogin2");
               }}></img>
           </div>
-          <div className={classes.sun_image} />
+          {/* */}
         </div>
-        <div className={classes.headingContainer}>
-          <div className={classes.head2}>
-            <span>
-              THE HOLY GRAIL OF <span style={{color: "#FAAC09"}}>BITCOIN</span>
-            </span>
-            <span className={classes.head2_2}>
-              {LANDING_CONSTANTS.L2_HEAD2_2}
-            </span>
+        <div className={classes.container}>
+          <div>
+            <img src={sunImg} />
           </div>
-          <div className={classes.head1}>{LANDING_CONSTANTS.HEAD1} </div>
+
+          <div className={classes.headingContainer}>
+            <div className={classes.head2}>
+              <span>
+                THE HOLY GRAIL OF{" "}
+                <span style={{color: "#FAAC09"}}>BITCOIN</span>
+              </span>
+              <span className={classes.head2_2}>
+                {LANDING_CONSTANTS.L2_HEAD2_2}
+              </span>
+            </div>
+            <div className={classes.head1}>{LANDING_CONSTANTS.HEAD1} </div>
+          </div>
         </div>
       </div>
     );
@@ -336,7 +354,7 @@ const Landing2 = (props) => {
           classes.mobile
         )}>
         <div className={classes.logo}>
-          <img src={logo} width="150px"></img>
+          <img src={logo} width="200px"></img>
         </div>
         <div className={classes.sun}></div>
         <div className={classes.headingContainer}>
