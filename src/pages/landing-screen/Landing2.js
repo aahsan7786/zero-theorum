@@ -79,7 +79,7 @@ const useStyles = makeStyles({
   },
   head2: {
     fontSize: "45px",
-    marginTop: "25px",
+    // marginTop: "25px",
 
     textAlign: "center",
     // width: "80%",
