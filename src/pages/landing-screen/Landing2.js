@@ -344,7 +344,11 @@ const Landing2 = (props) => {
           <div className={classes.logo}>
             <img src={logo} width="150px" style={{marginLeft: "20px"}}></img>
 
-            <div className={classes.loginBtn}></div>
+            <div
+              className={classes.loginBtn}
+              onClick={() => {
+                history.push("/investorlogin2");
+              }}></div>
             {/* <img
               style={{marginRight: "20px"}}
               src={loginImg}
@@ -401,7 +405,11 @@ const Landing2 = (props) => {
             <div className={classes.head1}>{LANDING_CONSTANTS.HEAD1} </div>
           </div>
           <div className={classes.loginImgBtn}>
-            <div className={classes.loginBtn}></div>
+            <div
+              className={classes.loginBtn}
+              onClick={() => {
+                history.push("/investorlogin2");
+              }}></div>
             {/* <img src={loginImg} width="150px"></img> */}
           </div>
         </div>
