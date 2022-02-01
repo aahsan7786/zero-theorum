@@ -181,7 +181,7 @@ const useStyles = makeStyles({
     },
     head1: {
       fontSize: "9px",
-      width: "60%",
+      // width: "60%",
     },
     head2: {
       fontSize: "20px",
@@ -366,6 +366,7 @@ const Landing2 = (props) => {
             <span className={classes.head2_2}>
               {LANDING_CONSTANTS.L2_HEAD2_2}
             </span>
+            <div className={classes.head1}>{LANDING_CONSTANTS.HEAD1} </div>
           </div>
           <div className={classes.loginImgBtn}>
             <img src={loginImg} width="150px"></img>
