@@ -11,6 +11,8 @@ import sunImg from "./../../assets/images/sun_gif.gif";
 // import sunImg from "./../../assets/images/sun.gif";
 
 import loginImg from "./../../assets/images/Investor-LoginBTN.png";
+import loginImgHover from "./../../assets/images/Investor-LoginBTNwhite.png";
+
 import TransitionButton from "../../components/common/transitionButton";
 const useStyles = makeStyles({
   main: {
@@ -161,9 +163,28 @@ const useStyles = makeStyles({
     marginTop: "60px",
     textAlign: "center",
     paddingRight: "20px",
+    cursor: "pointer",
   },
   submitBtn: {
     margin: "auto",
+  },
+  loginBtn: {
+    background: `url(${loginImgHover})`,
+    width: "150px",
+    height: "40px",
+    backgroundSize: "150px",
+    backgroundRepeat: "no-repeat",
+    margin: "auto",
+    alignSelf: "center",
+    left: "0",
+    marginRight: "0",
+    "&:hover": {
+      background: `url(${loginImg})`,
+      width: "150px",
+      height: "40px",
+      backgroundSize: "150px",
+      backgroundRepeat: "no-repeat",
+    },
   },
   "@media only screen and (max-width: 480px)": {
     web: {
@@ -180,8 +201,16 @@ const useStyles = makeStyles({
       alignItems: "center",
     },
     head1: {
-      fontSize: "9px",
-      // width: "60%",
+      fontSize: "15px",
+      wordWrap: "break-word",
+      whiteSpace: "initial",
+      width: "80%",
+      height: "auto",
+      lineHeight: "27px",
+      margin: "auto",
+      marginTop: "20px",
+      color: "#E9B25F",
+      background: "none",
     },
     head2: {
       fontSize: "20px",
@@ -241,6 +270,9 @@ const useStyles = makeStyles({
       marginTop: "30px",
       textAlign: "center",
       paddingRight: "0 !important",
+    },
+    loginBtn: {
+      marginRight: "auto",
     },
   },
 });
@@ -312,14 +344,14 @@ const Landing2 = (props) => {
           <div className={classes.logo}>
             <img src={logo} width="150px" style={{marginLeft: "20px"}}></img>
 
-            {/* <img src={logo} width="150px"></img> */}
-            <img
+            <div className={classes.loginBtn}></div>
+            {/* <img
               style={{marginRight: "20px"}}
               src={loginImg}
               width="150px"
               onClick={() => {
                 history.push("/investorlogin2");
-              }}></img>
+              }}></img> */}
           </div>
           {/* */}
         </div>
@@ -332,7 +364,7 @@ const Landing2 = (props) => {
             <div className={classes.head2}>
               <span>
                 THE HOLY GRAIL OF{" "}
-                <span style={{color: "#FAAC09"}}>BITCOIN</span>
+                <span style={{color: "#E9B25F"}}>BITCOIN</span>
               </span>
               <span className={classes.head2_2}>
                 {LANDING_CONSTANTS.L2_HEAD2_2}
@@ -361,7 +393,7 @@ const Landing2 = (props) => {
         <div className={classes.headingContainer}>
           <div className={classes.head2}>
             <span>
-              THE HOLY GRAIL OF <span style={{color: "#FAAC09"}}>BITCOIN</span>
+              THE HOLY GRAIL OF <span style={{color: "#E9B25F"}}>BITCOIN</span>
             </span>
             <span className={classes.head2_2}>
               {LANDING_CONSTANTS.L2_HEAD2_2}
@@ -369,7 +401,8 @@ const Landing2 = (props) => {
             <div className={classes.head1}>{LANDING_CONSTANTS.HEAD1} </div>
           </div>
           <div className={classes.loginImgBtn}>
-            <img src={loginImg} width="150px"></img>
+            <div className={classes.loginBtn}></div>
+            {/* <img src={loginImg} width="150px"></img> */}
           </div>
         </div>
       </div>
