@@ -1,6 +1,27 @@
+$logoHeight: 23px;
+$logoWidth: 150px;
 .nav-container {
   display: flex;
+  height: 40px;
+  align-items: center;
+  background: chocolate;
+
   .menu-container {
     display: flex;
+  }
+  .logo-container {
+    width: $logoWidth;
+    height: $logoHeight;
+    .logo {
+      width: $logoWidth;
+      height: $logoHeight;
+    }
+  }
+}
+.menu-icon-container {
+  width: max-content;
+  .menu-icon {
+    width: 100px;
+    height: 18px;
   }
 }

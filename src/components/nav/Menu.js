@@ -10,6 +10,7 @@ const Menu = (props) => {
           <MenuItem
             name={menuItem.name}
             icon={menuItem.icon}
+            hoverIcon={menuItem.hoverIcon}
             route={menuItem.route}
             onClick={menuItem.onClick}
             className={menuItem.className}></MenuItem>
