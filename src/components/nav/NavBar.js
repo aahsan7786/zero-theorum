@@ -9,6 +9,7 @@ const NavBar = (props) => {
         <img className={"logo"} src={logo}></img>
       </div>
       <div className="menu-container">{<Menu></Menu>}</div>
+      <div className="userInfo"></div>
     </div>
   );
 };

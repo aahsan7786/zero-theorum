@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import {makeStyles} from "@material-ui/styles";
 import {useHistory} from "react-router-dom";
 import clsx from "clsx";
@@ -280,7 +280,18 @@ const useStyles = makeStyles({
 const Landing2 = (props) => {
   const classes = useStyles(props);
   const history = useHistory();
-
+  const contactRef = useRef();
+  useEffect(() => {
+    if (
+      history &&
+      history.location &&
+      history.location.hash &&
+      history.location.hash === "#contact"
+    ) {
+      contactRef && contactRef.current.scrollIntoView({behavior: "smooth"});
+    }
+    console.log(history.location);
+  }, [history.location]);
   const getAbout = () => {
     return (
       <>
@@ -423,7 +434,9 @@ const Landing2 = (props) => {
       {getMobileMainContent()}
       <div className={classes.footer}>
         <div className={classes.about}>{getAbout()}</div>
-        <div className={classes.contact}>{getContact()}</div>
+        <div className={classes.contact} ref={contactRef}>
+          {getContact()}
+        </div>
         <div className={classes.rightsReserved}>
           <div>2021 ZeroTheorem, All Rights Reserved</div>
         </div>

@@ -123,9 +123,11 @@ const Login = (props) => {
         className={classes.width}
         style={{textAlign: "center", fontSize: "10px"}}>
         Are you interested in knowing what Zero Theorem holds for you?{" "}
-        <href style={{textDecoration: "underline", cursor: "pointer"}}>
+        <a
+          style={{textDecoration: "underline", cursor: "pointer"}}
+          href="/#contact">
           Contact us
-        </href>{" "}
+        </a>{" "}
         to get your Zero Theorem invitation
       </div>
     </div>
