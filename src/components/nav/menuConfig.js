@@ -1,0 +1,51 @@
+export const menuConfig = [
+  {
+    name: "Dashboard",
+    icon: "",
+    route: "",
+    onClick: () => {},
+    className: "",
+  },
+  {
+    name: "Forward Valuation",
+    icon: "",
+    route: "",
+    onClick: () => {},
+    className: "",
+  },
+  {
+    name: "Back Test",
+    icon: "",
+    route: "",
+    onClick: () => {},
+    className: "",
+  },
+  {
+    name: "Governing Dyamics",
+    icon: "",
+    route: "",
+    onClick: () => {},
+    className: "",
+  },
+  {
+    name: "Substitution Rates",
+    icon: "",
+    route: "",
+    onClick: () => {},
+    className: "",
+  },
+  {
+    name: "Resources",
+    icon: "",
+    route: "",
+    onClick: () => {},
+    className: "",
+  },
+  {
+    name: "Contact",
+    icon: "",
+    route: "",
+    onClick: () => {},
+    className: "",
+  },
+];

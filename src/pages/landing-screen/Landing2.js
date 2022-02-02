@@ -347,7 +347,7 @@ const Landing2 = (props) => {
             <div
               className={classes.loginBtn}
               onClick={() => {
-                history.push("/investorlogin2");
+                history.push("/investorlogin");
               }}></div>
             {/* <img
               style={{marginRight: "20px"}}
@@ -408,7 +408,7 @@ const Landing2 = (props) => {
             <div
               className={classes.loginBtn}
               onClick={() => {
-                history.push("/investorlogin2");
+                history.push("/investorlogin");
               }}></div>
             {/* <img src={loginImg} width="150px"></img> */}
           </div>

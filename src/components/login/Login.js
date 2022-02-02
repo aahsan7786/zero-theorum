@@ -122,9 +122,11 @@ const Login = (props) => {
       <div
         className={classes.width}
         style={{textAlign: "center", fontSize: "10px"}}>
-        Are you interested in knowing what Zero Theorem website have for you!
-        Ping us to get your Zero Theorem{" "}
-        <href style={{textDecoration: "underline"}}>website invitation</href>
+        Are you interested in knowing what Zero Theorem holds for you?{" "}
+        <href style={{textDecoration: "underline", cursor: "pointer"}}>
+          Contact us
+        </href>{" "}
+        to get your Zero Theorem invitation
       </div>
     </div>
   );

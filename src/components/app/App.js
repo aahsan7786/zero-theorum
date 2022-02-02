@@ -83,20 +83,19 @@ import {COGNITO} from "../../config";
 import logo from "./../../assets/images/zerOtheorem_logo.svg";
 import "./App.css";
 import Box from "@material-ui/core/Box";
-import {ThemeProvider} from "@material-ui/core/styles";
 import Main from "./Main";
 import Landing from "../../pages/landing-screen/Landing";
 import Landing2 from "../../pages/landing-screen/Landing2";
 
-//import Performance from './../../routes/Performance';
-//import Investor from './../../routes/Investor';
-import theme from "./theme/theme";
 import Grid from "@material-ui/core/Grid";
-// import Grid from './../components/common/Grid';
 
 import AppBar from "./AppBar";
 import AppBarOptions from "./AppBar.config";
 import useStyles from "./../../styles/main.styles";
+
+import Dashboard from "../../pages/dashboard/Dashboard";
+
+import NavBar from "./../nav/NavBar";
 
 Amplify.configure({
   aws_cognito_region: COGNITO.REGION,
@@ -111,7 +110,7 @@ const App = (props) => {
   const pathname = props.history.location.pathname;
   return (
     <Box className="App" id="maindiv">
-      {pathname != "/" &&
+      {/* {pathname != "/" &&
         pathname != "/landing-2" &&
         pathname != "/investorlogin" &&
         pathname != "/investorlogin2" && (
@@ -121,7 +120,11 @@ const App = (props) => {
             className={(classes.spacingBottom40, classes.gridPaddingLeft40)}>
             <AppBar logo={logo} options={AppBarOptions} />
           </Grid>
-        )}
+        )} */}
+      {pathname != "/" &&
+        pathname != "/landing-2" &&
+        pathname != "/investorlogin" &&
+        pathname != "/investorlogin2" && <>{<NavBar></NavBar>}</>}
       <Router>
         <ScrollToTop />
         <Switch>
@@ -147,20 +150,23 @@ const App = (props) => {
             <PopupForm />
           </Route>
           <Route exact path="/investorlogin">
-            <InvestorLogin />
+            <InvestorLogin2 />
           </Route>
           <Route exact path="/investorlogin2">
-            <InvestorLogin2 />
+            <InvestorLogin />
           </Route>
           <Route exact path="/performance">
             <Performance />
+          </Route>
+          <Route exact path="/dashboard">
+            <Dashboard />
           </Route>
           <Route path="/pdf">
             <PDF />
           </Route>
         </Switch>
       </Router>
-      {pathname !== "/investor" &&
+      {/* {pathname !== "/investor" &&
       pathname !== "/home" &&
       pathname !== "/" &&
       pathname !== "/landing-2" &&
@@ -169,7 +175,7 @@ const App = (props) => {
         <Grid item xs={12} className={clsx(classes.gridPaddingLeft40)}>
           <AppBar logo={logo} options={AppBarOptions} />
         </Grid>
-      ) : null}
+      ) : null} */}
     </Box>
   );
   return (
