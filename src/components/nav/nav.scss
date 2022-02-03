@@ -7,7 +7,10 @@ $logoWidth: 150px;
   justify-content: space-between;
   padding: 0px 10px;
   box-shadow: 1px 1px 10px #545132;
-
+  position: sticky;
+  top: 0;
+  background: #131415;
+  z-index: 9;
   .menu-container {
     display: flex;
   }

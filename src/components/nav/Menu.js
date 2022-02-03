@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {menuConfig} from "./menuConfig";
-import MenuItem from "./menuItem";
+import MenuItem from "./MenuItem";
 const Menu = (props) => {
   const getMenu = () => {
     return (
