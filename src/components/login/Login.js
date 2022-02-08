@@ -10,7 +10,8 @@ import {login} from "../../store/user/actions";
 import WithApiService from "../hoc/WithApiService";
 import {useHistory} from "react-router-dom";
 import Auth from "@aws-amplify/auth";
-
+import Snackbar from "@material-ui/core/Snackbar";
+import "./login.scss";
 const useStyles = makeStyles({
   container: {
     height: "inherit",
@@ -84,10 +85,13 @@ const useStyles = makeStyles({
     cursor: "pointer",
   },
 });
+
 const Login = (props) => {
   const classes = useStyles(props);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [isError, setError] = useState(false);
+
   const history = useHistory();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -101,66 +105,81 @@ const Login = (props) => {
         history.push("/dashboard");
         console.log(data);
       } else {
-        alert("User Name or password not correct");
+        setError(true);
+        // alert("User Name or password not correct");
       }
     });
   };
   return (
-    <div className={classes.container}>
-      <div className={classes.heading}>Login</div>
-      <div className={classes.width}>
-        <img src={userIcon} className={classes.icon}></img>
-        <input
-          className={clsx(classes.input)}
-          type="text"
-          placeholder="Username or mail"
-          onChange={(e) => {
-            setUserName(e.target.value);
-          }}></input>
-      </div>
-      <div className={classes.width}>
-        <img src={passIcon} className={classes.icon}></img>
-        <input
-          className={clsx(classes.input)}
-          type={showPassword ? "text" : "password"}
-          placeholder="Password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}></input>
-        <img
-          src={eyeIcon}
-          className={classes.eyeIcon}
-          onMouseDown={() => setShowPassword(true)}
-          onMouseUp={() => setShowPassword(false)}
-          onMouseLeave={() => setShowPassword(false)}></img>
+    <>
+      <div className={classes.container}>
+        <div className={classes.heading}>Login</div>
+        <div className={classes.width}>
+          <img src={userIcon} className={classes.icon}></img>
+          <input
+            className={clsx(classes.input)}
+            type="text"
+            placeholder="Username or mail"
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}></input>
+        </div>
+        <div className={classes.width}>
+          <img src={passIcon} className={classes.icon}></img>
+          <input
+            className={clsx(classes.input)}
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}></input>
+          <img
+            src={eyeIcon}
+            className={classes.eyeIcon}
+            onMouseDown={() => setShowPassword(true)}
+            onMouseUp={() => setShowPassword(false)}
+            onMouseLeave={() => setShowPassword(false)}></img>
 
-        <div className={clsx(classes.forgotContainer)}>
-          <div className={classes.rememberMe}>
-            <input type="checkbox" className={classes.checkbox}></input>
-            Remember Me
+          <div className={clsx(classes.forgotContainer)}>
+            <div className={classes.rememberMe}>
+              <input type="checkbox" className={classes.checkbox}></input>
+              Remember Me
+            </div>
+            <div>Forgot Password</div>
           </div>
-          <div>Forgot Password</div>
+        </div>
+
+        <div>
+          <TransitionButton
+            text="Login"
+            className={classes.loginBtn}
+            onClick={handleLogin}></TransitionButton>
+        </div>
+        <div
+          className={classes.width}
+          style={{textAlign: "center", fontSize: "10px"}}>
+          Are you interested in knowing what Zero Theorem holds for you?{" "}
+          <a
+            style={{textDecoration: "underline", cursor: "pointer"}}
+            href="/#contact">
+            Contact us
+          </a>{" "}
+          to get your Zero Theorem invitation
         </div>
       </div>
-
-      <div>
-        <TransitionButton
-          text="Login"
-          className={classes.loginBtn}
-          onClick={handleLogin}></TransitionButton>
-      </div>
-      <div
-        className={classes.width}
-        style={{textAlign: "center", fontSize: "10px"}}>
-        Are you interested in knowing what Zero Theorem holds for you?{" "}
-        <a
-          style={{textDecoration: "underline", cursor: "pointer"}}
-          href="/#contact">
-          Contact us
-        </a>{" "}
-        to get your Zero Theorem invitation
-      </div>
-    </div>
+      <Snackbar
+        autoHideDuration={6000000000}
+        open={isError}
+        onClose={() => setError(false)}
+        anchorOrigin={{vertical: "top", horizontal: "right"}}>
+        <div className={"myAlert"}>
+          {/* <div>
+            <img src={errorIcon} width={"25px"}></img>
+          </div> */}
+          <div>Invalid Username or password</div>
+        </div>
+      </Snackbar>
+    </>
   );
 };
 const mapStateToProps = (state) => ({});

@@ -95,7 +95,7 @@ import useStyles from "./../../styles/main.styles";
 
 import Dashboard from "../../pages/dashboard/Dashboard";
 import Resources from "../../pages/dashboard/resources/resources";
-import BackTest from "../../pages/dashboard/BackTest/backtest";
+import BackTest from "../../pages/dashboard/BackTest/BackTest";
 import GoverningDynamics from "../../pages/dashboard/GoverningDynamics/GoverningDynamics";
 import NavBar from "./../nav/NavBar";
 import AuthenticatedRoute from "../auth/AuthenticatedRoute";
