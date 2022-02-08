@@ -94,7 +94,7 @@ import AppBarOptions from "./AppBar.config";
 import useStyles from "./../../styles/main.styles";
 
 import Dashboard from "../../pages/dashboard/Dashboard";
-import Resources from "../../pages/dashboard/resources/resources";
+import Resources from "../../pages/dashboard/resources/Resources";
 import BackTest from "../../pages/dashboard/BackTest/BackTest";
 import GoverningDynamics from "../../pages/dashboard/GoverningDynamics/GoverningDynamics";
 import NavBar from "./../nav/NavBar";
