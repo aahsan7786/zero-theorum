@@ -5,6 +5,11 @@ import TransitionButton from "../common/transitionButton";
 import userIcon from "./../../assets/images/login/user.png";
 import passIcon from "./../../assets/images/login/password.png";
 import eyeIcon from "./../../assets/images/login/eye.png";
+import {connect} from "react-redux";
+import {login} from "../../store/user/actions";
+import WithApiService from "../hoc/WithApiService";
+import {useHistory} from "react-router-dom";
+import Auth from "@aws-amplify/auth";
 
 const useStyles = makeStyles({
   container: {
@@ -81,7 +86,25 @@ const useStyles = makeStyles({
 });
 const Login = (props) => {
   const classes = useStyles(props);
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
+
   const [showPassword, setShowPassword] = useState(false);
+  const handleLogin = async () => {
+    const {api} = props;
+    await api.login(userName, password).then((data) => {
+      if (userName === "admin" && password === "test") {
+        props.login({
+          userInfo: {username: "hassan afzal", email: "hassanafzal@neurog.com"},
+        });
+        history.push("/dashboard");
+        console.log(data);
+      } else {
+        alert("User Name or password not correct");
+      }
+    });
+  };
   return (
     <div className={classes.container}>
       <div className={classes.heading}>Login</div>
@@ -90,14 +113,20 @@ const Login = (props) => {
         <input
           className={clsx(classes.input)}
           type="text"
-          placeholder="Username or mail"></input>
+          placeholder="Username or mail"
+          onChange={(e) => {
+            setUserName(e.target.value);
+          }}></input>
       </div>
       <div className={classes.width}>
         <img src={passIcon} className={classes.icon}></img>
         <input
           className={clsx(classes.input)}
           type={showPassword ? "text" : "password"}
-          placeholder="Password"></input>
+          placeholder="Password"
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}></input>
         <img
           src={eyeIcon}
           className={classes.eyeIcon}
@@ -117,7 +146,8 @@ const Login = (props) => {
       <div>
         <TransitionButton
           text="Login"
-          className={classes.loginBtn}></TransitionButton>
+          className={classes.loginBtn}
+          onClick={handleLogin}></TransitionButton>
       </div>
       <div
         className={classes.width}
@@ -133,4 +163,12 @@ const Login = (props) => {
     </div>
   );
 };
-export default Login;
+const mapStateToProps = (state) => ({});
+
+const mapDispatchToProps = (dispatch) => ({
+  login: (data) => dispatch(login(data)),
+});
+
+export default WithApiService()(
+  connect(mapStateToProps, mapDispatchToProps)(Login)
+);

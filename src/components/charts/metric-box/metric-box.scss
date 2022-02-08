@@ -3,3 +3,59 @@
     width: 50%;
   }
 }
+.metrix-box-continer {
+  padding: 20px;
+  ul {
+    list-style: none;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  li {
+    position: relative;
+    // padding: 10px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+  }
+  li a {
+    color: gray;
+  }
+  li:nth-child(odd) {
+    color: #deb513 !important;
+    &:before {
+      background: #deb513 !important;
+      z-index: 1;
+    }
+  }
+  li:before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #d8d8d8;
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-40%);
+  }
+
+  li:not(:last-child):after {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: #d8d8d8;
+    position: absolute;
+    left: -8px;
+    top: 50%;
+  }
+  .metric-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  .metric-label {
+  }
+  .metric-value {
+    width: 40%;
+    text-align: start;
+  }
+}

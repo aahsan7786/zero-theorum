@@ -22,7 +22,15 @@ const MenuItem = (props) => {
           }
           className={"menu-icon"}></img>
       )}
-      {/* <span>{props.name}</span> */}
+      <span
+        className={
+          "menu-name " +
+          (isHover || history.location.pathname === props.route
+            ? "menu-name-selected"
+            : "")
+        }>
+        {props.name}
+      </span>
     </div>
   );
 };

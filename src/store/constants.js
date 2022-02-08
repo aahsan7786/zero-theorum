@@ -191,3 +191,6 @@ export const DEFAULT_RESOURCES = "DEFAULT_RESOURCES";
 
 // PDF
 export const SET_PDF = "SET_PDF";
+
+//user login
+export const USER_LOGIN = "USER_LOGIN";

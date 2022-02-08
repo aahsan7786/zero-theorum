@@ -1,12 +1,12 @@
-import React, { Fragment, lazy, Suspense, useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { loadDashboardPageSuccessForecast } from "Store/forecast/actions";
+import React, {Fragment, lazy, Suspense, useEffect, useState} from "react";
+import {connect} from "react-redux";
+import {loadDashboardPageSuccessForecast} from "Store/forecast/actions";
 import ErrorBoundry from "Components/error-boundry/ErrorBoundry";
 import InfoModalGraph from "Components/infoModalGraph/infoModalGraph";
-import { ReactSVG } from "react-svg";
+import {ReactSVG} from "react-svg";
 import information from "Images/icons/information.svg";
 import LoadingIndicator from "Components/loadingIndicator/LoadingIndicator";
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 import MathJax from "react-mathjax-preview";
 
 const MetricBox = lazy(() => import("Charts/metric-box/MetricBox"));

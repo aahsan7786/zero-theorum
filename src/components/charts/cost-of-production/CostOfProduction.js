@@ -1,19 +1,19 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import WithApiService from "../../hoc/WithApiService";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import {
   fetchCostOfProductionSuccess,
   fetchCostOfProductionError,
 } from "Store/charts/costOfProduction/actions";
 import Plot from "../../../../node_modules/react-plotly.js/react-plotly";
-import { viewSettingsConfig, viewSettingsLayout } from "../ChartViewSettins";
-import { isEmpty } from "../../globalFunctions/globalFunctions";
-import { lastWeek, _today } from "../../globalFunctions/detectDate";
-import { transformDateFormat } from "../../globalFunctions/transformDateFormat";
-import { fetchData } from "../../globalFunctions/fetchData";
+import {viewSettingsConfig, viewSettingsLayout} from "../ChartViewSettins";
+import {isEmpty} from "../../globalFunctions/globalFunctions";
+import {lastWeek, _today} from "../../globalFunctions/detectDate";
+import {transformDateFormat} from "../../globalFunctions/transformDateFormat";
+import {fetchData} from "../../globalFunctions/fetchData";
 import Loader from "Components/loader/loader";
 import InfoModalGraph from "Components/infoModalGraph/infoModalGraph";
-import { ReactSVG } from "react-svg";
+import {ReactSVG} from "react-svg";
 import information from "Images/icons/information.svg";
 import DateFilter from "Components/date-filter/DateFilter";
 
@@ -38,7 +38,7 @@ const CostOfProduction = (props) => {
   }, []);
 
   const onChangeFilter = (startDate) => {
-    const { api, fetchCostOfProductionSuccess, fetchCostOfProductionError } =
+    const {api, fetchCostOfProductionSuccess, fetchCostOfProductionError} =
       props;
     fetchData(
       api.getCostOfProduction,
@@ -50,7 +50,7 @@ const CostOfProduction = (props) => {
 
   const {
     isLoading,
-    data: { date, min, guess },
+    data: {date, min, guess},
   } = props;
 
   if (isLoading) {
@@ -134,7 +134,7 @@ const CostOfProduction = (props) => {
   );
 };
 
-const mapStateToProps = ({ costOfProductionReducer }) => {
+const mapStateToProps = ({costOfProductionReducer}) => {
   return costOfProductionReducer;
 };
 

@@ -1,16 +1,16 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import WithApiService from "../../hoc/WithApiService";
 import Plot from "react-plotly.js";
 import {
   fetchMadsDistSuccess,
   fetchMadsDistError,
 } from "../../../store/charts/madsDist/actions";
-import { viewSettingsConfig, viewSettingsLayout } from "../ChartViewSettins";
-import { isEmpty } from "../../globalFunctions/globalFunctions";
-import { connect } from "react-redux";
+import {viewSettingsConfig, viewSettingsLayout} from "../ChartViewSettins";
+import {isEmpty} from "../../globalFunctions/globalFunctions";
+import {connect} from "react-redux";
 import Loader from "Components/loader/loader";
 import InfoModalGraph from "Components/infoModalGraph/infoModalGraph";
-import { ReactSVG } from "react-svg";
+import {ReactSVG} from "react-svg";
 import information from "Images/icons/information.svg";
 
 const MadsDist = (props) => {
@@ -18,7 +18,7 @@ const MadsDist = (props) => {
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
-    const { api, fetchMadsDistSuccess, fetchMadsDistError, data, apiRoute } =
+    const {api, fetchMadsDistSuccess, fetchMadsDistError, data, apiRoute} =
       props;
     if (isEmpty(data)) {
       api[apiRoute]()
@@ -27,7 +27,7 @@ const MadsDist = (props) => {
     }
   }, []);
 
-  const { isLoading, data } = props;
+  const {isLoading, data} = props;
 
   if (
     isLoading ||
@@ -111,13 +111,13 @@ const MadsDist = (props) => {
         }
         useResizeHandler={viewSettingsLayout().useResizeHandler}
         style={viewSettingsLayout().style}
-        config={viewSettingsConfig(true, scroll).config}
+        config={viewSettingsConfig(false, scroll).config}
       />
     </Fragment>
   );
 };
 
-const mapStateToProps = ({ madsDistReducer }) => {
+const mapStateToProps = ({madsDistReducer}) => {
   return madsDistReducer;
 };
 

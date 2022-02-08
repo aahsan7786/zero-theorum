@@ -12,7 +12,7 @@ import Home from "../../pages/home/Home";
 import About from "../../pages/about/About";
 import Performance from "../../pages/performance/Performance";
 import ScientificMethod from "../../pages/scientific-method/ScientificMethod";
-import Resources from "../../pages/resources/Resources";
+// import Resources from "../../pages/resources/Resources";
 import QuantLab from "../../pages/quant-lab/QuantLab";
 import Forecast from "../../pages/forecast/Forecast";
 import Faq from "../../pages/faq/Faq";
@@ -26,7 +26,7 @@ import Feedback from "../../pages/contact/feedback/Feedback";
 import Modal from "../modal/Modal";
 import ModalData from "../modalData/ModalData";
 import ModalPublication from "../modalPublication/ModalPublication";
-import BackTest from "../../pages/back-test/BackTest";
+// import BackTest from "../../pages/back-test/BackTest";
 import Footer from "../footer/Footer";
 import Publication from "../../pages/publication/Publication";
 import Summary from "../../pages/summary/Summary";
@@ -39,7 +39,7 @@ import Accuracy from "../../pages/accuracy/Accuracy";
 import AlternativeData from "../../pages/alternativeData/AlternativeData";
 import AlternativeFactors from "../../pages/alternativeFactors/AlternativeFactors";
 import GoverningEquations from "../../pages/governingEquations/GoverningEquations";
-import SubstitutionRates from "../../pages/substitution-rates/SubstitutionRates";
+// import SubstitutionRates from "../../pages/substitution-rates/SubstitutionRates";
 import Profile from "../../pages/profile/Profile";
 import PopupForm from "../../pages/login/PopupForm";
 import Privacy from "../../pages/privacy/Privacy";
@@ -94,9 +94,13 @@ import AppBarOptions from "./AppBar.config";
 import useStyles from "./../../styles/main.styles";
 
 import Dashboard from "../../pages/dashboard/Dashboard";
-
+import Resources from "../../pages/dashboard/resources/resources";
+import BackTest from "../../pages/dashboard/BackTest/backtest";
+import GoverningDynamics from "../../pages/dashboard/GoverningDynamics/GoverningDynamics";
 import NavBar from "./../nav/NavBar";
-
+import AuthenticatedRoute from "../auth/AuthenticatedRoute";
+import SubstitutionRates from "../../pages/dashboard/SubstitutionRates/SubstitutionRates";
+import ForwardValuation from "../../pages/dashboard/ForwardValuation/ForwardValuation";
 Amplify.configure({
   aws_cognito_region: COGNITO.REGION,
   aws_user_pools_id: COGNITO.USER_POOL_ID,
@@ -121,10 +125,7 @@ const App = (props) => {
             <AppBar logo={logo} options={AppBarOptions} />
           </Grid>
         )} */}
-      {pathname != "/" &&
-        pathname != "/landing-2" &&
-        pathname != "/investorlogin" &&
-        pathname != "/investorlogin2" && <>{<NavBar></NavBar>}</>}
+
       <Router>
         <ScrollToTop />
         <Switch>
@@ -158,9 +159,30 @@ const App = (props) => {
           <Route exact path="/performance">
             <Performance />
           </Route>
-          <Route exact path="/dashboard">
+          <AuthenticatedRoute exact path="/dashboard">
+            <NavBar></NavBar>
             <Dashboard />
-          </Route>
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/resources">
+            <NavBar></NavBar>
+            <Resources />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/backtest">
+            <NavBar></NavBar>
+            <BackTest />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/governingdynamics">
+            <NavBar></NavBar>
+            <GoverningDynamics />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/substitutionrates">
+            <NavBar></NavBar>
+            <SubstitutionRates />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/forwardvaluation">
+            <NavBar></NavBar>
+            <ForwardValuation />
+          </AuthenticatedRoute>
           <Route path="/pdf">
             <PDF />
           </Route>

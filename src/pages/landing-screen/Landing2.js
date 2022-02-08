@@ -47,7 +47,7 @@ const useStyles = makeStyles({
     margin: "auto",
   },
   logo: {
-    marginTop: "-20px",
+    // marginTop: "-20px",
     width: "97vw",
     display: "flex",
     justifyContent: "space-between",
@@ -160,7 +160,7 @@ const useStyles = makeStyles({
     display: "none",
   },
   loginImgBtn: {
-    marginTop: "60px",
+    marginTop: "40px",
     textAlign: "center",
     paddingRight: "20px",
     cursor: "pointer",

@@ -8,6 +8,7 @@ const Menu = (props) => {
       menuConfig.map((menuItem) => {
         return (
           <MenuItem
+            key={menuItem.name}
             name={menuItem.name}
             icon={menuItem.icon}
             hoverIcon={menuItem.hoverIcon}
