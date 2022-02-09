@@ -160,14 +160,14 @@ export default class ApiClient {
 
   getSubstitutionRate = async (startDate, index, tf) => {
     const data = await this.getSources(
-      `/substitution-rate?start_date=${startDate}&index=${index}&tf=${tf}`
+      `/substitution-rate?start_date=${startDate}&index=${index}`
     );
     return TransformData.substitutionRate(data, index);
   };
 
   getSubstitutionRateCorr = async (startDate, index, tf) => {
     const data = await this.getSources(
-      `/substitution-rate-corr?start_date=${startDate}&index=${index}&tf=${tf}`
+      `/substitution-rate-corr?start_date=${startDate}&index=${index}`
     );
     return TransformData.substitutionRateCorr(data, index);
   };
@@ -214,14 +214,14 @@ export default class ApiClient {
 
   getGoverningEquations = async (eq, start_date, tf) => {
     const data = await this.getSources(
-      `/governing-equations?eq=${eq}&start_date=${start_date}&tf=${tf}`
+      `/governing-equations?eq=${eq}&start_date=${start_date}`
     );
     return TransformData.governingEquations(data, eq);
   };
 
   getGoverningEquationsGreeks = async (start_date, index, greek, tf) => {
     const data = await this.getSources(
-      `/governing-equations-greeks?start_date=${start_date}&index=${index}&greek=${greek}&tf=${tf}`
+      `/governing-equations-greeks?start_date=${start_date}&index=${index}&greek=${greek}`
     );
     return TransformData.governingEquationsGreeks(data, greek);
   };

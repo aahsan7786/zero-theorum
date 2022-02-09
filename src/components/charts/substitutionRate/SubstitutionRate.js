@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import WithApiService from "../../hoc/WithApiService";
 import Plot from "react-plotly.js";
 import {
@@ -6,17 +6,17 @@ import {
   fetchSubstitutionRateCorrError,
   fetchSubstitutionRateCorrLoad,
 } from "Store/charts/substitutionRateCorr/actions";
-import { viewSettingsConfig, viewSettingsLayout } from "../ChartViewSettins";
-import { isEmpty } from "../../globalFunctions/globalFunctions";
-import { connect } from "react-redux";
+import {viewSettingsConfig, viewSettingsLayout} from "../ChartViewSettins";
+import {isEmpty} from "../../globalFunctions/globalFunctions";
+import {connect} from "react-redux";
 import Loader from "Components/loader/loader";
 import InfoModalGraph from "Components/infoModalGraph/infoModalGraph";
-import { ReactSVG } from "react-svg";
+import {ReactSVG} from "react-svg";
 import information from "Images/icons/information.svg";
 import "./substitutionRate.scss";
-import { lastWeek } from "../../globalFunctions/detectDate";
-import { transformDateFormat } from "../../globalFunctions/transformDateFormat";
-import { useSelector } from "react-redux";
+import {lastWeek} from "../../globalFunctions/detectDate";
+import {transformDateFormat} from "../../globalFunctions/transformDateFormat";
+import {useSelector} from "react-redux";
 
 const SubstitutionRate = (props) => {
   const [show, setShow] = useState(false);
@@ -44,7 +44,19 @@ const SubstitutionRate = (props) => {
         })
         .catch((error) => fetchSubstitutionRateCorrError(error));
     }
-  }, [hours]);
+  }, [hours, props.type]);
+
+  useEffect(() => {
+    if (!props.disable) {
+      fetchSubstitutionRateCorrLoad();
+      api
+        .getSubstitutionRateCorr("2019-01-01", type, hours)
+        .then((probData) => {
+          fetchSubstitutionRateCorrSuccess(probData);
+        })
+        .catch((error) => fetchSubstitutionRateCorrError(error));
+    }
+  }, [type]);
 
   if (
     isLoading ||
@@ -100,7 +112,7 @@ const SubstitutionRate = (props) => {
           viewSettingsLayout(
             props.title,
             false,
-            { l: 40, r: 30, t: 95, b: 30 },
+            {l: 40, r: 30, t: 95, b: 30},
             "",
             "",
             0.5,
@@ -120,7 +132,7 @@ const SubstitutionRate = (props) => {
   );
 };
 
-const mapStateToProps = ({ substitutionRateCorrReducer }) => {
+const mapStateToProps = ({substitutionRateCorrReducer}) => {
   return substitutionRateCorrReducer;
 };
 

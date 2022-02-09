@@ -98,7 +98,7 @@ const Login = (props) => {
   const handleLogin = async () => {
     const {api} = props;
     await api.login(userName, password).then((data) => {
-      if (userName === "admin" && password === "test") {
+      if (userName === "test" && password === "FORgot123") {
         props.login({
           userInfo: {username: "hassan afzal", email: "hassanafzal@neurog.com"},
         });

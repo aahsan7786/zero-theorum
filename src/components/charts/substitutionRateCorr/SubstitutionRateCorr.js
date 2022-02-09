@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import WithApiService from "../../hoc/WithApiService";
 import Plot from "react-plotly.js";
 import {
@@ -6,19 +6,19 @@ import {
   fetchSubstitutionRateError,
   fetchSubstitutionRateLoad,
 } from "Store/charts/substitutionRate/actions";
-import { viewSettingsConfig, viewSettingsLayout } from "../ChartViewSettins";
-import { isEmpty } from "../../globalFunctions/globalFunctions";
-import { connect } from "react-redux";
+import {viewSettingsConfig, viewSettingsLayout} from "../ChartViewSettins";
+import {isEmpty} from "../../globalFunctions/globalFunctions";
+import {connect} from "react-redux";
 import Loader from "Components/loader/loader";
 import InfoModalGraph from "Components/infoModalGraph/infoModalGraph";
-import { ReactSVG } from "react-svg";
+import {ReactSVG} from "react-svg";
 import information from "Images/icons/information.svg";
 import "./substitutionRateCorr.scss";
 import DateFilter from "Components/date-filter/DateFilter";
-import { fetchData } from "Components/globalFunctions/fetchData";
-import { lastWeek } from "../../globalFunctions/detectDate";
-import { transformDateFormat } from "../../globalFunctions/transformDateFormat";
-import { useSelector } from "react-redux";
+import {fetchData} from "Components/globalFunctions/fetchData";
+import {lastWeek} from "../../globalFunctions/detectDate";
+import {transformDateFormat} from "../../globalFunctions/transformDateFormat";
+import {useSelector} from "react-redux";
 
 const SubstitutionRateCorr = (props) => {
   const [show, setShow] = useState(false);
@@ -45,6 +45,16 @@ const SubstitutionRateCorr = (props) => {
         .catch((error) => fetchSubstitutionRateError(error));
     }
   }, [date, hours]);
+
+  useEffect(() => {
+    if (!props.disable) {
+      fetchSubstitutionRateLoad();
+      api
+        .getSubstitutionRate(date, type, hours)
+        .then((probData) => fetchSubstitutionRateSuccess(probData))
+        .catch((error) => fetchSubstitutionRateError(error));
+    }
+  }, [type]);
 
   const onChangeFilter = (startDate) => {
     setDate(startDate);
@@ -100,7 +110,7 @@ const SubstitutionRateCorr = (props) => {
           {
             x: data[props.type].date,
             y: data[props.type].index,
-            line: { color: "#FFC600" },
+            line: {color: "#FFC600"},
             mode: "lines",
             name: props.legend,
             type: "scatter",
@@ -110,7 +120,7 @@ const SubstitutionRateCorr = (props) => {
           viewSettingsLayout(
             props.title,
             true,
-            { l: 40, r: 30, t: 95, b: 30 },
+            {l: 40, r: 30, t: 95, b: 30},
             "%H:%M",
             "",
             0.5,
@@ -120,9 +130,14 @@ const SubstitutionRateCorr = (props) => {
             "percent",
             true,
             true,
-            '',
-              '','','', '', '', 25, 
-              // hours*60*60*1000
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            25
+            // hours*60*60*1000
           ).layout
         }
         useResizeHandler={viewSettingsLayout().useResizeHandler}
@@ -137,7 +152,7 @@ const SubstitutionRateCorr = (props) => {
   );
 };
 
-const mapStateToProps = ({ substitutionRateReducer }) => {
+const mapStateToProps = ({substitutionRateReducer}) => {
   return substitutionRateReducer;
 };
 
