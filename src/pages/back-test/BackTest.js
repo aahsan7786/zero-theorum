@@ -1,9 +1,9 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, {lazy, Suspense, useEffect, useState} from "react";
+import {connect} from "react-redux";
 import "./back-test.scss";
 import ErrorBoundry from "Components/error-boundry/ErrorBoundry";
 import LoadingIndicator from "Components/loadingIndicator/LoadingIndicator";
-import { openModal } from "Store/modal/actions";
+import {openModal} from "Store/modal/actions";
 import ad from "Images/ad1.png";
 import feature from "Images/icons/feature-exploration.svg";
 import volatilityActive from "Images/icons/volatility-active.svg";

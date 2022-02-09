@@ -26,7 +26,7 @@ import Feedback from "../../pages/contact/feedback/Feedback";
 import Modal from "../modal/Modal";
 import ModalData from "../modalData/ModalData";
 import ModalPublication from "../modalPublication/ModalPublication";
-// import BackTest from "../../pages/back-test/BackTest";
+import BackTest1 from "../../pages/back-test/BackTest";
 import Footer from "../footer/Footer";
 import Publication from "../../pages/publication/Publication";
 import Summary from "../../pages/summary/Summary";
@@ -183,6 +183,16 @@ const App = (props) => {
             <NavBar></NavBar>
             <ForwardValuation />
           </AuthenticatedRoute>
+          <Route path="/back-test">
+            <BackTest1 />
+          </Route>
+          <Route path="/scientific-method">
+            <ScientificMethod />
+          </Route>
+          <Route path="/governing-equations">
+            <GoverningEquations />
+          </Route>
+
           <Route path="/pdf">
             <PDF />
           </Route>

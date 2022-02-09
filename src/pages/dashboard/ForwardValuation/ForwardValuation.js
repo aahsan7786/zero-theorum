@@ -141,7 +141,6 @@ const ForwardValuation = (props) => {
           </div>
         </div>
         <div className={classes.griditem5}>
-          {" "}
           <div className={classes.chartContainer}>
             <ErrorBoundry>
               <Suspense fallback={<div />}>

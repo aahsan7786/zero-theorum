@@ -1,8 +1,8 @@
-import React, { Fragment, lazy, Suspense, useState } from "react";
-import { connect } from "react-redux";
+import React, {Fragment, lazy, Suspense, useState} from "react";
+import {connect} from "react-redux";
 import "./governingEquations.scss";
 import ErrorBoundry from "Components/error-boundry/ErrorBoundry";
-import { loadDashboardPageSuccessResearch } from "Store/research/actions";
+import {loadDashboardPageSuccessResearch} from "Store/research/actions";
 import ad from "Images/ad1.png";
 import formula1 from "Images/formula1.png";
 import formula2 from "Images/formula2.png";
@@ -13,13 +13,13 @@ import formula6 from "Images/formula6.png";
 import formula7 from "Images/formula7.png";
 import formula8 from "Images/formula8.png";
 import InfoModalGraph from "Components/infoModalGraph/infoModalGraph";
-import { ReactSVG } from "react-svg";
+import {ReactSVG} from "react-svg";
 import information from "Images/icons/information.svg";
 import marketActive from "Images/icons/market-metrics-active.svg";
 import forecast from "Images/icons/forecast.svg";
 import LoadingIndicator from "Components/loadingIndicator/LoadingIndicator";
 import MathJax from "react-mathjax-preview";
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 
 const CostOfProduction = lazy(() =>
   import("Charts/cost-of-production/CostOfProduction")
@@ -114,7 +114,7 @@ const GoverningEquations = (props) => {
                               </div>
                               {/*<img src={formula} alt=""/>*/}
                               <MathJax
-                                style={{ fontSize: 18 }}
+                                style={{fontSize: 18}}
                                 className="mathJaxGeneral"
                                 math={
                                   "\\[\n" +
@@ -133,15 +133,13 @@ const GoverningEquations = (props) => {
                           className={[
                             "dashboard-box d-flex",
                             screen.width > 540 ? "__lg" : "__xxl flex-column",
-                          ].join(" ")}
-                        >
+                          ].join(" ")}>
                           <ErrorBoundry>
                             <Suspense fallback={<LoadingIndicator />}>
                               <div
                                 className={[
                                   "col-lg-4 d-flex align-items-center flex-column justify-content-center",
-                                ].join(" ")}
-                              >
+                                ].join(" ")}>
                                 <img
                                   src={formula1}
                                   alt=""
@@ -151,8 +149,7 @@ const GoverningEquations = (props) => {
                                   className={[
                                     screen.width > 540 ? "" : "text-center",
                                     "w-75 my-5",
-                                  ].join(" ")}
-                                >
+                                  ].join(" ")}>
                                   <p>
                                     𝑤ℎ𝑒𝑛 𝛼 𝑖𝑠 𝑎𝑛 𝑖𝑛𝑐𝑟𝑒𝑎𝑠𝑖𝑛𝑔 𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝑜𝑓 𝑡, 𝜋
                                     <sub>𝐵𝑇𝐶</sub> 𝑖𝑠 𝑎 𝑑𝑒𝑐𝑟𝑒𝑎𝑠𝑖𝑛𝑔 𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝑜𝑓 𝛼
@@ -181,15 +178,13 @@ const GoverningEquations = (props) => {
                           className={[
                             "dashboard-box d-flex",
                             screen.width > 540 ? "__lg" : "__xxx flex-column",
-                          ].join(" ")}
-                        >
+                          ].join(" ")}>
                           <ErrorBoundry>
                             <Suspense fallback={<LoadingIndicator />}>
                               <div
                                 className={[
                                   "col-lg-4 d-flex align-items-center flex-column justify-content-center",
-                                ].join(" ")}
-                              >
+                                ].join(" ")}>
                                 <img
                                   src={formula2}
                                   alt=""
@@ -199,12 +194,11 @@ const GoverningEquations = (props) => {
                                   className={[
                                     screen.width > 540 ? "" : "text-center",
                                     "w-75 my-5",
-                                  ].join(" ")}
-                                >
+                                  ].join(" ")}>
                                   <p>
                                     𝑤ℎ𝑒𝑛 1 − 𝑃<sup>′</sup>
-                                    &nbsp;> 0, 𝜋<sub>𝐵𝑇𝐶</sub> 𝑖𝑠 𝑎 𝑖𝑛𝑐𝑟𝑒𝑎𝑠𝑖𝑛𝑔
-                                    𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝑜𝑓 𝑃<sub>𝑘</sub>
+                                    &nbsp;{">"} 0, 𝜋<sub>𝐵𝑇𝐶</sub> 𝑖𝑠 𝑎
+                                    �𝑛𝑐𝑟𝑒𝑎𝑠𝑖𝑛𝑔 �𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝑜𝑓 𝑃<sub>𝑘</sub>
                                   </p>
                                   <br />{" "}
                                   <p>
@@ -231,15 +225,13 @@ const GoverningEquations = (props) => {
                           className={[
                             "dashboard-box d-flex",
                             screen.width > 540 ? "__lg" : "__xxx flex-column",
-                          ].join(" ")}
-                        >
+                          ].join(" ")}>
                           <ErrorBoundry>
                             <Suspense fallback={<LoadingIndicator />}>
                               <div
                                 className={[
                                   "col-lg-4 d-flex align-items-center flex-column justify-content-center",
-                                ].join(" ")}
-                              >
+                                ].join(" ")}>
                                 <img
                                   src={formula3}
                                   alt=""
@@ -249,12 +241,11 @@ const GoverningEquations = (props) => {
                                   className={[
                                     screen.width > 540 ? "" : "text-center",
                                     "w-75 my-5",
-                                  ].join(" ")}
-                                >
+                                  ].join(" ")}>
                                   <p>
                                     𝑤ℎ𝑒𝑛 1 − 𝑃<sup>′</sup>
-                                    &nbsp; > 0, 𝜋<sub>𝐵𝑇𝐶</sub> 𝑖𝑠 𝑎 𝑖𝑛𝑐𝑟𝑒𝑎𝑠𝑖𝑛𝑔
-                                    𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝑜𝑓 𝑅<sub>𝑘</sub>
+                                    &nbsp; {">"} 0, 𝜋<sub>𝐵𝑇𝐶</sub> 𝑖𝑠 𝑎
+                                    �𝑛𝑐𝑟𝑒𝑎𝑠𝑖𝑛𝑔 �𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝑜𝑓 𝑅<sub>𝑘</sub>
                                   </p>
                                   <br />{" "}
                                   <p>
@@ -280,15 +271,13 @@ k Asset Trade Volume"
                           className={[
                             "dashboard-box d-flex",
                             screen.width > 540 ? "__lg" : "__xxl flex-column",
-                          ].join(" ")}
-                        >
+                          ].join(" ")}>
                           <ErrorBoundry>
                             <Suspense fallback={<LoadingIndicator />}>
                               <div
                                 className={[
                                   "col-lg-4 d-flex align-items-center flex-column justify-content-center",
-                                ].join(" ")}
-                              >
+                                ].join(" ")}>
                                 <img
                                   src={formula4}
                                   alt=""
@@ -309,15 +298,13 @@ k Asset Trade Volume"
                           className={[
                             "dashboard-box d-flex",
                             screen.width > 540 ? "__lg" : "__xxl flex-column",
-                          ].join(" ")}
-                        >
+                          ].join(" ")}>
                           <ErrorBoundry>
                             <Suspense fallback={<LoadingIndicator />}>
                               <div
                                 className={[
                                   "col-lg-4 d-flex align-items-center flex-column justify-content-center",
-                                ].join(" ")}
-                              >
+                                ].join(" ")}>
                                 <img
                                   src={formula5}
                                   alt=""
@@ -327,12 +314,11 @@ k Asset Trade Volume"
                                   className={[
                                     screen.width > 540 ? "" : "text-center",
                                     "w-75 my-5",
-                                  ].join(" ")}
-                                >
+                                  ].join(" ")}>
                                   <p>
                                     𝑤ℎ𝑒𝑛 𝑏<sup>′</sup>
-                                    &nbsp; > 0, 𝜋<sub>𝐵𝑇𝐶</sub> 𝑖𝑠 𝑎 𝑖𝑛𝑐𝑟𝑒𝑎𝑠𝑖𝑛𝑔
-                                    𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝑜𝑓 𝑏
+                                    &nbsp; {">"} 0, 𝜋<sub>𝐵𝑇𝐶</sub> 𝑖𝑠 𝑎
+                                    𝑖𝑛𝑐𝑟𝑒𝑎𝑠𝑖𝑛𝑔 𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝑜𝑓 𝑏
                                   </p>
                                   <br />
                                   <p>
@@ -358,15 +344,13 @@ in Block Reward"
                           className={[
                             "dashboard-box d-flex",
                             screen.width > 540 ? "__lg" : "__xxl flex-column",
-                          ].join(" ")}
-                        >
+                          ].join(" ")}>
                           <ErrorBoundry>
                             <Suspense fallback={<LoadingIndicator />}>
                               <div
                                 className={[
                                   "col-lg-4 d-flex align-items-center flex-column justify-content-center",
-                                ].join(" ")}
-                              >
+                                ].join(" ")}>
                                 <img
                                   src={formula6}
                                   alt=""
@@ -376,12 +360,11 @@ in Block Reward"
                                   className={[
                                     screen.width > 540 ? "" : "text-center",
                                     "w-75 my-5",
-                                  ].join(" ")}
-                                >
+                                  ].join(" ")}>
                                   <p>
                                     𝑤ℎ𝑒𝑛 ℎ<sup>′</sup>
-                                    &nbsp;> 0, 𝜋<sub>𝐵𝑇𝐶</sub> 𝑖𝑠 𝑎 𝑖𝑛𝑐𝑟𝑒𝑎𝑠𝑖𝑛𝑔
-                                    𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝑜𝑓 ℎ
+                                    &nbsp;{">"} 0, 𝜋<sub>𝐵𝑇𝐶</sub> 𝑖𝑠 𝑎
+                                    𝑖𝑛𝑐𝑟𝑒𝑎𝑠𝑖𝑛𝑔 𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝑜𝑓 ℎ
                                   </p>
                                   <br />
                                   <p>
@@ -407,15 +390,13 @@ in Hash Rate"
                           className={[
                             "dashboard-box d-flex",
                             screen.width > 540 ? "__lg" : "__xxl flex-column",
-                          ].join(" ")}
-                        >
+                          ].join(" ")}>
                           <ErrorBoundry>
                             <Suspense fallback={<LoadingIndicator />}>
                               <div
                                 className={[
                                   "col-lg-4 d-flex align-items-center flex-column justify-content-center",
-                                ].join(" ")}
-                              >
+                                ].join(" ")}>
                                 <img
                                   src={formula7}
                                   alt=""
@@ -425,12 +406,11 @@ in Hash Rate"
                                   className={[
                                     screen.width > 540 ? "" : "text-center",
                                     "w-75 my-5",
-                                  ].join(" ")}
-                                >
+                                  ].join(" ")}>
                                   <p>
                                     𝑤ℎ𝑒𝑛 𝑑<sup>′</sup>
-                                    &nbsp;> 0, 𝜋<sub>𝐵𝑇𝐶</sub> 𝑖𝑠 𝑎 𝑑𝑒𝑐𝑟𝑒𝑎𝑠𝑖𝑛𝑔
-                                    𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝑜𝑓 ℎ
+                                    &nbsp;{">"} 0, 𝜋<sub>𝐵𝑇𝐶</sub> 𝑖𝑠 𝑎
+                                    𝑑𝑒𝑐𝑟𝑒𝑎𝑠𝑖𝑛𝑔 𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝑜𝑓 ℎ
                                   </p>
                                   <br />
                                   <p>

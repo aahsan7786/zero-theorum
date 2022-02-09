@@ -12,3 +12,7 @@ export const SUBSTITUTION_RATES_INFO = {
   heading: "Substitution Rates",
   info: 'Similar to the famous "Greeks" derived from the Black-Scholes Merton Options Pricing theory, Governing Dynamics page explores the sensitivities of Bitcoin Price Changes (𝜋BTC) relative to changes in the underline variables. Each of Zero Theorem\'s partial derivatives is are assigned Greek symbol where the output of the derivative is plotted over time.',
 };
+export const GOVERNING_DYNAMICS_INFO = {
+  heading: "GOVERNING DYNAMICS",
+  info: "Similar to the famous “Greeks” derived from the Black-Scholes Merton Options Pricing theory, Governing Dynamics page explores the sensitivities of Bitcoin Price Changes (𝜋𝐵𝑇𝐶) relative to changes in the underlying variables. Each of Zero Theorem’s partial derivatives is are assigned Greek symbol where the output of the derivative is plotted over time.",
+};
