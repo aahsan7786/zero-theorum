@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 
 const AuthenticatedRoute = ({children, ...rest}) => {
   const getAuth = () => {
-    return true;
+    // return true;
     return rest.user && rest.user.userInfo && rest.user.userInfo.email;
   };
 
