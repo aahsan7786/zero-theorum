@@ -72,7 +72,7 @@ export const menuConfig = [
     name: "Contact",
     icon: contactIcon,
     hoverIcon: contactIconHover,
-    route: "",
+    route: "/contactus",
     onClick: () => {},
     className: "",
   },

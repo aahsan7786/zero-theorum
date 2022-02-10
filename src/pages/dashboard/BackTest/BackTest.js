@@ -5,6 +5,7 @@ import Info from "../../../components/InfoSction/Info";
 import backtestIconHover from "./../../../assets/images/dashboardIcons/backtest/SVG/BackTest-hover.svg";
 import ErrorBoundry from "Components/error-boundry/ErrorBoundry";
 import LoadingIndicator from "Components/loadingIndicator/LoadingIndicator";
+import DashboardBackground from "../DashboardBackground";
 
 const Assumptions2New = lazy(() =>
   import("Charts/assumptions2/Assumptions2New")
@@ -77,6 +78,7 @@ const BackTest = (props) => {
 
   return (
     <>
+      <DashboardBackground></DashboardBackground>
       <h3>Backtest</h3>
       <div className={classes.grid_container}>
         <div className={classes.griditem1}>

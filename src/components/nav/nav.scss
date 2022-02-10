@@ -24,8 +24,11 @@ $logoWidth: 120px;
     }
   }
   .userInfo {
-    width: 150px;
+    // width: 150px;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 }
 .menu-icon-container {

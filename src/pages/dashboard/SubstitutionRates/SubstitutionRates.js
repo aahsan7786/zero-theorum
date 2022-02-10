@@ -8,6 +8,7 @@ import {getTypes, getDefault} from "./SubstitutionTypes";
 import {SUBSTITUTION_RATES_INFO} from "../../../constants/Constants";
 import Info from "../../../components/InfoSction/Info";
 import substitutionHover from "./../../../assets/images/dashboardIcons/substitution/SVG/substitution-hover.svg";
+import DashboardBackground from "../DashboardBackground";
 
 const SubstitutionRate = lazy(() =>
   import("Components/charts/substitutionRate/SubstitutionRate")
@@ -87,6 +88,7 @@ const SubstitutionRates = (props) => {
 
   return (
     <>
+      <DashboardBackground></DashboardBackground>
       <h3>Substitution Rates</h3>
       <div className={classes.grid_container}>
         <div className={classes.boxtop}>

@@ -101,6 +101,7 @@ import NavBar from "./../nav/NavBar";
 import AuthenticatedRoute from "../auth/AuthenticatedRoute";
 import SubstitutionRates from "../../pages/dashboard/SubstitutionRates/SubstitutionRates";
 import ForwardValuation from "../../pages/dashboard/ForwardValuation/ForwardValuation";
+import Contact from "../../pages/dashboard/Contact/Contact";
 Amplify.configure({
   aws_cognito_region: COGNITO.REGION,
   aws_user_pools_id: COGNITO.USER_POOL_ID,
@@ -161,7 +162,7 @@ const App = (props) => {
           </Route>
           <AuthenticatedRoute exact path="/dashboard">
             <NavBar></NavBar>
-            <Dashboard />
+            <ForwardValuation />
           </AuthenticatedRoute>
           <AuthenticatedRoute exact path="/resources">
             <NavBar></NavBar>
@@ -182,6 +183,10 @@ const App = (props) => {
           <AuthenticatedRoute exact path="/forwardvaluation">
             <NavBar></NavBar>
             <ForwardValuation />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path="/contactus">
+            <NavBar></NavBar>
+            <Contact />
           </AuthenticatedRoute>
           <Route path="/back-test">
             <BackTest1 />

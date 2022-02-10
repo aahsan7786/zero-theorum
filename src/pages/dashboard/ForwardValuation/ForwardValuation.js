@@ -16,6 +16,7 @@ const Surface = lazy(() =>
   import("../../../components/charts/surface/Surface")
 );
 import LoadingIndicator from "Components/loadingIndicator/LoadingIndicator";
+import DashboardBackground from "../DashboardBackground";
 
 const useStyles = makeStyles({
   grid_container: {
@@ -83,6 +84,7 @@ const ForwardValuation = (props) => {
 
   return (
     <>
+      <DashboardBackground></DashboardBackground>
       <h4>ForwardValuation</h4>
       <div className={classes.grid_container}>
         <div className={classes.griditem1}>

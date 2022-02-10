@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {makeStyles} from "@material-ui/styles";
+import DashboardBackground from "../DashboardBackground";
 
 const useStyles = makeStyles({
   grid_container: {
@@ -43,6 +44,7 @@ const Resources = (props) => {
 
   return (
     <>
+      <DashboardBackground></DashboardBackground>
       <h3>resources</h3>
       <div className={classes.grid_container}>
         <div className={classes.boxtop}>00</div>
