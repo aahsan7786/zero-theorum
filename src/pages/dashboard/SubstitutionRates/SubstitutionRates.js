@@ -59,7 +59,7 @@ const useStyles = makeStyles({
     justifyItems: "center",
     height: "400px",
   },
-  infoWraper: {height: "100%", width: "80%"},
+  // infoWraper: {height: "100%", width: "80%"},
   gridItems: {
     color: "white",
     // height: "65%",
@@ -92,12 +92,12 @@ const SubstitutionRates = (props) => {
       <h3>Substitution Rates</h3>
       <div className={classes.grid_container}>
         <div className={classes.boxtop}>
-          <div className={classes.infoWraper}>
-            <Info
-              icon={substitutionHover}
-              heading={SUBSTITUTION_RATES_INFO.heading}
-              info={SUBSTITUTION_RATES_INFO.info}></Info>
-          </div>
+          {/* <div className={classes.infoWraper}> */}
+          <Info
+            icon={substitutionHover}
+            heading={SUBSTITUTION_RATES_INFO.heading}
+            info={SUBSTITUTION_RATES_INFO.info}></Info>
+          {/* </div> */}
         </div>
         <div className={classes.boxmid}>
           {getTypes(hours).map((type) => {

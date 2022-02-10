@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
 import {makeStyles} from "@material-ui/styles";
 import DashboardBackground from "../DashboardBackground";
-
+import Info from "../../../components/InfoSction/Info";
+import resourcesIconHover from "./../../../assets/images/dashboardIcons/resources/SVG/Resources-hover.svg";
+import {RESOURCES_INFO} from "../../../constants/Constants";
 const useStyles = makeStyles({
   grid_container: {
     position: "absolute",
@@ -14,13 +16,11 @@ const useStyles = makeStyles({
     height: "70vh",
   },
   boxtop: {
-    background: "grey",
-    boder: "1px solid red",
+    border: "1px solid grey",
   },
 
   boxbot: {
-    background: "grey",
-    boder: "1px solid red",
+    border: "1px solid grey",
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr",
     gap: "4em",
@@ -47,7 +47,12 @@ const Resources = (props) => {
       <DashboardBackground></DashboardBackground>
       <h3>resources</h3>
       <div className={classes.grid_container}>
-        <div className={classes.boxtop}>00</div>
+        <div className={classes.boxtop}>
+          <Info
+            icon={resourcesIconHover}
+            heading={RESOURCES_INFO.heading}
+            info={RESOURCES_INFO.info}></Info>
+        </div>
 
         <div className={classes.boxbot}>
           <div className={classes.griditem}>Zero Theorem literatur review</div>

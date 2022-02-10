@@ -6,6 +6,7 @@ import backtestIconHover from "./../../../assets/images/dashboardIcons/backtest/
 import ErrorBoundry from "Components/error-boundry/ErrorBoundry";
 import LoadingIndicator from "Components/loadingIndicator/LoadingIndicator";
 import DashboardBackground from "../DashboardBackground";
+import {BACKTEST_INFO} from "../../../constants/Constants";
 
 const Assumptions2New = lazy(() =>
   import("Charts/assumptions2/Assumptions2New")
@@ -84,10 +85,8 @@ const BackTest = (props) => {
         <div className={classes.griditem1}>
           <Info
             icon={backtestIconHover}
-            heading={"BACKTEST"}
-            info={
-              "Backtest page explores a hypothetical scenario if forward valuation forecasts were to be used as trading signals in a proprietary quantitative system."
-            }></Info>
+            heading={BACKTEST_INFO.heading}
+            info={BACKTEST_INFO.info}></Info>
         </div>
         <div className={classes.griditem2}></div>
         <div className={classes.griditem3}>

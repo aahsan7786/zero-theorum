@@ -9,6 +9,7 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
     alignContent: "center",
+    padding: "0px 20px",
   },
   heading: {
     display: "flex",
