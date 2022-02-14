@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     position: "fixed",
     backgroundSize: "100%",
     zIndex: 0,
-    opacity: 0.7,
+    opacity: 0.6,
     backgroundPosition: "center",
   },
 });
