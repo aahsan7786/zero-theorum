@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment, useState } from "react";
+import React, {useEffect, Fragment, useState} from "react";
 import WithApiService from "../../hoc/WithApiService";
 import Plot from "react-plotly.js";
 import {
@@ -6,22 +6,22 @@ import {
   fetchRollingMadsSuccess,
 } from "../../../store/charts/rollingMads/actions";
 import LoadingIndicator from "../../loadingIndicator/LoadingIndicator";
-import { viewSettingsConfig, viewSettingsLayout } from "../ChartViewSettins";
+import {viewSettingsConfig, viewSettingsLayout} from "../ChartViewSettins";
 import DateFilter from "../../date-filter/DateFilter";
-import { isEmpty } from "../../globalFunctions/globalFunctions";
-import { connect } from "react-redux";
+import {isEmpty} from "../../globalFunctions/globalFunctions";
+import {connect} from "react-redux";
 import Loader from "Components/loader/loader";
 import InfoModalGraph from "Components/infoModalGraph/infoModalGraph";
-import { ReactSVG } from "react-svg";
+import {ReactSVG} from "react-svg";
 import information from "Images/icons/information.svg";
-import { fetchData } from "Components/globalFunctions/fetchData";
+import {fetchData} from "Components/globalFunctions/fetchData";
 
 const RollingMads = (props) => {
   const [show, setShow] = useState(false);
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
-    const { api, fetchRollingMadsSuccess, fetchRollingMadsError, data } = props;
+    const {api, fetchRollingMadsSuccess, fetchRollingMadsError, data} = props;
     if (isEmpty(data)) {
       api
         .getRollingMads()
@@ -31,7 +31,7 @@ const RollingMads = (props) => {
   }, []);
 
   const onChangeFilter = (startDate) => {
-    const { api, fetchRollingMadsSuccess, fetchRollingMadsError } = props;
+    const {api, fetchRollingMadsSuccess, fetchRollingMadsError} = props;
     fetchData(
       api.getRollingMads,
       fetchRollingMadsSuccess,
@@ -42,7 +42,7 @@ const RollingMads = (props) => {
 
   const {
     isLoading,
-    data: { date, val },
+    data: {date, val},
   } = props;
 
   if (isLoading) {
@@ -65,7 +65,7 @@ const RollingMads = (props) => {
           setShow(!show);
         }}
         style={{
-          top: screen.width > 540 ? "2.5rem" : "1.5rem",
+          top: screen.width > 540 ? "0.5rem" : "1.5rem",
           zIndex: 2,
           width: "1.4rem",
           fill: "#ccc",
@@ -119,7 +119,7 @@ const RollingMads = (props) => {
   );
 };
 
-const mapStateToProps = ({ rollingMadsReducer }) => {
+const mapStateToProps = ({rollingMadsReducer}) => {
   return rollingMadsReducer;
 };
 

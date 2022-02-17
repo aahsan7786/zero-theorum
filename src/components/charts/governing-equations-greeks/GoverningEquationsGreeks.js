@@ -1,25 +1,25 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import WithApiService from "../../hoc/WithApiService";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import {
   fetchGoverningEquationsGeeksError,
   fetchGoverningEquationsGreeksSuccess,
 } from "Store/charts/governingEquationsGreeks/actions";
 import Plot from "../../../../node_modules/react-plotly.js/react-plotly";
-import { viewSettingsConfig, viewSettingsLayout } from "../ChartViewSettins";
-import { isEmpty } from "../../globalFunctions/globalFunctions";
-import { fetchData } from "../../globalFunctions/fetchData";
+import {viewSettingsConfig, viewSettingsLayout} from "../ChartViewSettins";
+import {isEmpty} from "../../globalFunctions/globalFunctions";
+import {fetchData} from "../../globalFunctions/fetchData";
 import Loader from "Components/loader/loader";
 import InfoModalGraph from "Components/infoModalGraph/infoModalGraph";
-import { ReactSVG } from "react-svg";
+import {ReactSVG} from "react-svg";
 import information from "Images/icons/information.svg";
 import DateFilterArray from "Components/date-filter-array/DateFilterArray";
 import Select from "react-select";
 import "./governing-equationsGreeks.scss";
 import DateFilter from "Components/date-filter/DateFilter";
-import { lastWeek } from "../../globalFunctions/detectDate";
-import { transformDateFormat } from "../../globalFunctions/transformDateFormat";
-import { useSelector } from "react-redux";
+import {lastWeek} from "../../globalFunctions/detectDate";
+import {transformDateFormat} from "../../globalFunctions/transformDateFormat";
+import {useSelector} from "react-redux";
 
 const customStyles = {
   menu: (provided, state) => ({
@@ -76,19 +76,19 @@ const customStyles = {
 };
 
 const indexArr = [
-  { value: "EURUSD", label: "EURUSD", tf: "6", disabled: false },
-  { value: "DXY", label: "DXY", tf: "24", disabled: false },
-  { value: "_MGC", label: "_MGC" },
-  { value: "_SP", label: "_SP" },
-  { value: "_YM", label: "_YM" },
-  { value: "_BZ", label: "_BZ" },
-  { value: "GDAXI", label: "GDAXI", tf: "24", disabled: false },
-  { value: "_GDAXI", label: "_GDAXI", tf: "6", disabled: false },
-  { value: "FTSE", label: "FTSE", tf: "24", disabled: false },
-  { value: "_NIY", label: "_NIY" },
-  { value: "_NG", label: "_NG" },
-  { value: "_PL", label: "_PL" },
-  { value: "_SI", label: "_SI" },
+  {value: "EURUSD", label: "EURUSD", tf: "6", disabled: false},
+  {value: "DXY", label: "DXY", tf: "24", disabled: false},
+  {value: "_MGC", label: "_MGC"},
+  {value: "_SP", label: "_SP"},
+  {value: "_YM", label: "_YM"},
+  {value: "_BZ", label: "_BZ"},
+  {value: "GDAXI", label: "GDAXI", tf: "24", disabled: false},
+  {value: "_GDAXI", label: "_GDAXI", tf: "6", disabled: false},
+  {value: "FTSE", label: "FTSE", tf: "24", disabled: false},
+  {value: "_NIY", label: "_NIY"},
+  {value: "_NG", label: "_NG"},
+  {value: "_PL", label: "_PL"},
+  {value: "_SI", label: "_SI"},
 ];
 
 const GoverningEquationsGreeks = (props) => {
@@ -161,7 +161,7 @@ const GoverningEquationsGreeks = (props) => {
       data[props.greek].equation
     )
   ) {
-    return <Loader style={{ marginTop: 0 }} />;
+    return <Loader style={{marginTop: 0}} />;
   }
 
   return (
@@ -180,7 +180,7 @@ const GoverningEquationsGreeks = (props) => {
           setShow(!show);
         }}
         style={{
-          top: screen.width > 540 ? "2.5rem" : "1.5rem",
+          top: screen.width > 540 ? "0.5rem" : "1.5rem",
           zIndex: 2,
           width: "1.4rem",
           fill: "#ccc",
@@ -226,9 +226,14 @@ const GoverningEquationsGreeks = (props) => {
             "percent",
             true,
             true,
-              '',
-              '','','', '', '', 50, 
-              // hours*60*60*1000
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            50
+            // hours*60*60*1000
           ).layout
         }
         useResizeHandler={viewSettingsLayout().useResizeHandler}
@@ -252,7 +257,7 @@ const GoverningEquationsGreeks = (props) => {
   );
 };
 
-const mapStateToProps = ({ governingEquationsGreeksReducer }) => {
+const mapStateToProps = ({governingEquationsGreeksReducer}) => {
   return governingEquationsGreeksReducer;
 };
 

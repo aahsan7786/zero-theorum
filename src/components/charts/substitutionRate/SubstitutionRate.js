@@ -86,7 +86,7 @@ const SubstitutionRate = (props) => {
           setShow(!show);
         }}
         style={{
-          top: screen.width > 540 ? "2.5rem" : "1.5rem",
+          top: screen.width > 540 ? "0.5rem" : "1.5rem",
           zIndex: 2,
           width: "1.4rem",
           fill: "#ccc",

@@ -17,6 +17,7 @@ import formula6 from "Images/formula6.png";
 import formula7 from "Images/formula7.png";
 import {useSelector} from "react-redux";
 import DashboardBackground from "../DashboardBackground";
+import clsx from "clsx";
 
 const GoverningEquationsChart = lazy(() =>
   import("Charts/governing-equations/GoverningEquations")
@@ -36,6 +37,8 @@ const useStyles = makeStyles({
   },
   griditem: {
     border: "1px solid grey",
+    paddingTop: "10px",
+
     "&:nth-child(1)": {
       height: "250px",
     },
@@ -70,6 +73,9 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
     width: "40%",
+  },
+  paddingTop: {
+    paddingTop: "10px",
   },
 });
 

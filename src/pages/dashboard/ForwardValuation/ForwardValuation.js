@@ -3,6 +3,7 @@ import React, {Fragment, lazy, Suspense, useEffect, useState} from "react";
 import {makeStyles} from "@material-ui/styles";
 import ErrorBoundry from "Components/error-boundry/ErrorBoundry";
 import {useSelector} from "react-redux";
+import clsx from "clsx";
 
 const TrendPlot = lazy(() => import("Charts/trendPlot/TrendPlot"));
 const MetricBox = lazy(() => import("Charts/metric-box/MetricBoxNew"));
@@ -33,13 +34,12 @@ const useStyles = makeStyles({
     width: "100%",
     height: "100%",
     position: "relative",
-    padding: "37px 0 10px",
+    padding: "50px 0 10px",
   },
   griditem1: {
     border: "1px solid grey",
     gridColumnStart: "1",
     gridColumnEnd: "11",
-    height: "350px",
   },
   griditem2: {
     border: "1px solid grey",
@@ -50,7 +50,7 @@ const useStyles = makeStyles({
     border: "1px solid grey",
     gridColumnStart: "1",
     gridColumnEnd: "4",
-    height: "300px",
+    height: "350px",
   },
   griditem4: {
     border: "1px solid grey",
@@ -77,6 +77,9 @@ const useStyles = makeStyles({
     gridColumnStart: "7",
     gridColumnEnd: "13",
   },
+  paddingTop: {
+    paddingTop: "10px",
+  },
 });
 const ForwardValuation = (props) => {
   const classes = useStyles(props);
@@ -87,8 +90,10 @@ const ForwardValuation = (props) => {
       <DashboardBackground></DashboardBackground>
       <h4>ForwardValuation</h4>
       <div className={classes.grid_container}>
-        <div className={classes.griditem1}>
-          <div className={classes.chartContainer}>
+        <div className={clsx(classes.griditem1, classes.paddingTop)}>
+          <div
+            className={classes.chartContainer}
+            style={{padding: "10px 0 10px"}}>
             <ErrorBoundry>
               <Suspense fallback={<div />}>
                 <TrendPlot />
@@ -97,7 +102,7 @@ const ForwardValuation = (props) => {
           </div>
         </div>
         <div className={classes.griditem2}>
-          <div className={classes.chartContainer}>
+          <div className={""}>
             <ErrorBoundry>
               <Suspense fallback={<div />}>
                 <MetricBox />
@@ -105,8 +110,8 @@ const ForwardValuation = (props) => {
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem3}>
-          <div className={classes.chartContainer}>
+        <div className={clsx(classes.griditem3, classes.paddingTop)}>
+          <div className={clsx(classes.chartContainer)}>
             <ErrorBoundry>
               <Suspense fallback={<div />}>
                 <RollingMads
@@ -122,7 +127,7 @@ const ForwardValuation = (props) => {
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem4}>
+        <div className={clsx(classes.griditem4, classes.paddingTop)}>
           <div className={classes.chartContainer}>
             <ErrorBoundry>
               <Suspense fallback={<div />}>
@@ -142,7 +147,7 @@ const ForwardValuation = (props) => {
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem5}>
+        <div className={clsx(classes.griditem5, classes.paddingTop)}>
           <div className={classes.chartContainer}>
             <ErrorBoundry>
               <Suspense fallback={<div />}>

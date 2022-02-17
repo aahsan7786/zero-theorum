@@ -1,25 +1,25 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import WithApiService from "../../hoc/WithApiService";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import {
   fetchGoverningEquationsError,
   fetchGoverningEquationsSuccess,
 } from "Store/charts/governingEquations/actions";
 import Plot from "../../../../node_modules/react-plotly.js/react-plotly";
-import { viewSettingsConfig, viewSettingsLayout } from "../ChartViewSettins";
-import { isEmpty } from "../../globalFunctions/globalFunctions";
-import { fetchData } from "../../globalFunctions/fetchData";
+import {viewSettingsConfig, viewSettingsLayout} from "../ChartViewSettins";
+import {isEmpty} from "../../globalFunctions/globalFunctions";
+import {fetchData} from "../../globalFunctions/fetchData";
 import Loader from "Components/loader/loader";
 import InfoModalGraph from "Components/infoModalGraph/infoModalGraph";
-import { ReactSVG } from "react-svg";
+import {ReactSVG} from "react-svg";
 import information from "Images/icons/information.svg";
 import DateFilterArray from "Components/date-filter-array/DateFilterArray";
 import Select from "react-select";
 import "./governing-equations.scss";
 import DateFilter from "Components/date-filter/DateFilter";
-import { lastWeek } from "../../globalFunctions/detectDate";
-import { transformDateFormat } from "../../globalFunctions/transformDateFormat";
-import { useSelector } from "react-redux";
+import {lastWeek} from "../../globalFunctions/detectDate";
+import {transformDateFormat} from "../../globalFunctions/transformDateFormat";
+import {useSelector} from "react-redux";
 
 const GoverningEquations = (props) => {
   const [show, setShow] = useState(false);
@@ -69,7 +69,7 @@ const GoverningEquations = (props) => {
       data[`eq_${props.eq}`].date
     )
   ) {
-    return <Loader style={{ marginTop: 0 }} />;
+    return <Loader style={{marginTop: 0}} />;
   }
 
   return (
@@ -88,7 +88,7 @@ const GoverningEquations = (props) => {
           setShow(!show);
         }}
         style={{
-          top: screen.width > 540 ? "2.5rem" : "1.5rem",
+          top: screen.width > 540 ? "0.5rem" : "1.5rem",
           zIndex: 2,
           width: "1.4rem",
           fill: "#ccc",
@@ -132,9 +132,14 @@ const GoverningEquations = (props) => {
             "percent",
             true,
             true,
-            '',
-              '','','', '', '', 50,
-              // hours*60*60*1000
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            50
+            // hours*60*60*1000
           ).layout
         }
         useResizeHandler={viewSettingsLayout().useResizeHandler}
@@ -147,7 +152,7 @@ const GoverningEquations = (props) => {
   );
 };
 
-const mapStateToProps = ({ governingEquationsReducer }) => {
+const mapStateToProps = ({governingEquationsReducer}) => {
   return governingEquationsReducer;
 };
 

@@ -58,6 +58,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyItems: "center",
     height: "400px",
+    paddingTop: "10px",
   },
   // infoWraper: {height: "100%", width: "80%"},
   gridItems: {
