@@ -6,7 +6,7 @@ import messageHoverIcon from "./../../assets/images/notificationBtn/messageBtn/m
 import messageIcon from "./../../assets/images/notificationBtn/messageBtn/msgBtn-white.svg";
 import profileIcon from "./../../assets/images/notificationBtn/profileIcon/profile icon.svg";
 import {makeStyles} from "@material-ui/styles";
-
+import {getCookie} from "../../service/CookieManager";
 const useStyles = makeStyles({
   userInfoContainer: {
     display: "flex",
@@ -45,13 +45,20 @@ const useStyles = makeStyles({
 
 const UserInfo = (props) => {
   const classes = useStyles(props);
+  const getUserName = () => {
+    if (props.user && props.user.userInfo) return props.user.userInfo.username;
+    return getCookie("authToken");
+  };
+  const [userName, setUserName] = useState(getUserName());
+
+  useEffect(() => {}, []);
   return (
     <div className={classes.userInfoContainer}>
       <div className={classes.notification}></div>
       <div className={classes.message}></div>
-      {props.user && props.user.userInfo && (
+      {userName && (
         <div className={classes.avatarContainer}>
-          <div className={classes.name}>{props.user.userInfo.username}</div>
+          <div className={classes.name}>{userName}</div>
           <div className={classes.avatar}></div>
         </div>
       )}

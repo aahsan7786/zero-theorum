@@ -12,6 +12,7 @@ import {useHistory} from "react-router-dom";
 import Auth from "@aws-amplify/auth";
 import Snackbar from "@material-ui/core/Snackbar";
 import "./login.scss";
+import {setCookie} from "../../service/CookieManager";
 const useStyles = makeStyles({
   container: {
     height: "inherit",
@@ -102,6 +103,7 @@ const Login = (props) => {
         props.login({
           userInfo: {username: "hassan afzal", email: "hassanafzal@neurog.com"},
         });
+        setCookie("authToken", userName, 1);
         history.push("/dashboard");
         console.log(data);
       } else {

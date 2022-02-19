@@ -1,20 +1,20 @@
 import React, {useEffect, useState} from "react";
 import {Route, Redirect, useLocation} from "react-router-dom";
 import {connect} from "react-redux";
-
+import {getCookie} from "../../service/CookieManager";
 const AuthenticatedRoute = ({children, ...rest}) => {
   const getAuth = () => {
+    let auth = getCookie("authToken");
     // return true;
-    return rest.user && rest.user.userInfo && rest.user.userInfo.email;
+    return (
+      (rest.user && rest.user.userInfo && rest.user.userInfo.email) || auth
+    );
   };
 
   const {pathname, search} = useLocation();
   const [isAuthenticated, setAuth] = useState(getAuth());
 
   useEffect(() => {
-    console.log(children);
-    console.log(rest);
-
     if (getAuth()) {
       setAuth(true);
     } else setAuth(false);

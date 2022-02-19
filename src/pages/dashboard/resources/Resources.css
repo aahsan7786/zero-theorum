@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.grid_container {
+  position: absolute;
+  left: 5%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1fr;
+  gap: 0.7em;
+  width: 90%;
+  height: 70vh;
+}
+.boxtop {
+  border: 1px solid grey;
+  height: 215px;
+}
+
+.boxbot {
+  border: 1px solid grey;
+  display: flex;
+  column-gap: 30px;
+  row-gap: 30px;
+  flex-wrap: wrap;
+  overflow: scroll;
+  position: relative;
+  height: fit-content;
+  font-size: 12px;
+  padding: 30px;
+  justify-content: center;
+}
+
+/* ::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+} */
+/* ::-webkit-scrollbar-track {
+  background: transparent;
+} */
+/* ::-webkit-scrollbar-thumb {
+  background-color: #ddb611;
+  border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #eeff00;
+} */
