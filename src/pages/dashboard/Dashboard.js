@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {makeStyles} from "@material-ui/styles";
 import dashboardBackground from "./../../assets/images/dashboardBackground.webp";
 import DashboardBackground from "./DashboardBackground";
+import DashboardBreadcrumb from "./DashboardBreadcrumb";
 const useStyles = makeStyles({
   grid_container: {
     position: "absolute",
@@ -60,7 +61,7 @@ const Dashboard = (props) => {
   return (
     <>
       <DashboardBackground></DashboardBackground>
-      <h4>Dashboard</h4>
+      <DashboardBreadcrumb></DashboardBreadcrumb>
       <div className={classes.grid_container}>
         <div className={classes.griditem1}>1</div>
         <div className={classes.griditem2}>2</div>

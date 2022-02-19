@@ -7,7 +7,8 @@ import ErrorBoundry from "Components/error-boundry/ErrorBoundry";
 import LoadingIndicator from "Components/loadingIndicator/LoadingIndicator";
 import DashboardBackground from "../DashboardBackground";
 import {BACKTEST_INFO} from "../../../constants/Constants";
-
+import DashboardBreadcrumb from "../DashboardBreadcrumb";
+const AssumptionsNew = lazy(() => import("Charts/assumptions/AssumptionsNew"));
 const Assumptions2New = lazy(() =>
   import("Charts/assumptions2/Assumptions2New")
 );
@@ -39,6 +40,9 @@ const useStyles = makeStyles({
     border: "1px solid grey",
     gridColumnStart: "4",
     gridColumnEnd: "10",
+
+    display: "flex",
+    alignItems: "center",
   },
   griditem3: {
     border: "1px solid grey",
@@ -74,13 +78,14 @@ const useStyles = makeStyles({
     padding: "37px 0 10px",
   },
 });
+
 const BackTest = (props) => {
   const classes = useStyles(props);
 
   return (
     <>
       <DashboardBackground></DashboardBackground>
-      <h3>Backtest</h3>
+      <DashboardBreadcrumb currentPage={"Back Test"}></DashboardBreadcrumb>
       <div className={classes.grid_container}>
         <div className={classes.griditem1}>
           <Info
@@ -88,7 +93,13 @@ const BackTest = (props) => {
             heading={BACKTEST_INFO.heading}
             info={BACKTEST_INFO.info}></Info>
         </div>
-        <div className={classes.griditem2}></div>
+        <div className={classes.griditem2}>
+          <ErrorBoundry>
+            <Suspense fallback={<LoadingIndicator />}>
+              <AssumptionsNew />
+            </Suspense>
+          </ErrorBoundry>
+        </div>
         <div className={classes.griditem3}>
           <ErrorBoundry>
             <Suspense fallback={<LoadingIndicator />}>

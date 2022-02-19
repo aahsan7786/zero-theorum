@@ -18,6 +18,7 @@ import formula7 from "Images/formula7.png";
 import {useSelector} from "react-redux";
 import DashboardBackground from "../DashboardBackground";
 import clsx from "clsx";
+import DashboardBreadcrumb from "../DashboardBreadcrumb";
 
 const GoverningEquationsChart = lazy(() =>
   import("Charts/governing-equations/GoverningEquations")
@@ -86,7 +87,8 @@ const GoverningDynamics = (props) => {
   return (
     <>
       <DashboardBackground></DashboardBackground>
-      <h3>GoverningDynamics</h3>
+      <DashboardBreadcrumb
+        currentPage={"Governing Dynamics"}></DashboardBreadcrumb>
       <div className={classes.grid_container}>
         <div className={classes.griditem}>
           <Info

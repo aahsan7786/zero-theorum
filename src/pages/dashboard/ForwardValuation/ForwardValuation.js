@@ -18,6 +18,7 @@ const Surface = lazy(() =>
 );
 import LoadingIndicator from "Components/loadingIndicator/LoadingIndicator";
 import DashboardBackground from "../DashboardBackground";
+import DashboardBreadcrumb from "../DashboardBreadcrumb";
 
 const useStyles = makeStyles({
   grid_container: {
@@ -88,7 +89,9 @@ const ForwardValuation = (props) => {
   return (
     <>
       <DashboardBackground></DashboardBackground>
-      <h4>ForwardValuation</h4>
+      <DashboardBreadcrumb
+        currentPage={"Forward Valuation"}></DashboardBreadcrumb>
+
       <div className={classes.grid_container}>
         <div className={clsx(classes.griditem1, classes.paddingTop)}>
           <div

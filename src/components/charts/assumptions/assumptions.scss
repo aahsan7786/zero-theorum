@@ -23,3 +23,43 @@
   font-style: italic;
   color: #cccc;
 }
+.assumptionNew {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  .ddGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+  }
+  .btnGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+  }
+  .calculate {
+    width: 135px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 0px;
+    font-size: 14px;
+    color: white;
+    background-color: #ddb611;
+    &:hover {
+      color: #ddb611;
+      background-color: transparent;
+    }
+  }
+  .description {
+    font-size: 10px;
+    width: 80%;
+    color: white;
+    margin-top: 5px;
+  }
+  .gotolink {
+    font-size: 12px;
+    color: #ddb611;
+    margin-bottom: 10px;
+  }
+}

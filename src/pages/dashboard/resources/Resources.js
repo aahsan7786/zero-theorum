@@ -4,6 +4,7 @@ import DashboardBackground from "../DashboardBackground";
 import Info from "../../../components/InfoSction/Info";
 import resourcesIconHover from "./../../../assets/images/dashboardIcons/resources/SVG/Resources-hover.svg";
 import {RESOURCES_INFO} from "../../../constants/Constants";
+import DashboardBreadcrumb from "../DashboardBreadcrumb";
 const useStyles = makeStyles({
   grid_container: {
     position: "absolute",
@@ -45,7 +46,7 @@ const Resources = (props) => {
   return (
     <>
       <DashboardBackground></DashboardBackground>
-      <h3>resources</h3>
+      <DashboardBreadcrumb currentPage={"Resources"}></DashboardBreadcrumb>
       <div className={classes.grid_container}>
         <div className={classes.boxtop}>
           <Info
