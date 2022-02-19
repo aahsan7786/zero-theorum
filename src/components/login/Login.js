@@ -101,9 +101,9 @@ const Login = (props) => {
     await api.login(userName, password).then((data) => {
       if (userName === "test" && password === "FORgot123") {
         props.login({
-          userInfo: {username: "hassan afzal", email: "hassanafzal@neurog.com"},
+          userInfo: {username: "Hassan Afzal", email: "hassanafzal@neurog.com"},
         });
-        setCookie("authToken", userName, 1);
+        setCookie("authToken", "Hassan Afzal", 1);
         history.push("/dashboard");
         console.log(data);
       } else {
