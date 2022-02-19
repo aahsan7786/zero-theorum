@@ -104,8 +104,9 @@ const Login = (props) => {
           userInfo: {username: "Hassan Afzal", email: "hassanafzal@neurog.com"},
         });
         setCookie("authToken", "Hassan Afzal", 1);
+        localStorage.setItem("userName", "Hassan Afzal");
+        localStorage.setItem("email", "hassanafzal@neurog.com");
         history.push("/dashboard");
-        console.log(data);
       } else {
         setError(true);
         // alert("User Name or password not correct");

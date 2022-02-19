@@ -39,12 +39,15 @@ const useStyles = makeStyles({
     alignItems: "center",
     gridGap: "5px",
   },
-  name: {},
+  name: {
+    cursor: "pointer",
+  },
   avatar: {
     position: "relative",
     backgroundImage: `url(${profileIcon})`,
     width: "25px",
     height: "25px",
+    cursor: "pointer",
   },
   menu: {
     position: "absolute",
@@ -86,6 +89,8 @@ const UserInfo = (props) => {
     props.login(null);
     eraseCookie("authToken");
     history.push("/investorlogin");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("email");
   };
   useEffect(() => {}, []);
   return (
