@@ -1,7 +1,7 @@
-import { HOURS_NUMBER } from "../constants";
+import {HOURS_NUMBER} from "../constants";
 
 const initialState = {
-  hours: "",
+  hours: "24",
 };
 
 export const hoursReducer = (state = initialState, action) => {

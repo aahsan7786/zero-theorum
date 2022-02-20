@@ -134,6 +134,11 @@ const ForwardValuation = (props) => {
           <div className={classes.chartContainer}>
             <ErrorBoundry>
               <Suspense fallback={<div />}>
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
+                  <b>{`${hours} Hour Average Target Accuracy per Time Horizon`}</b>
+                </div>
                 <MadsDist
                   info={
                     "Measuring the average\n" +
@@ -142,7 +147,7 @@ const ForwardValuation = (props) => {
                     "7days, 10 days, 30 days, 45\n" +
                     "Days, 90 days and 180 days."
                   }
-                  title={`${hours} Hour Average Target Accuracy per Time Horizon`}
+                  title={""}
                   apiRoute="getTasDist"
                   type="tas"
                 />
@@ -156,12 +161,13 @@ const ForwardValuation = (props) => {
               <Suspense fallback={<div />}>
                 <RollingMads
                   info={
-                    "Average Target Accuracy is\n" +
+                    "Average Directional Accuracy is\n" +
                     "determined by measuring if\n" +
-                    "the real price reached the\n" +
-                    "expected forecasted price"
+                    "the real price persisted in the\n" +
+                    "expected forecasted directional\n" +
+                    "for duration of forecast"
                   }
-                  title={`${hours} Hour Average Target Accuracy`}
+                  title={`${hours} Hour Average Directional Accuracy`}
                 />
               </Suspense>
             </ErrorBoundry>
@@ -171,6 +177,11 @@ const ForwardValuation = (props) => {
           <div className={classes.chartContainer}>
             <ErrorBoundry>
               <Suspense fallback={<div />}>
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
+                  <b>{`${hours} Hour Average Directional Accuracy per Time Horizon`}</b>
+                </div>
                 <MadsDist
                   info={
                     "Measuring the Directional\n" +
@@ -179,7 +190,7 @@ const ForwardValuation = (props) => {
                     "days, 30 days, 45 Days, 90\n" +
                     "days and 180 days."
                   }
-                  title={`${hours} Hour Average Directional Accuracy per Time Horizon`}
+                  title={""}
                   apiRoute="getMadsDist"
                   type="mads"
                 />

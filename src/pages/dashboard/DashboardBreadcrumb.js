@@ -27,9 +27,9 @@ const DashboardBreadcrumb = (props) => {
     <div className={classes.root}>
       <div>{"ZeroTheorem / "}</div>
       &nbsp;
-      <Link to="/dashboard" className={classes.link}>
-        <div>{`Dashboard`}</div>
-      </Link>
+      {/* <Link to="/" className={classes.link}> */}
+      <div>{`Dashboard`}</div>
+      {/* </Link> */}
       &nbsp;
       {props.currentPage ? " / " : " "}
       &nbsp;

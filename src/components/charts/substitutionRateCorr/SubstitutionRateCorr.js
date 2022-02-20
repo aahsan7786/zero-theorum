@@ -121,7 +121,8 @@ const SubstitutionRateCorr = (props) => {
             props.title,
             true,
             {l: 40, r: 30, t: 95, b: 30},
-            "%H:%M",
+            // "%H:%M",
+            "",
             "",
             0.5,
             "Date",
@@ -136,7 +137,7 @@ const SubstitutionRateCorr = (props) => {
             "",
             "",
             "",
-            25
+            10
             // hours*60*60*1000
           ).layout
         }

@@ -101,12 +101,12 @@ const Login = (props) => {
     await api.login(userName, password).then((data) => {
       if (userName === "test" && password === "FORgot123") {
         props.login({
-          userInfo: {username: "Hassan Afzal", email: "hassanafzal@neurog.com"},
+          userInfo: {username: "Test User", email: "testuser@zerotheorem.com"},
         });
-        setCookie("authToken", "Hassan Afzal", 1);
-        localStorage.setItem("userName", "Hassan Afzal");
-        localStorage.setItem("email", "hassanafzal@neurog.com");
-        history.push("/dashboard");
+        setCookie("authToken", "Test User", 1);
+        localStorage.setItem("userName", "Test User");
+        localStorage.setItem("email", "testuser@zerotheorem.com");
+        history.push("/forwardvaluation");
       } else {
         setError(true);
         // alert("User Name or password not correct");

@@ -86,7 +86,7 @@ const SubstitutionRate = (props) => {
           setShow(!show);
         }}
         style={{
-          top: screen.width > 540 ? "0.5rem" : "1.5rem",
+          top: screen.width > 540 ? ".5rem" : "1.5rem",
           zIndex: 2,
           width: "1.4rem",
           fill: "#ccc",
@@ -121,7 +121,14 @@ const SubstitutionRate = (props) => {
             "stack",
             "percent",
             true,
-            true
+            true,
+            null,
+            "x",
+            "y",
+            "z",
+            "",
+            "",
+            10
           ).layout
         }
         useResizeHandler={viewSettingsLayout().useResizeHandler}

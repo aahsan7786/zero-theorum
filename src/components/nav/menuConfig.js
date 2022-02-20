@@ -20,14 +20,14 @@ import backtestIcon from "./../../assets/images/dashboardIcons/backtest/SVG/Back
 import backtestIconHover from "./../../assets/images/dashboardIcons/backtest/SVG/BackTest-hover.svg";
 
 export const menuConfig = [
-  {
-    name: "Dashboard",
-    icon: dashboardIcon,
-    hoverIcon: dashboardIconHover,
-    route: "/dashboard",
-    onClick: () => {},
-    className: "",
-  },
+  // {
+  //   name: "Dashboard",
+  //   icon: dashboardIcon,
+  //   hoverIcon: dashboardIconHover,
+  //   route: "/dashboard",
+  //   onClick: () => {},
+  //   className: "",
+  // },
   {
     name: "Forward Valuation",
     icon: forwardIcon,

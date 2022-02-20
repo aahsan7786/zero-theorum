@@ -123,7 +123,7 @@ const GoverningEquations = (props) => {
               t: 95,
               b: 30,
             },
-            "%H:%M",
+            "", // "%H:%M",
             "",
             0.5,
             "Date",
@@ -138,7 +138,7 @@ const GoverningEquations = (props) => {
             "",
             "",
             "",
-            50
+            10
             // hours*60*60*1000
           ).layout
         }

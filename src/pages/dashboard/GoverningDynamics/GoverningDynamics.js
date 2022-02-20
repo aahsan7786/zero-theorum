@@ -123,7 +123,13 @@ const GoverningDynamics = (props) => {
           <div className={classes.chartContainer} style={{display: "flex"}}>
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
-                <div className="yellow" style={{position: "absolute"}}>
+                <div
+                  className="yellow"
+                  style={{
+                    position: "absolute",
+                    marginLeft: "10px",
+                    marginTop: "10px",
+                  }}>
                   <b>{`${hours} Hour Gamma - Aggregate Substitution Rate Exposure`}</b>
                 </div>
                 <div className={classes.formulaContainer}>
@@ -157,7 +163,13 @@ const GoverningDynamics = (props) => {
           <div className={classes.chartContainer} style={{display: "flex"}}>
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
-                <div className="yellow" style={{position: "absolute"}}>
+                <div
+                  className="yellow"
+                  style={{
+                    position: "absolute",
+                    marginLeft: "10px",
+                    marginTop: "10px",
+                  }}>
                   <b>
                     {`${hours} Hour Beta - Specific k Asset Price Exposure`}
                   </b>
@@ -197,7 +209,13 @@ const GoverningDynamics = (props) => {
           <div className={classes.chartContainer} style={{display: "flex"}}>
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
-                <div className="yellow" style={{position: "absolute"}}>
+                <div
+                  className="yellow"
+                  style={{
+                    position: "absolute",
+                    marginLeft: "10px",
+                    marginTop: "10px",
+                  }}>
                   <b>
                     {`${hours} Hour Delta - Specific k Asset Trade Volume Exposure`}
                   </b>
@@ -236,14 +254,20 @@ const GoverningDynamics = (props) => {
           <div className={classes.chartContainer} style={{display: "flex"}}>
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
-                <div className="yellow" style={{position: "absolute"}}>
+                <div
+                  className="yellow"
+                  style={{
+                    position: "absolute",
+                    marginLeft: "10px",
+                    marginTop: "10px",
+                  }}>
                   <b>{`${hours} Hour Phi - Transactional Velocity Exposure`}</b>
                 </div>
                 <div className={classes.formulaContainer}>
                   <img
                     src={formula4}
                     alt=""
-                    width={screen.width > 540 ? "60%" : "50%"}
+                    width={screen.width > 540 ? "80%" : "50%"}
                   />
                 </div>
                 <GoverningEquationsChart
@@ -259,7 +283,9 @@ const GoverningDynamics = (props) => {
           <div className={classes.chartContainer} style={{display: "flex"}}>
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
-                <div className="yellow" style={{position: "absolute"}}>
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
                   <b>{`${hours} Hour Rho - Hash Rate Exposure`}</b>
                 </div>
                 <div className={classes.formulaContainer}>
@@ -295,7 +321,9 @@ const GoverningDynamics = (props) => {
           <div className={classes.chartContainer} style={{display: "flex"}}>
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
-                <div className="yellow" style={{position: "absolute"}}>
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
                   {`${hours} Hour Mu - Difficulty Rate Exposure`}
                 </div>
                 <div className={classes.formulaContainer}>
