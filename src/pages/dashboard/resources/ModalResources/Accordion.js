@@ -49,9 +49,7 @@ function Accordion(props) {
                   file={item.pdf}
                   onLoadSuccess={onDocumentLoadSuccess}
                   onClick={() => {
-                    console.log("CLICK");
-                    setPdf(item.pdf);
-                    console.log("CLICK 2");
+                    props.setPdf(item.pdf);
                   }}>
                   <Page
                     pageNumber={pageNumber}
