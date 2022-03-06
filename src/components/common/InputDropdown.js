@@ -102,6 +102,7 @@ const InputDropdown = (props) => {
   return (
     <div
       className={clsx(
+        "ddInput",
         classes.root,
         props.inputDDclassName,
         props.disabled ? " inputDDdisabled" : "",

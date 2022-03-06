@@ -24,6 +24,7 @@ const MonthlyReturn = (props) => {
 
   const {
     isLoading,
+    title,
     data: {month, Y2017, Y2018, Y2019, Y2020, Y2021},
   } = props;
 
@@ -118,7 +119,7 @@ const MonthlyReturn = (props) => {
         ]}
         layout={{
           title: {
-            text: "<b>" + `${hours} Hour Return Distribution` + "</b>",
+            text: title,
             x: 0.05,
             y: 0.98,
             font: {

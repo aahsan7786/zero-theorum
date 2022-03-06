@@ -28,6 +28,7 @@ const PerformanceBenchmark = (props) => {
       fetchPerformanceBenchmarkSuccess,
       fetchPerformanceBenchmarkError,
       data,
+      title,
     } = props;
     if (isEmpty(data)) {
       api
@@ -39,6 +40,7 @@ const PerformanceBenchmark = (props) => {
 
   const {
     isLoading,
+    title,
     data: {date, zt_cum_perf, btc_cum_perf},
   } = props;
 
@@ -108,7 +110,7 @@ const PerformanceBenchmark = (props) => {
         ]}
         layout={
           viewSettingsLayout(
-            `${hours} Hour Performance Benchmark`,
+            title,
             true,
             {
               l: 40,

@@ -60,6 +60,7 @@ const MarketCorrelation = (props) => {
 
   const {
     isLoading,
+    title,
     data: {month_month_corr},
   } = props;
 
@@ -118,7 +119,7 @@ const MarketCorrelation = (props) => {
         ]}
         layout={{
           title: {
-            text: "<b>" + `${hours} Hour Return Correlation` + "</b>",
+            text: title,
             x: 0.05,
             y: 0.98,
             font: {

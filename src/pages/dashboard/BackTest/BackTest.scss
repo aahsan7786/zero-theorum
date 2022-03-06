@@ -1,13 +1,13 @@
 .grid_container_bt {
-    position: absolute;
-    left: 5%;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1.3fr 1fr 1fr;
-    gap: 0.7em;
-    width: 90%;
-    height: 100vh;
-  }
+  position: absolute;
+  left: 5%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1.3fr 1fr 1fr;
+  gap: 0.7em;
+  width: 90%;
+  height: 100vh;
+
   .griditem_bt_1 {
     border: 1px solid gray;
     grid-column-start: 1;
@@ -25,7 +25,7 @@
     grid-column-start: 10;
     grid-column-end: 13;
   }
- .griditem_bt_4 {
+  .griditem_bt_4 {
     border: 1px solid grey;
     grid-column-start: 1;
     grid-column-end: 7;
@@ -53,22 +53,78 @@
     position: relative;
     padding: 37px 0 10px;
   }
-
-  @media (max-width:580px) {
-    .grid_container_bt{
-      display: flex !important;
-      flex-direction: column;
-      height: fit-content;
+  .yellow {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 580px) {
+  .grid_container_bt {
+    .infoBtn {
+      display: none;
     }
-    .grid_container_bt>div {
-        height: 500px;    }
-        .griditem_bt_1{
-            height: fit-content !important;
-            padding: 10px;
-        }
-    .griditem_bt_2>div{
-        display: flex;
-        flex-direction: column;
-        width: fit-content;
+    .yellow {
+      border: 1px solid #deb513;
+      padding: 5px;
+      width: 96%;
+      text-align: left;
+      position: static !important;
+      font-size: 12px;
+    }
+    .chartContainer {
+      padding: 0px;
+    }
+    .ddInput {
+      width: 150px !important;
+    }
+    .infoSectionContainer {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      .infoSectionInfoText {
+        text-align: justify;
+      }
     }
   }
+
+  .grid_container_bt {
+    display: flex !important;
+    flex-direction: column;
+    height: fit-content;
+  }
+  .grid_container_bt > div {
+    background-color: rgba(128, 128, 128, 0.205);
+    margin-bottom: 20px;
+    border: none !important;
+    box-shadow: 5px;
+    .js-plotly-plot {
+      height: 400px !important;
+    }
+  }
+  .griditem_bt_1,
+  .griditem_bt_2 {
+    height: max-content !important;
+    padding: 10px !important;
+  }
+  .griditem_bt_3 {
+    height: max-content !important;
+  }
+  .griditem_bt_4,
+  .griditem_bt_5,
+  .griditem_bt_6,
+  .griditem_bt_7 {
+    height: 500px !important;
+  }
+
+  .griditem_bt_2 > div {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .griditem_bt_6 {
+    .js-plotly-plot {
+      .modebar-group {
+        margin-top: -10px !important;
+      }
+    }
+  }
+}

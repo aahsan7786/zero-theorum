@@ -8,7 +8,7 @@ import LoadingIndicator from "Components/loadingIndicator/LoadingIndicator";
 import DashboardBackground from "../DashboardBackground";
 import {BACKTEST_INFO} from "../../../constants/Constants";
 import DashboardBreadcrumb from "../DashboardBreadcrumb";
-import "./BackTest.scss"
+import "./BackTest.scss";
 const AssumptionsNew = lazy(() => import("Charts/assumptions/AssumptionsNew"));
 const Assumptions2New = lazy(() =>
   import("Charts/assumptions2/Assumptions2New")
@@ -21,67 +21,12 @@ const MarketCorrelation = lazy(() =>
   import("Charts/market-correlation/MarketCorrelation")
 );
 const MonthlyReturn = lazy(() => import("Charts/monthlyReturn/MonthlyReturn"));
-const useStyles = makeStyles({
-  // grid_container_bt: {
-  //   position: "absolute",
-  //   left: "5%",
-  //   display: "grid",
-  //   gridTemplateColumns: "repeat(12, 1fr)",
-  //   gridTemplateRows: "1.3fr 1fr 1fr",
-  //   gap: "0.7em",
-  //   width: "90%",
-  //   height: "100vh",
-  // },
-  // griditem_bt_1: {
-  //   border: "1px solid grey",
-  //   gridColumnStart: "1",
-  //   gridColumnEnd: "4",
-  // },
-  // griditem_bt_2: {
-  //   border: "1px solid grey",
-  //   gridColumnStart: "4",
-  //   gridColumnEnd: "10",
-
-  //   display: "flex",
-  //   alignItems: "center",
-  // },
-  // griditem_bt_3: {
-  //   border: "1px solid grey",
-  //   gridColumnStart: "10",
-  //   gridColumnEnd: "13",
-  // },
-  // griditem_bt_4: {
-  //   border: "1px solid grey",
-  //   gridColumnStart: "1",
-  //   gridColumnEnd: "7",
-  //   height: "400px",
-  // },
-  // griditem_bt_5: {
-  //   border: "1px solid grey",
-  //   gridColumnStart: "7",
-  //   gridColumnEnd: "13",
-  // },
-  // griditem_bt_6: {
-  //   border: "1px solid grey",
-  //   gridColumnStart: "1",
-  //   gridColumnEnd: "7",
-  //   height: "400px",
-  // },
-  // griditem_bt_7: {
-  //   border: "1px solid grey",
-  //   gridColumnStart: "7",
-  //   gridColumnEnd: "13",
-  // },
-  // chartContainer: {
-  //   width: "100%",
-  //   height: "100%",
-  //   position: "relative",
-  //   padding: "37px 0 10px",
-  // },
-});
+const useStyles = makeStyles({});
+import {useSelector} from "react-redux";
 
 const BackTest = (props) => {
   const classes = useStyles(props);
+  const hours = useSelector((item) => item.hoursReducer.hours);
 
   return (
     <>
@@ -112,7 +57,12 @@ const BackTest = (props) => {
           <div className="chartContainer">
             <ErrorBoundry>
               <Suspense fallback={<div />}>
-                <PerformanceBenchmark />
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
+                  <b>{`${hours} Hour Performance Benchmark`}</b>
+                </div>
+                <PerformanceBenchmark title={""} />
               </Suspense>
             </ErrorBoundry>
           </div>
@@ -121,7 +71,12 @@ const BackTest = (props) => {
           <div className="chartContainer">
             <ErrorBoundry>
               <Suspense fallback={<div />}>
-                <DrawDown />
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
+                  <b>{`${hours} Hour Drawdown`}</b>
+                </div>
+                <DrawDown title={""} />
               </Suspense>
             </ErrorBoundry>
           </div>
@@ -130,7 +85,12 @@ const BackTest = (props) => {
           <div className="chartContainer">
             <ErrorBoundry>
               <Suspense fallback={<div />}>
-                <MonthlyReturn />
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
+                  <b>{`${hours} Hour Return Distribution`}</b>
+                </div>
+                <MonthlyReturn title={""} />
               </Suspense>
             </ErrorBoundry>
           </div>
@@ -139,7 +99,12 @@ const BackTest = (props) => {
           <div className="chartContainer">
             <ErrorBoundry>
               <Suspense fallback={<div />}>
-                <MarketCorrelation />
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
+                  <b>{`${hours} Hour Return Correlation`}</b>
+                </div>
+                <MarketCorrelation title={""} />
               </Suspense>
             </ErrorBoundry>
           </div>

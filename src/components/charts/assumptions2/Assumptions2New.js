@@ -38,75 +38,79 @@ const Assumptions2New = (props) => {
   }
 
   return (
-    <div className="metrix-box-continer" style={{padding: "20px 40px"}}>
-      <p className="dashboard-box-title yellow" style={{fontSize: "13px"}}>
-        <b>PERFORMANCE METRICS</b>
-      </p>
-      <ul class="timeline">
-        <li>
-          <div className="metric-row">
-            <p className="metric-label">Total Returns:</p>
-            <div className="metric-value">{data.stats.total_returns}</div>
-          </div>
-        </li>
-        <li>
-          <div className="metric-row">
-            <p className="metric-label">Benchmark Returns:</p>
-            <div className="metric-value">{data.stats.benchmark_returns}</div>
-          </div>
-        </li>
-        <li>
-          <div className="metric-row">
-            <p className="metric-label">Daily Sharpe:</p>
-            <div className="metric-value">{data.stats.daily_sharpe}</div>
-          </div>
-        </li>
-        <li>
-          <div className="metric-row">
-            <p className="metric-label">Daily Sortino:</p>
-            <div className="metric-value">{data.stats.daily_sortino}</div>
-          </div>
-        </li>
-        <li>
-          <div className="metric-row">
-            <p className="metric-label">Annual Sortino:</p>
-            <div className="metric-value">{data.stats.annual_sortino}</div>
-          </div>
-        </li>
-        <li>
-          <div className="metric-row">
-            <p className="metric-label">Max Drawdown:</p>
-            <div className="metric-value">{data.stats.max_draw_down}</div>
-          </div>
-        </li>
-        <li>
-          <div className="metric-row">
-            <p className="metric-label">Max Lake Ratio:</p>
-            <div className="metric-value">{data.stats.max_lake_ratio}</div>
-          </div>
-        </li>
-        <li>
-          <div className="metric-row">
-            <p className="metric-label">Alpha:</p>
-            <div className="metric-value">{data.stats.alpha.toFixed(2)}</div>
-          </div>
-        </li>
-        <li>
-          <div className="metric-row">
-            <p className="metric-label">Beta:</p>
-            <div className="metric-value">{data.stats.beta.toFixed(2)}</div>
-          </div>
-        </li>
-        <li>
-          <div className="metric-row">
-            <p className="metric-label"> Kelly Leverage:</p>
-            <div className="metric-value">
-              {data.stats.KellyLeverage.toFixed(2)}
+    <>
+      <div
+        className="yellow"
+        style={{position: "absolute", marginLeft: "10px"}}>
+        <b>{"PERFORMANCE METRICS"}</b>
+      </div>
+      <div className="metrix-box-continer" style={{padding: "20px 40px"}}>
+        <ul class="timeline">
+          <li>
+            <div className="metric-row">
+              <p className="metric-label">Total Returns:</p>
+              <div className="metric-value">{data.stats.total_returns}</div>
             </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+          </li>
+          <li>
+            <div className="metric-row">
+              <p className="metric-label">Benchmark Returns:</p>
+              <div className="metric-value">{data.stats.benchmark_returns}</div>
+            </div>
+          </li>
+          <li>
+            <div className="metric-row">
+              <p className="metric-label">Daily Sharpe:</p>
+              <div className="metric-value">{data.stats.daily_sharpe}</div>
+            </div>
+          </li>
+          <li>
+            <div className="metric-row">
+              <p className="metric-label">Daily Sortino:</p>
+              <div className="metric-value">{data.stats.daily_sortino}</div>
+            </div>
+          </li>
+          <li>
+            <div className="metric-row">
+              <p className="metric-label">Annual Sortino:</p>
+              <div className="metric-value">{data.stats.annual_sortino}</div>
+            </div>
+          </li>
+          <li>
+            <div className="metric-row">
+              <p className="metric-label">Max Drawdown:</p>
+              <div className="metric-value">{data.stats.max_draw_down}</div>
+            </div>
+          </li>
+          <li>
+            <div className="metric-row">
+              <p className="metric-label">Max Lake Ratio:</p>
+              <div className="metric-value">{data.stats.max_lake_ratio}</div>
+            </div>
+          </li>
+          <li>
+            <div className="metric-row">
+              <p className="metric-label">Alpha:</p>
+              <div className="metric-value">{data.stats.alpha.toFixed(2)}</div>
+            </div>
+          </li>
+          <li>
+            <div className="metric-row">
+              <p className="metric-label">Beta:</p>
+              <div className="metric-value">{data.stats.beta.toFixed(2)}</div>
+            </div>
+          </li>
+          <li>
+            <div className="metric-row">
+              <p className="metric-label"> Kelly Leverage:</p>
+              <div className="metric-value">
+                {data.stats.KellyLeverage.toFixed(2)}
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 };
 

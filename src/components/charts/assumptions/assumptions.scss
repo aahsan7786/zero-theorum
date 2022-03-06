@@ -63,3 +63,18 @@
     margin-bottom: 10px;
   }
 }
+
+@media (max-width: 580px) {
+  .assumptionNew {
+    width: 100% !important;
+  }
+  .ddGrid {
+    width: 78%;
+    grid-template-columns: 100px 100px !important;
+    justify-content: space-between;
+  }
+  .btnGrid {
+    grid-gap: 0px !important;
+    margin-top: 20px;
+  }
+}

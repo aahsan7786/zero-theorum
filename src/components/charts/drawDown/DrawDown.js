@@ -21,6 +21,7 @@ const DrawDown = (props) => {
 
   const {
     isLoading,
+    title,
     data: {date, PctDrawdown},
   } = props;
 
@@ -79,7 +80,7 @@ const DrawDown = (props) => {
         ]}
         layout={
           viewSettingsLayout(
-            `${hours} Hour Drawdown`,
+            title,
             true,
             {
               l: 40,

@@ -13,30 +13,28 @@ $logoWidth: 120px;
   z-index: 9;
 }
 
-  .menu-container {
-    grid-gap: 20px;
-    display: flex;
-    
-  }
-  .logo-container {
-    width: $logoWidth;
-    height: $logoHeight;
-  }
-    .logo {
-      width: $logoWidth;
-      height: $logoHeight;
-    }
-  
-  .userInfo {
-    // width: 150px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
+.menu-container {
+  grid-gap: 20px;
+  display: flex;
+}
+.logo-container {
+  width: $logoWidth;
+  height: $logoHeight;
+}
+.logo {
+  width: $logoWidth;
+  height: $logoHeight;
+}
 
-.menu-icon-container 
-{
+.userInfo {
+  // width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.menu-icon-container {
   width: max-content;
   display: flex;
   align-items: center;
@@ -44,21 +42,20 @@ $logoWidth: 120px;
   grid-gap: 5px;
 }
 
-  .menu-icon {
-    width: 20px;
-    cursor: pointer;
-    // height: 18px;
-  }
-  .menu-name {
-    font-family: "Roboto";
-    cursor: pointer;
-    font-size: 12px;
-  }
-  .menu-name-selected {
-    color: #f9be67;
-  }
-.hamburger
-{
+.menu-icon {
+  width: 20px;
+  cursor: pointer;
+  // height: 18px;
+}
+.menu-name {
+  font-family: "Roboto";
+  cursor: pointer;
+  font-size: 12px;
+}
+.menu-name-selected {
+  color: #f9be67;
+}
+.hamburger {
   height: 35px;
   width: 35px;
   // background-color: #ff0000;
@@ -70,8 +67,7 @@ $logoWidth: 120px;
   z-index: 10;
   top: 10px;
 
-  .lines
-  {
+  .lines {
     width: 90%;
     height: 4px;
     border-radius: 50vw;
@@ -80,52 +76,41 @@ $logoWidth: 120px;
   }
 }
 
-.hamburger:hover
-{
-  .lines{
-          background-color: rgb(240, 240, 2);  
-        }
+.hamburger:hover {
+  .lines {
+    background-color: #deb513;
+  }
 }
 
-.show
-{
+.show {
   display: flex !important;
   flex-direction: column;
   height: auto;
 }
 
-
-@media (max-width:580px) 
-{
-  .nav-container
-  {
-
-    // background: #01f891 !important;
+@media (max-width: 580px) {
+  .nav-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // display: block;
+    position: fixed;
+    width: 100%;
   }
-  .menu-container
-  {    
+  .menu-container {
     display: none;
     place-self: flex-start;
     margin: 30px 0 10px 0;
   }
 
-  .userInfo
-  { 
+  .userInfo {
     display: none;
-    
-    
   }
 
-  .hamburger
-  {
+  .hamburger {
     display: block;
+    position: fixed;
   }
-  .logo-container
-  {
+  .logo-container {
     margin-top: 10px;
   }
 }

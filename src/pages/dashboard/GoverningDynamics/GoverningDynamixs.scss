@@ -60,6 +60,7 @@
     width: 100%;
     background-color: rgba(128, 128, 128, 0.3);
     padding-top: 10px;
+    border: none;
   }
 
   .mathJaxGeneral {
@@ -69,7 +70,8 @@
   .chartContainer_GD {
     flex-direction: column;
     align-items: center;
-    height: 400px;
+    height: 500px;
+    padding: 0;
   }
   .formulaContainer {
     width: 80%;
@@ -83,5 +85,71 @@
     width: 100%;
     margin-left: 0 !important;
     margin-top: 0 !important;
+  }
+
+  #governingDynamics {
+    .yellow_gd {
+      border: 1px solid #deb513;
+      padding: 5px;
+      width: 96%;
+      text-align: left;
+      position: static !important;
+      margin-bottom: 80px;
+      font-size: 10px;
+    }
+    .dashboard-box-filter {
+      top: 50px;
+      .dropdown-header {
+        border-color: #deb513;
+        color: #deb513;
+      }
+    }
+    .infoBtn {
+      top: 58px !important;
+      fill: #deb513 !important;
+    }
+    .governingIndexSelect {
+      top: 50px;
+      left: 0.5rem;
+      & > div {
+        background-color: transparent;
+        border-color: #deb513;
+        & > div > div {
+          color: #deb513;
+        }
+      }
+    }
+    .dropdown-select {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    .derivedEqContainer {
+      .yellow_gd {
+        margin-bottom: 20px;
+      }
+    }
+    .infoSectionContainer {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      .infoSectionInfoText {
+        text-align: justify;
+      }
+    }
+    .formulaContainer > div {
+      line-height: 0;
+    }
+    .child6 {
+      img {
+        width: 150px;
+      }
+    }
   }
 }
