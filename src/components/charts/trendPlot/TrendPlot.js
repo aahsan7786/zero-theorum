@@ -73,6 +73,7 @@ const TrendPlot = (props) => {
       metricReducer,
       fetchMetricSuccess,
       fetchMetricError,
+      title,
     } = props;
     if (isEmpty(trendReducer.data)) {
       fetchData(
@@ -110,7 +111,8 @@ const TrendPlot = (props) => {
     );
   };
 
-  const {isLoading, trendReducer, ztLearnerReducer, metricReducer} = props;
+  const {isLoading, trendReducer, ztLearnerReducer, metricReducer, title} =
+    props;
 
   if (isLoading) {
     return <Loader />;
@@ -147,6 +149,7 @@ const TrendPlot = (props) => {
           position: "absolute",
           right: "2rem",
         }}
+        className={"infoBtn"}
       />
       <Plot
         onClick={() => setScroll(true)}
@@ -190,13 +193,7 @@ const TrendPlot = (props) => {
             fontWeight: 600,
           },
           title: {
-            text:
-              '<b><span style="margin-right: 2rem;">' +
-              hours +
-              " Hour Target Price:" +
-              '<span style="margin: 0 2rem; color: #fff "> BTC/USD: ' +
-              metricReducer?.data?.predicted_price?.toFixed(2) +
-              "</span></span></b>",
+            text: title,
             x: 0.05,
             y: 0.98,
             font: {

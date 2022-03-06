@@ -8,21 +8,40 @@ import UserInfo from "./UserInfo";
 
 const NavBar = (props) => {
   const history = useHistory();
+  const [isActive , setIsActive] = useState(false);
+
 
   return (
-    <div className={"nav-container"}>
+    <>
+      <div
+        className={`hamburger `}
+        onClick={() => {
+          setIsActive(!isActive);
+        }}
+      >
+        <div className="lines"></div>
+        <div className="lines"></div>
+        <div className="lines"></div>
+      </div>
+
+          <div className={`nav-container ${isActive ? "show" : ""}`}>
+      
       <div
         className={"logo-container"}
         onClick={() => {
           history.push("/");
-        }}>
+        }}
+      >
         <img className={"logo"} src={logo}></img>
       </div>
-      <div className="menu-container">{<Menu></Menu>}</div>
-      <div className="userInfo">
+      <div className={`menu-container ${isActive ? "show" : ""}`}>
+        {<Menu></Menu>}
+      </div>
+      <div className={`userInfo ${isActive ? "show" : ""}`}>
         <UserInfo></UserInfo>
       </div>
     </div>
+  </>
   );
 };
 export default NavBar;

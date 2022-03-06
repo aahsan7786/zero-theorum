@@ -1,9 +1,8 @@
 import React, {Fragment, lazy, Suspense, useEffect, useState} from "react";
 
-import {makeStyles} from "@material-ui/styles";
 import ErrorBoundry from "Components/error-boundry/ErrorBoundry";
 import {useSelector} from "react-redux";
-import clsx from "clsx";
+import "./ForwardValuation.scss";
 
 const TrendPlot = lazy(() => import("Charts/trendPlot/TrendPlot"));
 const MetricBox = lazy(() => import("Charts/metric-box/MetricBoxNew"));
@@ -20,91 +19,40 @@ import LoadingIndicator from "Components/loadingIndicator/LoadingIndicator";
 import DashboardBackground from "../DashboardBackground";
 import DashboardBreadcrumb from "../DashboardBreadcrumb";
 
-const useStyles = makeStyles({
-  grid_container: {
-    position: "absolute",
-    left: "5%",
-    display: "grid",
-    gridTemplateColumns: "repeat(12, 1fr)",
-    gridTemplateRows: ".9fr 1fr 1fr",
-    gap: "0.5em",
-    width: "90%",
-    height: "100vh",
-  },
-  chartContainer: {
-    width: "100%",
-    height: "100%",
-    position: "relative",
-    padding: "50px 0 10px",
-  },
-  griditem1: {
-    border: "1px solid grey",
-    gridColumnStart: "1",
-    gridColumnEnd: "11",
-  },
-  griditem2: {
-    border: "1px solid grey",
-    gridColumnStart: "11",
-    gridColumnEnd: "13",
-  },
-  griditem3: {
-    border: "1px solid grey",
-    gridColumnStart: "1",
-    gridColumnEnd: "4",
-    height: "350px",
-  },
-  griditem4: {
-    border: "1px solid grey",
-    gridColumnStart: "4",
-    gridColumnEnd: "7",
-  },
-  griditem5: {
-    border: "1px solid grey",
-    gridColumnStart: "7",
-    gridColumnEnd: "10",
-  },
-  griditem6: {
-    border: "1px solid grey",
-    gridColumnStart: "10",
-    gridColumnEnd: "13",
-  },
-  griditem7: {
-    border: "1px solid grey",
-    gridColumnStart: "1",
-    gridColumnEnd: "7",
-  },
-  griditem8: {
-    border: "1px solid grey",
-    gridColumnStart: "7",
-    gridColumnEnd: "13",
-  },
-  paddingTop: {
-    paddingTop: "10px",
-  },
-});
 const ForwardValuation = (props) => {
-  const classes = useStyles(props);
   const hours = useSelector((item) => item.hoursReducer.hours);
-
+  const metricReducer = useSelector((state) => state.metricReducer);
   return (
     <>
       <DashboardBackground></DashboardBackground>
       <DashboardBreadcrumb
         currentPage={"Forward Valuation"}></DashboardBreadcrumb>
 
-      <div className={classes.grid_container}>
-        <div className={clsx(classes.griditem1, classes.paddingTop)}>
-          <div
-            className={classes.chartContainer}
-            style={{padding: "10px 0 10px"}}>
+      <div className="grid_container" id="forwardValuation">
+        <div className="griditem1 paddingTop">
+          <div className="chartContainer">
             <ErrorBoundry>
               <Suspense fallback={<div />}>
-                <TrendPlot />
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
+                  <b>
+                    <span>
+                      {hours}
+                      Hour Target Price:{" "}
+                      <span style={{color: "#fff"}}>
+                        BTC/USD:{" "}
+                        {metricReducer?.data?.predicted_price?.toFixed(2)}
+                      </span>
+                    </span>
+                  </b>
+                </div>
+                <TrendPlot title={""} />
               </Suspense>
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem2}>
+        <div className="griditem2">
           <div className={""}>
             <ErrorBoundry>
               <Suspense fallback={<div />}>
@@ -113,10 +61,15 @@ const ForwardValuation = (props) => {
             </ErrorBoundry>
           </div>
         </div>
-        <div className={clsx(classes.griditem3, classes.paddingTop)}>
-          <div className={clsx(classes.chartContainer)}>
+        <div className="griditem3 paddingTop">
+          <div className="chartContainer">
             <ErrorBoundry>
               <Suspense fallback={<div />}>
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
+                  <b>{`${hours} Hour Average Target Accuracy`}</b>
+                </div>
                 <RollingMads
                   info={
                     "Average Target Accuracy is\n" +
@@ -124,14 +77,14 @@ const ForwardValuation = (props) => {
                     "the real price reached the\n" +
                     "expected forecasted price"
                   }
-                  title={`${hours} Hour Average Target Accuracy`}
+                  title={""}
                 />
               </Suspense>
             </ErrorBoundry>
           </div>
         </div>
-        <div className={clsx(classes.griditem4, classes.paddingTop)}>
-          <div className={classes.chartContainer}>
+        <div className="griditem4 paddingTop">
+          <div className="chartContainer">
             <ErrorBoundry>
               <Suspense fallback={<div />}>
                 <div
@@ -155,10 +108,15 @@ const ForwardValuation = (props) => {
             </ErrorBoundry>
           </div>
         </div>
-        <div className={clsx(classes.griditem5, classes.paddingTop)}>
-          <div className={classes.chartContainer}>
+        <div className="griditem5 paddingTop">
+          <div className="chartContainer">
             <ErrorBoundry>
               <Suspense fallback={<div />}>
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
+                  <b>{`${hours} Hour Average Directional Accuracy`}</b>
+                </div>
                 <RollingMads
                   info={
                     "Average Directional Accuracy is\n" +
@@ -167,14 +125,14 @@ const ForwardValuation = (props) => {
                     "expected forecasted directional\n" +
                     "for duration of forecast"
                   }
-                  title={`${hours} Hour Average Directional Accuracy`}
+                  title={""}
                 />
               </Suspense>
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem6}>
-          <div className={classes.chartContainer}>
+        <div className="griditem6 paddingTop">
+          <div className="chartContainer">
             <ErrorBoundry>
               <Suspense fallback={<div />}>
                 <div
@@ -198,12 +156,15 @@ const ForwardValuation = (props) => {
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem7}>
-          {" "}
-          <div className={classes.chartContainer}>
-            {" "}
+        <div className="griditem7 paddingTop">
+          <div className="chartContainer">
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
+                  <b>{"Calls Options Volatility Surface"}</b>
+                </div>
                 <Surface
                   type={"Calls"}
                   info={
@@ -211,17 +172,21 @@ const ForwardValuation = (props) => {
                     "calculated from Deribit BTC call\n" +
                     "options"
                   }
+                  title={""}
                 />
               </Suspense>
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem8}>
-          {" "}
-          <div className={classes.chartContainer}>
-            {" "}
+        <div className="griditem8 paddingTop">
+          <div className="chartContainer">
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
+                <div
+                  className="yellow"
+                  style={{position: "absolute", marginLeft: "10px"}}>
+                  <b>{"Calls Options Volatility Surface"}</b>
+                </div>
                 <Surface
                   type={"Puts"}
                   info={
@@ -229,6 +194,7 @@ const ForwardValuation = (props) => {
                     "calculated from Deribit BTC put\n" +
                     "options"
                   }
+                  title={""}
                 />
               </Suspense>
             </ErrorBoundry>

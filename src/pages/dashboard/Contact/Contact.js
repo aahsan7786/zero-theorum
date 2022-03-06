@@ -5,80 +5,81 @@ import DashboardBackground from "../DashboardBackground";
 import backgroundImg from "Images/starry_bg.webp";
 import sunImg from "Images/sun_gif.gif";
 import clsx from "clsx";
+import "./contact.css";
 const useStyles = makeStyles({
-  container: {
-    width: "50%",
-    border: "1px solid grey",
-    padding: "10px",
-    fontSize: "14px",
-  },
+  // form_container: {
+  //   width: "50%",
+  //   border: "1px solid grey",
+  //   padding: "10px",
+  //   fontSize: "14px",
+  // },
 
-  form_body: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
+  // form_body: {
+  //   display: "flex",
+  //   flexDirection: "column",
+  //   alignItems: "center",
+  // },
 
-  nameBox: {
-    marginTop: "10px",
-    display: "flex",
-    justifyContent: "space-between",
-    width: "100%",
-  },
-  emailBox: {
-    marginTop: "10px",
-    marginBottom: "10px",
-    display: "flex",
-    // justifyContent:'space-around',
-    width: "100%",
-  },
-  text: {
-    background: "rgba(39, 43, 51, 0.5)",
-    color: "white",
-    padding: "10px",
-    width: "45%",
-    border: "none",
-    fontSize: "larger",
-  },
-  emailtext: {
-    background: "rgba(39, 43, 51, 0.5)",
-    color: "white",
-    padding: "10px",
-    width: "100%",
-    border: "none",
-    fontSize: "larger",
-  },
+  // nameBox: {
+  //   marginTop: "10px",
+  //   display: "flex",
+  //   justifyContent: "space-between",
+  //   width: "100%",
+  // },
+  // emailBox: {
+  //   marginTop: "10px",
+  //   marginBottom: "10px",
+  //   display: "flex",
+  //   // justifyContent:'space-around',
+  //   width: "100%",
+  // },
+  // text: {
+  //   background: "rgba(39, 43, 51, 0.5)",
+  //   color: "white",
+  //   padding: "10px",
+  //   width: "45%",
+  //   border: "none",
+  //   fontSize: "larger",
+  // },
+  // emailtext: {
+  //   background: "rgba(39, 43, 51, 0.5)",
+  //   color: "white",
+  //   padding: "10px",
+  //   width: "100%",
+  //   border: "none",
+  //   fontSize: "larger",
+  // },
 
-  textArea: {
-    height: "200px",
-    width: "100%",
-    background: "rgba(39, 43, 51, 0.5)",
-    color: "white",
-    padding: "10px",
-    marginBottom: "10px",
-    border: "none",
-  },
+  // textArea: {
+  //   height: "200px",
+  //   width: "100%",
+  //   background: "rgba(39, 43, 51, 0.5)",
+  //   color: "white",
+  //   padding: "10px",
+  //   marginBottom: "10px",
+  //   border: "none",
+  // },
 
-  radio: {
-    display: "flex",
-    width: "90%",
-    justifyContent: "space-around",
-    alignItems: "center",
-    marginLeft: "-20%",
-  },
-  btn: {
-    width: "100px",
-    height: "40px",
-    borderRadius: "0px",
-    lineHeight: "40px",
-    fontSize: "14px",
-    color: "white",
-    backgroundColor: "#ddb611",
-    "&:hover": {
-      color: "#ddb611",
-      backgroundColor: "transparent",
-    },
-  },
+  // radio: {
+  //   display: "flex",
+  //   width: "90%",
+  //   justifyContent: "space-around",
+  //   alignItems: "center",
+  //   marginLeft: "-20%",
+  // },
+  // contact_submit_btn: {
+  //   width: "100px",
+  //   height: "40px",
+  //   borderRadius: "0px",
+  //   lineHeight: "40px",
+  //   fontSize: "14px",
+  //   color: "white",
+  //   backgroundColor: "#ddb611",
+  //   "&:hover": {
+  //     color: "#ddb611",
+  //     backgroundColor: "transparent",
+  //   },
+  // },
   root: {
     background: `url(${backgroundImg}) repeat center`,
     height: "100%",
@@ -103,50 +104,50 @@ const Contact = (props) => {
   const classes = useStyles(props);
 
   return (
-    <div className={classes.root}>
+    <div className="root">
       <DashboardBreadcrumb currentPage={"Contact"}></DashboardBreadcrumb>
-      <h4 style={{color: "#deb513"}} className={"ml-5"}>
-        Contact Form
-      </h4>
-      <p
-        style={{fontSize: "12px", fontWeight: "bold", color: "#9b9b9c"}}
-        className={"ml-5"}>
-        We would love to hear your thoughts, suggestion, concerns with anything
-        so we can improve our platform
-      </p>
-      <div style={{display: "flex", justifyContent: "space-between"}}>
-        <div className={clsx(classes.container, "ml-5")}>
-          <form className={classes.form_body} onSubmit={handleSubmit}>
-            <div className={classes.nameBox}>
-              <input
-                className={classes.text}
-                type="text"
-                placeholder="First Name"
-              />
-              <input
-                className={classes.text}
-                type="text"
-                placeholder="Last Name"
-              />
+      <div className="top_text_container">
+        <h4 style={{color: "#deb513"}} className={""}>
+          Contact Form
+        </h4>
+        <p
+          style={{fontSize: "12px", fontWeight: "bold", color: "#9b9b9c"}}
+          className={""}>
+          We would love to hear your thoughts, suggestion, concerns with
+          anything so we can improve our platform
+        </p>
+      </div>
+
+      <div
+        className="wrapper_form"
+        style={{display: "flex", justifyContent: "space-between"}}>
+        <div className="form_container">
+          <form className="form_body" onSubmit={handleSubmit}>
+            <div className="nameBox">
+              <input className="text" type="text" placeholder="First Name" />
+              <input className="text" type="text" placeholder="Last Name" />
             </div>
 
-            <div className={classes.emailBox}>
-              <input
-                className={classes.emailtext}
-                type="email"
-                placeholder="E-mail"
-              />
+            <div className="emailBox">
+              <input className="emailtext" type="email" placeholder="E-mail" />
             </div>
 
             <textArea
-              className={classes.textArea}
+              className="textArea"
               placeholder="Describe your feedback"
             />
 
-            <div style={{fontSize: "large", width: "100%", margin: "10px"}}>
+            <div
+              className="feedbackType"
+              style={{
+                fontSize: "large",
+                width: "100%",
+                margin: "10px",
+                color: "#ddb611",
+              }}>
               Feedback Type
             </div>
-            <div className={classes.radio}>
+            <div className="radio">
               <label htmlFor="rad1">
                 <input type="radio" id="rad1" value="comments" name="radio" />
                 Comments
@@ -174,14 +175,14 @@ const Contact = (props) => {
             </div>
 
             <input
-              className={clsx(classes.btn, "btn", "mt-3")}
+              className="contact_submit_btn  mt-3"
               type="submit"
               name=""
               id=""
             />
           </form>
         </div>
-        <div>
+        <div className="sun_image">
           <img src={sunImg}></img>
         </div>
       </div>

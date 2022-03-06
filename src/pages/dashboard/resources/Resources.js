@@ -6,7 +6,7 @@ import resourcesIconHover from "./../../../assets/images/dashboardIcons/resource
 import {RESOURCES_INFO} from "../../../constants/Constants";
 // import Modal from "./ModalResources/Modal";
 import Accordion from "./ModalResources/Accordion";
-import "./Resources.css";
+import "./Resources.scss";
 import {connect} from "react-redux";
 import {setResourcesOpen, defaultResources} from "Store/resources/actions";
 import DashboardBreadcrumb from "../DashboardBreadcrumb";
@@ -19,15 +19,15 @@ const Resources = (props) => {
       <DashboardBackground></DashboardBackground>
       <DashboardBreadcrumb currentPage={"Resources"}></DashboardBreadcrumb>
 
-      <div className="grid_container">
-        <div className="boxtop">
+      <div className="grid_container_resources">
+        <div className="boxtop_resources">
           <Info
             icon={resourcesIconHover}
             heading={RESOURCES_INFO.heading}
             info={RESOURCES_INFO.info}></Info>
         </div>
 
-        <div className="boxbot">
+        <div className="boxbot_resources">
           {resources.map((res, index) => (
             <Accordion
               id={index}

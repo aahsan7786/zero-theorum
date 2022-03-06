@@ -1,5 +1,6 @@
 import React, {Fragment, lazy, Suspense, useEffect, useState} from "react";
 import {makeStyles} from "@material-ui/styles";
+import clsx from "clsx";
 const useStyles = makeStyles({
   container: {
     width: "100%",
@@ -34,12 +35,18 @@ const Info = (props) => {
   const classes = useStyles(props);
 
   return (
-    <div className={classes.container}>
-      <div className={classes.heading}>
-        <img src={props.icon} className={classes.headingIcon}></img>
-        <span className={classes.headingText}>{props.heading}</span>
+    <div className={clsx(classes.container, "infoSectionContainer")}>
+      <div className={clsx(classes.heading, "infoSectionHeading")}>
+        <img
+          src={props.icon}
+          className={clsx(classes.headingIcon, "infoSectionIcon")}></img>
+        <span className={clsx(classes.headingText, "infoSectionHeadingText")}>
+          {props.heading}
+        </span>
       </div>
-      <div className={classes.info}>{props.info}</div>
+      <div className={clsx(classes.info, "infoSectionInfoText")}>
+        {props.info}
+      </div>
     </div>
   );
 };

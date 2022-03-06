@@ -17,6 +17,7 @@ import formula6 from "Images/formula6.png";
 import formula7 from "Images/formula7.png";
 import {useSelector} from "react-redux";
 import DashboardBackground from "../DashboardBackground";
+import "./GoverningDynamixs.scss";
 import clsx from "clsx";
 import DashboardBreadcrumb from "../DashboardBreadcrumb";
 
@@ -27,57 +28,57 @@ const GoverningEquationsGreeks = lazy(() =>
   import("Charts/governing-equations-greeks/GoverningEquationsGreeks")
 );
 const useStyles = makeStyles({
-  grid_container: {
-    position: "absolute",
-    left: "5%",
-    display: "grid",
-    gridTemplateColumns: "repeat(2, 1fr)",
-    gap: "0.7em",
-    width: "90%",
-    height: "100vh",
-  },
-  griditem: {
-    border: "1px solid grey",
-    paddingTop: "10px",
+  // grid_container: {
+  //   position: "absolute",
+  //   left: "5%",
+  //   display: "grid",
+  //   gridTemplateColumns: "repeat(2, 1fr)",
+  //   gap: "0.7em",
+  //   width: "90%",
+  //   height: "100vh",
+  // },
+  // grid_child: {
+  //   border: "1px solid grey",
+  //   paddingTop_GD: "10px",
 
-    "&:nth-child(1)": {
-      height: "250px",
-    },
-    "&:nth-child(3)": {
-      height: "400px",
-    },
-    "&:nth-child(5)": {
-      height: "400px",
-    },
-    "&:nth-child(7)": {
-      height: "400px",
-    },
-  },
-  chartContainer: {
-    width: "100%",
-    height: "100%",
-    position: "relative",
-    padding: "37px 0 10px",
-  },
-  derivedEqContainer: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "space-evenly",
-    width: "100%",
-    height: "100%",
-  },
-  formulaContainer: {
-    fontSize: "10px",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "40%",
-  },
-  paddingTop: {
-    paddingTop: "10px",
-  },
+  //   "&:nth-child(1)": {
+  //     height: "250px",
+  //   },
+  //   "&:nth-child(3)": {
+  //     height: "400px",
+  //   },
+  //   "&:nth-child(5)": {
+  //     height: "400px",
+  //   },
+  //   "&:nth-child(7)": {
+  //     height: "400px",
+  //   },
+  // },
+  // chartContainer_GD: {
+  //   width: "100%",
+  //   height: "100%",
+  //   position: "relative",
+  //   padding: "37px 0 10px",
+  // },
+  // derivedEqContainer: {
+  //   display: "flex",
+  //   flexDirection: "column",
+  //   alignItems: "center",
+  //   justifyContent: "space-evenly",
+  //   width: "100%",
+  //   height: "100%",
+  // },
+  // formulaContainer: {
+  //   fontSize: "10px",
+  //   display: "flex",
+  //   flexDirection: "column",
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  //   width: "40%",
+  // },
+  // paddingTop_GD: {
+  //   paddingTop_GD: "10px",
+  // },
 });
 
 const GoverningDynamics = (props) => {
@@ -89,18 +90,18 @@ const GoverningDynamics = (props) => {
       <DashboardBackground></DashboardBackground>
       <DashboardBreadcrumb
         currentPage={"Governing Dynamics"}></DashboardBreadcrumb>
-      <div className={classes.grid_container}>
-        <div className={classes.griditem}>
+      <div className="container_grid">
+        <div className="grid_child">
           <Info
             icon={dynamicsIconHover}
             heading={GOVERNING_DYNAMICS_INFO.heading}
             info={GOVERNING_DYNAMICS_INFO.info}></Info>
         </div>
-        <div className={classes.griditem}>
-          <div className={classes.derivedEqContainer}>
+        <div className="grid_child">
+          <div className="derivedEqContainer">
             <ErrorBoundry>
               <Suspense fallback={<div />}>
-                <div className="yellow">
+                <div className="yellow_gd">
                   <b>ZERO THEOREM REDUCED FORM EQUATION</b>
                 </div>
                 {/*<img src={formula} alt=""/>*/}
@@ -119,12 +120,12 @@ const GoverningDynamics = (props) => {
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem}>
-          <div className={classes.chartContainer} style={{display: "flex"}}>
+        <div className="grid_child">
+          <div className="chartContainer_GD" style={{display: "flex"}}>
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
                 <div
-                  className="yellow"
+                  className="yellow_gd"
                   style={{
                     position: "absolute",
                     marginLeft: "10px",
@@ -132,7 +133,7 @@ const GoverningDynamics = (props) => {
                   }}>
                   <b>{`${hours} Hour Gamma - Aggregate Substitution Rate Exposure`}</b>
                 </div>
-                <div className={classes.formulaContainer}>
+                <div className="formulaContainer">
                   <img
                     src={formula1}
                     alt=""
@@ -159,12 +160,12 @@ const GoverningDynamics = (props) => {
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem}>
-          <div className={classes.chartContainer} style={{display: "flex"}}>
+        <div className="grid_child">
+          <div className="chartContainer_GD" style={{display: "flex"}}>
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
                 <div
-                  className="yellow"
+                  className="yellow_gd"
                   style={{
                     position: "absolute",
                     marginLeft: "10px",
@@ -175,7 +176,7 @@ const GoverningDynamics = (props) => {
                   </b>
                 </div>
 
-                <div className={classes.formulaContainer}>
+                <div className="formulaContainer">
                   <img
                     src={formula2}
                     alt=""
@@ -205,12 +206,12 @@ const GoverningDynamics = (props) => {
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem}>
-          <div className={classes.chartContainer} style={{display: "flex"}}>
+        <div className="grid_child">
+          <div className="chartContainer_GD" style={{display: "flex"}}>
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
                 <div
-                  className="yellow"
+                  className="yellow_gd"
                   style={{
                     position: "absolute",
                     marginLeft: "10px",
@@ -220,7 +221,7 @@ const GoverningDynamics = (props) => {
                     {`${hours} Hour Delta - Specific k Asset Trade Volume Exposure`}
                   </b>
                 </div>
-                <div className={classes.formulaContainer}>
+                <div className="formulaContainer">
                   <img
                     src={formula3}
                     alt=""
@@ -250,12 +251,12 @@ const GoverningDynamics = (props) => {
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem}>
-          <div className={classes.chartContainer} style={{display: "flex"}}>
+        <div className="grid_child">
+          <div className="chartContainer_GD" style={{display: "flex"}}>
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
                 <div
-                  className="yellow"
+                  className="yellow_gd"
                   style={{
                     position: "absolute",
                     marginLeft: "10px",
@@ -263,7 +264,7 @@ const GoverningDynamics = (props) => {
                   }}>
                   <b>{`${hours} Hour Phi - Transactional Velocity Exposure`}</b>
                 </div>
-                <div className={classes.formulaContainer}>
+                <div className="formulaContainer">
                   <img
                     src={formula4}
                     alt=""
@@ -279,16 +280,16 @@ const GoverningDynamics = (props) => {
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem}>
-          <div className={classes.chartContainer} style={{display: "flex"}}>
+        <div className="grid_child">
+          <div className="chartContainer_GD" style={{display: "flex"}}>
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
                 <div
-                  className="yellow"
+                  className="yellow_gd"
                   style={{position: "absolute", marginLeft: "10px"}}>
                   <b>{`${hours} Hour Rho - Hash Rate Exposure`}</b>
                 </div>
-                <div className={classes.formulaContainer}>
+                <div className="formulaContainer">
                   <img
                     src={formula6}
                     alt=""
@@ -317,16 +318,16 @@ const GoverningDynamics = (props) => {
             </ErrorBoundry>
           </div>
         </div>
-        <div className={classes.griditem}>
-          <div className={classes.chartContainer} style={{display: "flex"}}>
+        <div className="grid_child">
+          <div className="chartContainer_GD" style={{display: "flex"}}>
             <ErrorBoundry>
               <Suspense fallback={<LoadingIndicator />}>
                 <div
-                  className="yellow"
+                  className="yellow_gd"
                   style={{position: "absolute", marginLeft: "10px"}}>
                   {`${hours} Hour Mu - Difficulty Rate Exposure`}
                 </div>
-                <div className={classes.formulaContainer}>
+                <div className="formulaContainer">
                   <img
                     src={formula7}
                     alt=""

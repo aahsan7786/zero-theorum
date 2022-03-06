@@ -78,6 +78,7 @@ const ImpliedVolatility = (props) => {
           position: "absolute",
           right: "2rem",
         }}
+        className={"infoBtn"}
       />
       <Plot
         data={[

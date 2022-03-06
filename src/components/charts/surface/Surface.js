@@ -50,6 +50,7 @@ const Surface = (props) => {
       fetchMetricsCallsSurfaceSuccess,
       fetchMetricsCallsSurfaceError,
       data,
+      title,
     } = props;
     if (isEmpty(data)) {
       api
@@ -62,6 +63,7 @@ const Surface = (props) => {
   const {
     isLoading,
     type,
+    title,
     data: {xcalls, ycalls, zcalls, xputs, yputs, zputs, xDiff, yDiff, zDiff},
   } = props;
 
@@ -110,6 +112,7 @@ const Surface = (props) => {
           position: "absolute",
           right: "2rem",
         }}
+        className={"infoBtn"}
       />
       <Plot
         onClick={() => setScroll(true)}
@@ -125,7 +128,7 @@ const Surface = (props) => {
         ]}
         layout={
           viewSettingsLayout(
-            `${type} Options Volatility Surface`,
+            title,
             true,
             {
               l: 50,

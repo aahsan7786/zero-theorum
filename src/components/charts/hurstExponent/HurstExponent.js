@@ -122,6 +122,7 @@ const HurstExponent = (props) => {
           position: "absolute",
           right: "2rem",
         }}
+        className={"infoBtn"}
       />
       <Plot
         data={[

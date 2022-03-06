@@ -58,6 +58,7 @@ const DrawDown = (props) => {
           position: "absolute",
           right: "2rem",
         }}
+        className={"infoBtn"}
       />
       <Plot
         onClick={() => setScroll(true)}

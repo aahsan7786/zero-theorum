@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./Accordion.css";
+import "./Accordion.scss";
 import {Document, Page} from "react-pdf";
 import {Link} from "react-router-dom";
 import {setPdf} from "Store/pdf/actions";
@@ -27,8 +27,8 @@ function Accordion(props) {
         onClick={() => {
           props.setOpenAccordian(props.id);
         }}>
-        <p className="accordion_title">
-          {props.title}
+        <div className={"accordion_title_container"}>
+          <p className="accordion_title">{props.title}</p>
           <img
             src={arrowRightIcon}
             style={{
@@ -36,7 +36,7 @@ function Accordion(props) {
               width: "10px",
               height: "10px",
             }}></img>
-        </p>
+        </div>
       </button>
 
       <div className={`accordion_content ${props.isActive ? "active" : ""}`}>

@@ -1,0 +1,140 @@
+.grid_container {
+  position: absolute;
+  left: 5%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.5em;
+  width: 90%;
+  height: 100vh;
+}
+#forwardValuation {
+  .chartContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 50px 0 10px;
+  }
+  .griditem1 {
+    border: 1px solid grey;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    height: 400px;
+  }
+  .griditem2 {
+    border: 1px solid grey;
+    grid-column-start: 11;
+    grid-column-end: 13;
+  }
+  .griditem3 {
+    border: 1px solid grey;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: 350px;
+  }
+  .griditem4 {
+    border: 1px solid grey;
+    grid-column-start: 4;
+    grid-column-end: 7;
+  }
+  .griditem5 {
+    border: 1px solid grey;
+    grid-column-start: 7;
+    grid-column-end: 10;
+  }
+  .griditem6 {
+    border: 1px solid grey;
+    grid-column-start: 10;
+    grid-column-end: 13;
+  }
+  .griditem7 {
+    border: 1px solid grey;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    height: 400px;
+  }
+  .griditem8 {
+    border: 1px solid grey;
+    grid-column-start: 7;
+    grid-column-end: 13;
+  }
+  .paddingTop {
+    padding-top: 10px;
+  }
+}
+@media (max-width: 580px) {
+  .grid_container {
+    grid-template-columns: 1fr;
+    height: fit-content;
+  }
+  #forwardValuation {
+    .chartContainer {
+      padding: 0 !important;
+    }
+
+    .griditem1,
+    .griditem3,
+    .griditem4,
+    .griditem5,
+    .griditem6,
+    .griditem7,
+    .griditem8 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      background-color: rgba(128, 128, 128, 0.205);
+      margin-bottom: 20px;
+
+      border: none;
+      box-shadow: 5px;
+    }
+    // .griditem1 {
+    .js-plotly-plot {
+      height: 300px !important;
+    }
+    // }
+
+    .griditem2 {
+      display: none;
+    }
+    .griditem4,
+    .griditem6 {
+      .yellow {
+        margin-bottom: 0px;
+      }
+    }
+    .yellow {
+      border: 1px solid #deb513;
+      padding: 5px;
+      width: 96%;
+      text-align: left;
+      position: static !important;
+      margin-bottom: 50px;
+      font-size: 12px;
+    }
+    .dashboard-box-filter {
+      top: 50px;
+      .dropdown-header {
+        border-color: #deb513;
+        color: #deb513;
+      }
+    }
+    .infoBtn {
+      top: 58px !important;
+      fill: #deb513 !important;
+    }
+    .dropdown-select {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+  }
+}
